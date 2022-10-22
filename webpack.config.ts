@@ -1,0 +1,20 @@
+import path from 'path';
+import { buildWebpackConfig } from './config/build/buildWebPackConfig';
+import { EnvVariables } from './config/build/types/config';
+
+const getConfig = (env: EnvVariables) => {
+    const mode = env.MODE ?? 'development';
+
+    return buildWebpackConfig({
+        mode,
+        isDev: mode === 'development',
+        paths: {
+            build: path.resolve(__dirname, 'build'),
+            entry: path.resolve(__dirname, 'src', 'index.tsx'),
+            html: path.resolve(__dirname, 'public', 'index.html'),
+        },
+        port: env.PORT ?? 3000,
+    })
+}
+
+export default getConfig;
