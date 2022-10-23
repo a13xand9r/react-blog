@@ -1,4 +1,4 @@
-import { classNames } from '../../helpers/classNames';
+import { classNames } from '../../../shared/lib/classNames/classNames';
 
 function MainPage() {
     return (
