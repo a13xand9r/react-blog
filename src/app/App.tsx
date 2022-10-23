@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { MainPageLazy } from 'pages/MainPage'
 import { AboutPageLazy } from 'pages/AboutPage'
 import { useThemeContext } from 'shared/theme/ThemeContext'
+import { routesConfig } from 'shared/config/routeConfig/routeConfig'
 
 export const App = () => {
     const {theme, toggleTheme} = useThemeContext();
@@ -17,8 +18,13 @@ export const App = () => {
             <Link to='/about'>about</Link>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
-                    <Route path='/about' element={<AboutPageLazy />} />
-                    <Route path='/' element={<MainPageLazy />} />
+                    {Object.values(routesConfig).map(({path, element}) => (
+                        <Route
+                            key={path}
+                            path={path}
+                            element={element}
+                        />
+                    ))}
                 </Routes>
             </Suspense>
         </div>
