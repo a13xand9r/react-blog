@@ -7,11 +7,11 @@ import { routesConfig } from 'shared/config/routeConfig/routeConfig'
 import { Navbar } from 'widgets/Navbar'
 
 export const App = () => {
-    const {theme, toggleTheme} = useThemeContext();
+    const {theme} = useThemeContext();
 
     return (
         <div className={classNames('app', theme)}>
-            <Navbar toggleTheme={toggleTheme} />
+            <Navbar />
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
                     {Object.values(routesConfig).map(({path, element}) => (
