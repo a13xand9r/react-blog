@@ -2,6 +2,10 @@ type ClassNameMod = Record<string, boolean | string>
 
 export const classNames = (...classes: (ClassNameMod | string)[]): string => {
     const totalClassNames = classes.reduce((acc, classNameMod) => {
+        if (!classNameMod) {
+            return acc;
+        }
+
         if (typeof classNameMod === 'string') {
             return [...acc, classNameMod];
         }
@@ -16,6 +20,8 @@ export const classNames = (...classes: (ClassNameMod | string)[]): string => {
 
         return [...acc, ...modNames];
     }, []);
+
+    console.log('totalClassNames', totalClassNames);
 
     return totalClassNames.join(' ');
 };

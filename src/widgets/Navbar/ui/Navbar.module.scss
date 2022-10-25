@@ -1,18 +1,15 @@
 .Navbar {
-    color: red;
+    height: var(--header-height);
+    width: 100%;
+
+    background: var(--inverted-bg-color);
+
+    padding: 15px;
+    display: flex;
 }
 
-.someClass {
-    color: green;
-}
-
-.red {
-    color: green;
-}
-
-.green {
-    color: green;
-}
-.blue {
-    color: green;
+.links {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
 }
