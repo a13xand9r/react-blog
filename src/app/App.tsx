@@ -1,10 +1,9 @@
-import { Suspense } from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
-import './styles/index.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useThemeContext } from 'shared/theme/ThemeContext'
-import { routesConfig } from 'shared/config/routeConfig/routeConfig'
 import { Navbar } from 'widgets/Navbar'
+import { AppRouter } from './providers/router'
+import { Sidebar } from 'widgets/Sidebar'
+import './styles/index.scss'
 
 export const App = () => {
     const {theme} = useThemeContext();
@@ -12,17 +11,10 @@ export const App = () => {
     return (
         <div className={classNames('app', theme)}>
             <Navbar />
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    {Object.values(routesConfig).map(({path, element}) => (
-                        <Route
-                            key={path}
-                            path={path}
-                            element={element}
-                        />
-                    ))}
-                </Routes>
-            </Suspense>
+            <div className='content-page'>
+                <Sidebar />
+                <AppRouter />
+            </div>
         </div>
     )
 }
