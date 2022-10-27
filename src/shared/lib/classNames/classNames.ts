@@ -21,7 +21,5 @@ export const classNames = (...classes: (ClassNameMod | string)[]): string => {
         return [...acc, ...modNames];
     }, []);
 
-    console.log('totalClassNames', totalClassNames);
-
     return totalClassNames.join(' ');
 };
