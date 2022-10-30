@@ -10,8 +10,8 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
     const { t, i18n } = useTranslation();
 
     const toggleLang = () => {
-        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-    }
+        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    };
 
     return (
         <Button className={className} onClick={toggleLang} theme={ButtonTheme.CLEAR}>

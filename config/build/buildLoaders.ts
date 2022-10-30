@@ -20,15 +20,15 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
         use: [
             options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
-                loader: "css-loader",
+                loader: 'css-loader',
                 options: {
                     modules: {
                         auto: (resPath: string) => resPath.includes('.module.'),
-                        localIdentName: "[path][name]__[local]--[hash:base64:5]",
-                      },
-                }
+                        localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                    },
+                },
             },
-            "sass-loader",
+            'sass-loader',
         ],
     };
 
@@ -42,6 +42,6 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
         fileLoader,
         svgLoader,
         tsLoader,
-        scssLoader
-    ]
+        scssLoader,
+    ];
 };

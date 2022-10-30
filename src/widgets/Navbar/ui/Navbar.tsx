@@ -9,7 +9,7 @@ interface NavbarProps {
 };
 
 export const Navbar: FC<NavbarProps> = ({ className }) => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <div className={classNames(className, styles.Navbar)}>
@@ -20,4 +20,3 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
         </div>
     );
 };
-

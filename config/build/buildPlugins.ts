@@ -15,9 +15,9 @@ export const buildPlugins = ({ html }: BuildPaths, isDev: boolean): webpack.Webp
             chunkFilename: 'css/[name].[contenthash:8].css',
         }),
         new webpack.DefinePlugin({
-            '__IS_DEV__': isDev
+            __IS_DEV__: isDev,
         }),
-    ]
+    ];
 
     if (isDev) {
         plugins.push(new ReactRefreshWebpackPlugin());
@@ -25,4 +25,4 @@ export const buildPlugins = ({ html }: BuildPaths, isDev: boolean): webpack.Webp
     }
 
     return plugins;
-}
+};

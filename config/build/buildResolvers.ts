@@ -10,5 +10,5 @@ export const buildResolvers = (options: BuildOptions): ResolveOptions => {
         modules: ['node_modules', options.paths.src],
         mainFiles: ['index'],
         alias: {},
-    }
-}
+    };
+};

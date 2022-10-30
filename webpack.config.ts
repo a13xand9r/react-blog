@@ -15,7 +15,7 @@ const getConfig = (env: EnvVariables) => {
             src: path.resolve(__dirname, 'src'),
         },
         port: env.PORT ?? 3000,
-    })
-}
+    });
+};
 
 export default getConfig;

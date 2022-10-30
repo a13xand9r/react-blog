@@ -13,10 +13,10 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
 
     const toggleCollapseSidebar = () => {
         setIsCollapsed(prev => !prev);
-    }
+    };
 
     return (
-        <div className={classNames(className, styles.Sidebar, {[styles.collapsed]: isCollapsed})}>
+        <div className={classNames(className, styles.Sidebar, { [styles.collapsed]: isCollapsed })}>
             <button onClick={toggleCollapseSidebar}>toggle</button>
             <div className={styles.switchersContainer}>
                 <ThemeSwitcher />

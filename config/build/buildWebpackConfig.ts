@@ -9,7 +9,7 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
     const { isDev, mode, paths } = options;
 
     return {
-        mode: mode,
+        mode,
         entry: paths.entry,
         devtool: isDev ? 'inline-source-map' : false,
         output: {
@@ -23,5 +23,5 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
             rules: buildLoaders(options),
         },
         resolve: buildResolvers(options),
-    }
-}
+    };
+};
