@@ -6,6 +6,7 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'standard-with-typescript',
+        'plugin:i18next/recommended',
     ],
     overrides: [
     ],
@@ -16,11 +17,11 @@ module.exports = {
     },
     plugins: [
         'react',
+        'i18next',
     ],
     rules: {
         indent: ['error', 4],
         '@typescript-eslint/indent': ['error', 4],
-        // 'comma-dangle': 'off',
         'react/react-in-jsx-scope': 'off',
         semi: [2, 'always'],
         '@typescript-eslint/semi': [2, 'always'],
