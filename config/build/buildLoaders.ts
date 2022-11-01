@@ -38,10 +38,22 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
         exclude: /node_modules/,
     };
 
+    const babelLoader = {
+        test: /\.(js|jsx|tsx|ts)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+            },
+        },
+    };
+
     return [
         fileLoader,
         svgLoader,
-        tsLoader,
         scssLoader,
+        babelLoader,
+        tsLoader,
     ];
 };
