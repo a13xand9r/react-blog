@@ -5,13 +5,14 @@ import { AppRouter } from './providers/router';
 import { Sidebar } from 'widgets/Sidebar';
 import './styles/index.scss';
 import { Suspense } from 'react';
+import { Loader } from 'widgets/Loader';
 
 export const App = () => {
     const { theme } = useThemeContext();
 
     return (
         <div className={classNames('app', theme)}>
-            <Suspense fallback=''>
+            <Suspense fallback={<Loader />}>
                 <Navbar />
                 <div className='content-page'>
                     <Sidebar />
