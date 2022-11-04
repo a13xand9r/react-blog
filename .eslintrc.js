@@ -43,6 +43,7 @@ module.exports = {
         'comma-dangle': ['error', 'always-multiline'],
         '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
         '@typescript-eslint/naming-convention': 'off',
+        'n/handle-callback-err': 'off',
     },
     globals: {
         __IS_DEV__: true,

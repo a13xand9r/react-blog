@@ -3,5 +3,8 @@
 	"Main": "Main",
 	"About": "About",
 	"Toggle": "Toggle",
-	"NotFound": "Not found"
+	"NotFound": "Not found",
+	"ThrowError": "Thow error",
+	"ReloadPage": "Reload page",
+	"ErrorMessage": "Something went wrong"
 }

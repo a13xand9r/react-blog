@@ -3,7 +3,6 @@ import { useThemeContext } from 'shared/theme/ThemeContext';
 import { Navbar } from 'widgets/Navbar';
 import { AppRouter } from './providers/router';
 import { Sidebar } from 'widgets/Sidebar';
-import './styles/index.scss';
 import { Suspense } from 'react';
 import { Loader } from 'widgets/Loader';
 
