@@ -7,6 +7,6 @@ export const renderWithTranslation = (component: ReactNode) => {
     return render(
         <I18nextProvider i18n={i18n}>
             {component}
-        </I18nextProvider>
+        </I18nextProvider>,
     );
 };
