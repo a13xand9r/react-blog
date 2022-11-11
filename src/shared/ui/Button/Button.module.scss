@@ -1,19 +1,22 @@
 .Button {
     cursor: pointer;
     outline: none;
-    transition: 0.1s;
-}
-
-.Button:hover {
-    transform: scale(1.05);
 }
 
 .clear {
     border: none;
     background: none;
+    color: var(--primary-color);
 }
 
 .primary {
     border: 1px solid black;
     background-color: var(--primary-color);
+}
+
+.outlined {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background: none;
+    padding: 5px 10px;
 }

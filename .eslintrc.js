@@ -3,22 +3,14 @@ module.exports = {
         browser: true,
         es2021: true,
     },
-    extends: [
-        'plugin:react/recommended',
-        'standard-with-typescript',
-        'plugin:i18next/recommended',
-    ],
-    overrides: [
-    ],
+    extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+    overrides: [],
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: ['tsconfig.json'],
     },
-    plugins: [
-        'react',
-        'i18next',
-    ],
+    plugins: ['react', 'i18next'],
     rules: {
         indent: ['error', 4],
         '@typescript-eslint/indent': ['error', 4],
@@ -44,6 +36,9 @@ module.exports = {
         '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
         '@typescript-eslint/naming-convention': 'off',
         'n/handle-callback-err': 'off',
+        '@typescript-eslint/consistent-type-assertions': 'off',
+        'react/display-name': 'off',
+        '@typescript-eslint/prefer-includes': 'off',
     },
     globals: {
         __IS_DEV__: true,
