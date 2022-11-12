@@ -6,15 +6,11 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
-  # This workflow contains a job called "integration"
-  integration:
-		# A strategy that defines different variations of an environment to run each job in.
+  pipeline:
     strategy:
       matrix:
-        os: ubuntu-latest
         node: [12]
-    # The runners that the job will run on
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Setup Node.js environment
