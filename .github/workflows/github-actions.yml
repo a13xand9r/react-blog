@@ -30,5 +30,11 @@ jobs:
       - name: Run Build
         run: npm run build
 
+      - name: Run Build Storybook
+        run: npm run storybook:build
+
+      - name: Run UI test
+        run: npm run test:ui:ci
+
       - name: Run Unit test
         run: npm run test:unit
