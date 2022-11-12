@@ -18,14 +18,14 @@ export const buildPlugins = ({ html }: BuildPaths, isDev: boolean): webpack.Webp
         new webpack.DefinePlugin({
             __IS_DEV__: isDev,
         }),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }),
     ];
 
     if (isDev) {
         plugins.push(new ReactRefreshWebpackPlugin());
         plugins.push(new webpack.HotModuleReplacementPlugin());
+        plugins.push(new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }));
     }
 
     return plugins;
