@@ -1,5 +1,5 @@
 {
-	"Language": "Русский",
+	"Lang": "Русский",
 	"Main": "Main",
 	"About": "About",
 	"Toggle": "Toggle",
@@ -7,5 +7,5 @@
 	"ThrowError": "Thow error",
 	"ReloadPage": "Reload page",
 	"ErrorMessage": "Something went wrong",
-	"ShortLanguage": "Ru"
+	"Short Lang": "Ru"
 }

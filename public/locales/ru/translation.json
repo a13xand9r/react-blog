@@ -1,5 +1,5 @@
 {
-	"Language": "English",
+	"Lang": "English",
 	"Main": "Главная",
 	"About": "О сайте",
 	"Toggle": "Переключить",
@@ -7,5 +7,5 @@
 	"ThrowError": "Кинуть ошибку",
 	"ReloadPage": "Обновить страницу",
 	"ErrorMessage": "Что-то пошло не так, можете обновить страницу",
-	"ShortLanguage": "En"
+	"Short Lang": "En"
 }

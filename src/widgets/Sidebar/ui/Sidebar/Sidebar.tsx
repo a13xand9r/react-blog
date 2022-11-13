@@ -45,7 +45,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
                 {isCollapsed ? '>' : '<'}
             </Button>
             <div className={styles.switchersContainer}>
-                <ThemeSwitcher />
+                <ThemeSwitcher className={styles.themeSwitcher} />
                 <LangSwitcher short={isCollapsed} buttonTheme={ButtonTheme.BACKGROUND_INVERTED} />
             </div>
         </div>
