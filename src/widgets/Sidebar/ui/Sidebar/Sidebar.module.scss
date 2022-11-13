@@ -6,14 +6,50 @@
     transition: width 0.2s;
 }
 
-.collapsed {
-    width: var(--sidebar-width-collapsed);
-}
-
 .switchersContainer {
     position: absolute;
     bottom: 20px;
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.toggleButton {
+    position: absolute;
+    bottom: 20px;
+    right: calc(-1 * var(--font-line-l));
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.menuIcon {
+    fill: var(--inverted-primary-color);
+}
+
+.link {
+    transition: opacity 0.2s;
+}
+
+.linkContainer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+
+    .switchersContainer {
+        flex-direction: column;
+    }
+
+    .link {
+        opacity: 0;
+        width: 0;
+    }
 }

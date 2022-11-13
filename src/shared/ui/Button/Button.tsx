@@ -6,16 +6,37 @@ export const enum ButtonTheme {
     CLEAR = 'clear',
     PRIMARY = 'primary',
     OUTLINED = 'outlined',
+    BACKGROUND = 'background',
+    BACKGROUND_INVERTED = 'backgroundInverted',
 }
+
+export type ButtonSize = 'S' | 'M' | 'L' | 'XL';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ButtonTheme;
+    size?: ButtonSize;
+    square?: boolean;
 };
 
-export const Button: FC<ButtonProps> = ({ className, children, theme = ButtonTheme.CLEAR, ...props }) => {
+export const Button: FC<ButtonProps> = ({
+    className,
+    children,
+    theme = ButtonTheme.CLEAR,
+    size = 'M',
+    square = false,
+    ...props
+}) => {
     return (
-        <button className={classNames(styles.Button, styles[theme], className)} {...props}>
+        <button
+            className={classNames(
+                styles.Button,
+                styles[theme],
+                styles[size],
+                { [styles.square]: square },
+                className,
+            )} {...props}
+        >
             {children}
         </button>
     );

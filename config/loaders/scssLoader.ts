@@ -9,7 +9,7 @@ export const getScssLoader = (isDev: boolean) => ({
             options: {
                 modules: {
                     auto: (resPath: string) => resPath.includes('.module.'),
-                    localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                    localIdentName: '[name]__[local]--[hash:base64:5]',
                 },
             },
         },
