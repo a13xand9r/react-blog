@@ -1,10 +1,11 @@
 {
-	"Language": "English",
+	"Lang": "English",
 	"Main": "Главная",
 	"About": "О сайте",
 	"Toggle": "Переключить",
 	"NotFound": "Такая страница не найдена",
 	"ThrowError": "Кинуть ошибку",
 	"ReloadPage": "Обновить страницу",
-	"ErrorMessage": "Что-то пошло не так, можете обновить страницу"
+	"ErrorMessage": "Что-то пошло не так, можете обновить страницу",
+	"Short Lang": "En"
 }

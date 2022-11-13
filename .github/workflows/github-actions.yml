@@ -25,10 +25,21 @@ jobs:
         run: npm run ts:lint
 
       - name: Run Stylelint
+        if: always()
         run: npm run scss:lint
 
       - name: Run Build
+        if: always()
         run: npm run build
 
+      - name: Run Build Storybook
+        if: always()
+        run: npm run storybook:build
+
+      - name: Run UI test
+        if: always()
+        run: npm run test:ui:ci
+
       - name: Run Unit test
+        if: always()
         run: npm run test:unit
