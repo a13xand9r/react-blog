@@ -39,6 +39,7 @@ module.exports = {
         '@typescript-eslint/consistent-type-assertions': 'off',
         'react/display-name': 'off',
         '@typescript-eslint/prefer-includes': 'off',
+        'space-before-function-paren': 'off',
     },
     globals: {
         __IS_DEV__: true,
