@@ -7,5 +7,7 @@
 	"ThrowError": "Кинуть ошибку",
 	"ReloadPage": "Обновить страницу",
 	"ErrorMessage": "Что-то пошло не так, можете обновить страницу",
-	"Short Lang": "En"
+	"Short Lang": "En",
+	"Login": "Войти",
+	"Test text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat expedita sapiente sequi qui reprehenderit dolor, dolores nemo dicta minus, hic quidem, odio pariatur asperiores corrupti? Qui soluta architecto illum blanditiis."
 }

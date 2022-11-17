@@ -4,13 +4,12 @@ module.exports = {
         es2021: true,
     },
     extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
-    overrides: [],
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: ['tsconfig.json'],
     },
-    plugins: ['react', 'i18next'],
+    plugins: ['react', 'i18next', 'react-hooks'],
     rules: {
         indent: ['error', 4],
         '@typescript-eslint/indent': ['error', 4],
@@ -40,8 +39,18 @@ module.exports = {
         'react/display-name': 'off',
         '@typescript-eslint/prefer-includes': 'off',
         'space-before-function-paren': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };

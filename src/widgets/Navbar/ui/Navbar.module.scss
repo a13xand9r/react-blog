@@ -2,6 +2,12 @@
     height: var(--header-height);
     width: 100%;
     background: var(--inverted-bg-color);
-    padding: 15px;
+
+    padding: 5px 15px;
     display: flex;
+    align-items: center;
+}
+
+.links {
+    margin-left: auto;
 }

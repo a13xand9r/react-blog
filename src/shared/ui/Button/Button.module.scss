@@ -5,10 +5,15 @@
     border: none;
 }
 
-.clear {
+.clear,
+.clearInverted {
     border: none;
     background: none;
     color: var(--primary-color);
+}
+
+.clearInverted {
+    color: var(--inverted-primary-color);
 }
 
 .primary {
