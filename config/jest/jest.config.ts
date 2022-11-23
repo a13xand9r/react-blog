@@ -6,6 +6,10 @@
 import path from 'path';
 
 export default {
+
+    globals: {
+        __IS_DEV__: true,
+    },
     // The root directory that Jest should scan for tests and modules within
     rootDir: '../../',
     // The glob patterns Jest uses to detect test files
