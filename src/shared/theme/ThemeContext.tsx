@@ -1,4 +1,4 @@
-import { createContext, FC, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, FC, useCallback, useContext, useMemo, useState } from 'react';
 
 export enum Theme {
     LIGHT = 'light',
@@ -37,12 +37,7 @@ export const ThemeProvider: FC = ({ children }) => {
 
     const contextValue = useMemo(() => ({ theme, setTheme }), [theme]);
 
-    useEffect(() => {
-        document.body.classList.remove(...Object.entries(Theme).map(([_, value]) => value));
-        document.body.classList.add(theme);
-        // document.body.classList.remove(Theme.DARK);
-        // Object.entries(Theme).map(([_, value]) => value);
-    }, [theme]);
+    document.body.className = theme;
 
     return (
         <ThemeContext.Provider value={contextValue}>
