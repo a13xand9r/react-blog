@@ -10,5 +10,7 @@
 	"Short Lang": "Ru",
 	"Login": "Login",
 	"increment": "increment",
-	"decrement": "decrement"
+	"decrement": "decrement",
+	"Enter login": "Enter login",
+	"Enter Password": "Enter password"
 }

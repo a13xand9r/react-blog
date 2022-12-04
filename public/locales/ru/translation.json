@@ -11,5 +11,7 @@
 	"Login": "Войти",
 	"Test text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat expedita sapiente sequi qui reprehenderit dolor, dolores nemo dicta minus, hic quidem, odio pariatur asperiores corrupti? Qui soluta architecto illum blanditiis.",
 	"increment": "увеличить",
-	"decrement": "уменьшить"
+	"decrement": "уменьшить",
+	"Enter login": "Введите логин",
+	"Enter Password": "Введите пароль"
 }
