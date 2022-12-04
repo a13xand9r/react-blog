@@ -31,7 +31,6 @@ export const Input: VFC<InputProps> = ({ className, onChange, value, placeholder
     useEffect(() => {
         if (autofocus) {
             inputRef.current?.focus();
-            // setIsFocused(true);
         }
     }, [autofocus]);
 
