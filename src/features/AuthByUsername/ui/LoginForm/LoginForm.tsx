@@ -8,6 +8,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Title } from 'shared/ui/Title/Title';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import styles from './LoginForm.module.scss';
 
 interface LoginFormProps {
@@ -35,7 +36,7 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
     return (
         <form onSubmit={submitForm} className={classNames(className, styles.LoginForm)}>
             <Title>{t('Authorization form')}</Title>
-            {error && <div>{t(error)}</div>}
+            {error && <Text theme={TextTheme.ERROR}>{t(error)}</Text>}
             <Input
                 type="text"
                 placeholder={t('Enter login')}
