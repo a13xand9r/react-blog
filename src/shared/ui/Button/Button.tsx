@@ -35,8 +35,10 @@ export const Button: FC<ButtonProps> = ({
                 styles[theme],
                 styles[size],
                 { [styles.square]: square },
+                { [styles.disabled]: props.disabled },
                 className,
-            )} {...props}
+            )}
+            {...props}
         >
             {children}
         </button>

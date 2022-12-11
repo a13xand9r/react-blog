@@ -1,0 +1,10 @@
+.text {
+    font: var(--font-m);
+    color: var(--secondary-color);
+}
+
+.error {
+    .text {
+        color: var(--red-light);
+    }
+}

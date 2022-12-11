@@ -12,5 +12,7 @@
 	"increment": "increment",
 	"decrement": "decrement",
 	"Enter login": "Enter login",
-	"Enter Password": "Enter password"
+	"Enter Password": "Enter password",
+	"Authorization form": "Autharization form",
+	"Logout": "Logout"
 }

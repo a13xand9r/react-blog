@@ -1,7 +1,7 @@
 import { getSvgLoader } from './../loaders/svgLoader';
 import { getScssLoader } from '../loaders/scssLoader';
 import path from 'path';
-import webpack from 'webpack';
+import webpack, { DefinePlugin } from 'webpack';
 
 module.exports = async ({ config }: { config: webpack.Configuration }) => {
     const srcFolderPath = path.resolve(__dirname, '..', '..', 'src');
@@ -20,6 +20,10 @@ module.exports = async ({ config }: { config: webpack.Configuration }) => {
     });
 
     config.module.rules.push(getSvgLoader());
+
+    config.plugins.push(new DefinePlugin({
+        __IS_DEV__: true,
+    }));
 
     return config;
 };

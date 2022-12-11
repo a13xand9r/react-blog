@@ -25,6 +25,10 @@
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     background: none;
+
+    &:focus {
+        box-shadow: 0 0 5px var(--primary-color);
+    }
 }
 
 .background {
@@ -75,4 +79,8 @@
 .square.XL {
     width: var(--font-line-xl);
     height: var(--font-line-xl);
+}
+
+.disabled {
+    opacity: 0.5;
 }

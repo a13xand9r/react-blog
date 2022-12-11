@@ -13,5 +13,7 @@
 	"increment": "увеличить",
 	"decrement": "уменьшить",
 	"Enter login": "Введите логин",
-	"Enter Password": "Введите пароль"
+	"Enter Password": "Введите пароль",
+	"Authorization form": "Форма авторизации",
+	"Logout": "Выйти"
 }

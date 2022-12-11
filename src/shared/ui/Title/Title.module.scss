@@ -1,0 +1,10 @@
+.Title {
+    font: var(--font-l);
+    color: var(--primary-color);
+}
+
+.error {
+    .Title {
+        color: var(--red-dark);
+    }
+}
