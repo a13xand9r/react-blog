@@ -8,6 +8,7 @@ interface LoaderProps {
 };
 
 export const Loader: FC<LoaderProps> = ({ className }) => {
+    console.log('loader render');
     return (
         <div className={classNames(className, styles.Loader)}>
             <Spinner />

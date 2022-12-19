@@ -17,4 +17,5 @@ export const decorators = [
     StyleDecorator,
     getThemeDecorator(Theme.LIGHT),
     RouterDecorator,
+    // TranslateDecorator,
 ];

@@ -1,6 +1,6 @@
-import { getLoginState } from 'features/AuthByUsername/model/selectors/getLoginState';
+import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername';
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUserName/loginByUserName';
-import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
+import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { FC, FormEvent, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,15 +10,25 @@ import { Input } from 'shared/ui/Input/Input';
 import { Title } from 'shared/ui/Title/Title';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import styles from './LoginForm.module.scss';
+import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword';
+import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginIsLoading';
+import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError';
+import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 
 interface LoginFormProps {
     className?: string;
 };
 
-export const LoginForm: FC<LoginFormProps> = ({ className }) => {
+const LoginForm: FC<LoginFormProps> = ({ className }) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
-    const { username, password, isLoading, error } = useSelector(getLoginState);
+
+    const username = useSelector(getLoginUsername);
+    const password = useSelector(getLoginPassword);
+    const isLoading = useSelector(getLoginIsLoading);
+    const error = useSelector(getLoginError);
+
+    useDynamicReducerLoader('login', loginReducer);
 
     const onUsernameChange = useCallback((value: string) => {
         dispatch(loginActions.changeUsername(value));
@@ -58,3 +68,5 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
         </form>
     );
 };
+
+export default LoginForm;

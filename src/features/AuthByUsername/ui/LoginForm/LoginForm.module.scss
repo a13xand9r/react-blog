@@ -8,3 +8,9 @@
 .loginBtn {
     margin-left: auto;
 }
+
+@media (max-width: 560px) {
+    .LoginForm {
+        min-width: unset;
+    }
+}

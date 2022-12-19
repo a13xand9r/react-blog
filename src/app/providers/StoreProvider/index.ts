@@ -1,4 +1,4 @@
-import { StateSchema } from './config/StateSchema';
+import { StateSchema, StateSchemaKey, StoreWithReducerManager } from './config/StateSchema';
 import { StoreProvider } from './ui/StoreProvider';
 
-export { StoreProvider, StateSchema };
+export { StoreProvider, StateSchema, StoreWithReducerManager, StateSchemaKey };

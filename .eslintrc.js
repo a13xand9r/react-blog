@@ -41,6 +41,8 @@ module.exports = {
         'space-before-function-paren': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        '@typescript-eslint/no-dynamic-delete': 'off',
+        '@typescript-eslint/prefer-ts-expect-error': 'off',
     },
     globals: {
         __IS_DEV__: true,
