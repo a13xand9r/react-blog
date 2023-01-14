@@ -43,6 +43,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         '@typescript-eslint/no-dynamic-delete': 'off',
         '@typescript-eslint/prefer-ts-expect-error': 'off',
+        '@typescript-eslint/no-misused-promises': 'off',
     },
     globals: {
         __IS_DEV__: true,

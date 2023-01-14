@@ -1,11 +1,12 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { StateSchemaKey, StoreWithReducerManager } from 'app/providers/StoreProvider';
 import { useEffect } from 'react';
-import { useDispatch, useStore } from 'react-redux';
+import { useStore } from 'react-redux';
+import { useAppDispatch } from './AppDispatch';
 
 export const useDynamicReducerLoader = (key: StateSchemaKey, reducer: Reducer, removeAfterUnmount = true) => {
     const store = useStore() as StoreWithReducerManager;
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch({ type: `@INIT ${key} reducer` });

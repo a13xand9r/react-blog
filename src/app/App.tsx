@@ -5,12 +5,12 @@ import { AppRouter } from './providers/router';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { Loader } from 'widgets/Loader';
-import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/User';
+import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
 
 export const App = () => {
     const { theme } = useThemeContext();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch(userActions.initAuthData());

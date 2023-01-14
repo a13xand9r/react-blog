@@ -3,7 +3,7 @@ import { loginByUsername } from 'features/AuthByUsername/model/services/loginByU
 import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { FC, FormEvent, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
@@ -14,14 +14,16 @@ import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLog
 import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginIsLoading';
 import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
+import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
 
 interface LoginFormProps {
     className?: string;
+    onSuccess?: () => void;
 };
 
-const LoginForm: FC<LoginFormProps> = ({ className }) => {
+const LoginForm: FC<LoginFormProps> = ({ className, onSuccess }) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
@@ -38,10 +40,14 @@ const LoginForm: FC<LoginFormProps> = ({ className }) => {
         dispatch(loginActions.changePassword(value));
     }, [dispatch]);
 
-    const submitForm = useCallback((e: FormEvent<HTMLFormElement>) => {
+    const submitForm = useCallback(async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        dispatch(loginByUsername({ username, password }));
-    }, [dispatch, password, username]);
+        const result = await dispatch(loginByUsername({ username, password }));
+        console.log('result', result);
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess();
+        }
+    }, [dispatch, onSuccess, password, username]);
 
     return (
         <form onSubmit={submitForm} className={classNames(className, styles.LoginForm)}>
