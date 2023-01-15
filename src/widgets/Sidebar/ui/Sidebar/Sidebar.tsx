@@ -14,7 +14,6 @@ interface SidebarProps {
 
 export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     const [isCollapsed, setIsCollapsed] = useState(true);
-    const [count, setCount] = useState(0);
     const { t } = useTranslation();
 
     const toggleCollapseSidebar = () => {
@@ -23,7 +22,6 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
 
     return (
         <div data-testid="Sidebar" className={classNames(className, styles.Sidebar, { [styles.collapsed]: isCollapsed })}>
-            <button onClick={() => setCount(count + 1)}>++++++++</button>
             <div className={styles.links}>
                 {sidebarItems.map(item => (
                     <SidebarItem {...item} title={t(item.title)} collapsed={isCollapsed} key={item.url} />
