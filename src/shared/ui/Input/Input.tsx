@@ -1,4 +1,4 @@
-import { ChangeEvent, InputHTMLAttributes, useEffect, useRef, useState, VFC } from 'react';
+import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState, VFC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Input.module.scss';
 
@@ -10,7 +10,7 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChan
     autofocus?: boolean;
 };
 
-export const Input: VFC<InputProps> = ({ className, onChange, value, placeholder, autofocus, ...otherProps }) => {
+export const Input: VFC<InputProps> = memo(({ className, onChange, value, placeholder, autofocus, ...otherProps }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
     const inputRef = useRef<HTMLInputElement>();
@@ -56,4 +56,4 @@ export const Input: VFC<InputProps> = ({ className, onChange, value, placeholder
             </div>
         </div>
     );
-};
+});

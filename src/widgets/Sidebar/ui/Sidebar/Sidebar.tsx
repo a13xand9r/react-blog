@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
@@ -12,8 +12,9 @@ interface SidebarProps {
     className?: string;
 };
 
-export const Sidebar: FC<SidebarProps> = ({ className }) => {
+export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     const [isCollapsed, setIsCollapsed] = useState(true);
+    const [count, setCount] = useState(0);
     const { t } = useTranslation();
 
     const toggleCollapseSidebar = () => {
@@ -22,6 +23,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
 
     return (
         <div data-testid="Sidebar" className={classNames(className, styles.Sidebar, { [styles.collapsed]: isCollapsed })}>
+            <button onClick={() => setCount(count + 1)}>++++++++</button>
             <div className={styles.links}>
                 {sidebarItems.map(item => (
                     <SidebarItem {...item} title={t(item.title)} collapsed={isCollapsed} key={item.url} />
@@ -43,4 +45,4 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
             </div>
         </div>
     );
-};
+});

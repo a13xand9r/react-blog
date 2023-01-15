@@ -1,6 +1,6 @@
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
-import { FC, useCallback, useState } from 'react';
+import { FC, memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -12,7 +12,7 @@ interface NavbarProps {
     className?: string;
 };
 
-export const Navbar: FC<NavbarProps> = ({ className }) => {
+export const Navbar: FC<NavbarProps> = memo(({ className }) => {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
     const { t } = useTranslation();
@@ -60,4 +60,4 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
             <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} />
         </div>
     );
-};
+});
