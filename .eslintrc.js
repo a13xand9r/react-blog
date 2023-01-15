@@ -44,6 +44,7 @@ module.exports = {
         '@typescript-eslint/no-dynamic-delete': 'off',
         '@typescript-eslint/prefer-ts-expect-error': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
+        'react/prop-types': 'off',
     },
     globals: {
         __IS_DEV__: true,

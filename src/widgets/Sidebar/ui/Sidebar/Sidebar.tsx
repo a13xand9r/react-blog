@@ -1,14 +1,12 @@
-import { routesPaths } from 'app/providers/router/config/routeConfig';
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import HomeIcon from 'shared/assets/icons/home.svg';
-import AboutIcon from 'shared/assets/icons/about.svg';
 import styles from './Sidebar.module.scss';
+import { sidebarItems } from '../../model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
     className?: string;
@@ -25,14 +23,9 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
     return (
         <div data-testid="Sidebar" className={classNames(className, styles.Sidebar, { [styles.collapsed]: isCollapsed })}>
             <div className={styles.links}>
-                <AppLink className={styles.linkContainer} theme={AppLinkTheme.SECONDARY} to={routesPaths.main}>
-                    <HomeIcon className={styles.menuIcon} />
-                    <span className={styles.link}>{t('Main')}</span>
-                </AppLink>
-                <AppLink className={styles.linkContainer} theme={AppLinkTheme.SECONDARY} to={routesPaths.about}>
-                    <AboutIcon className={styles.menuIcon} />
-                    <span className={styles.link}>{t('About')}</span>
-                </AppLink>
+                {sidebarItems.map(item => (
+                    <SidebarItem {...item} title={t(item.title)} collapsed={isCollapsed} key={item.url} />
+                ))}
             </div>
             <Button
                 data-testid="Sidebar-toggle"
