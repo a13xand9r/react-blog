@@ -7,6 +7,7 @@ const getConfig = (env: EnvVariables) => {
 
     return buildWebpackConfig({
         mode,
+        apiBaseUrl: env.API_BASE_URL ?? 'http://localhost:8000',
         isDev: mode === 'development',
         paths: {
             build: path.resolve(__dirname, 'build'),

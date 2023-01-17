@@ -11,10 +11,12 @@ export interface BuildOptions {
     mode: BuildMode;
     paths: BuildPaths;
     isDev: boolean;
+    apiBaseUrl: string;
     port: number;
 };
 
 export interface EnvVariables {
     MODE?: BuildMode;
     PORT?: number;
+    API_BASE_URL?: string;
 }
