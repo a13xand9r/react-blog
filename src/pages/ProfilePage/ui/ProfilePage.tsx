@@ -1,18 +1,19 @@
-import { profileReducer } from 'entities/Profile';
-import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile';
+import { FC, memo, useEffect } from 'react';
+import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 
-interface ProfilePageProps {
-    className?: string;
-};
-
-const ProfilePage: FC<ProfilePageProps> = memo(({ className }) => {
-    const { t } = useTranslation('profilePage');
+const ProfilePage: FC = memo(() => {
     useDynamicReducerLoader('profile', profileReducer);
+
+    const dispatch = useAppDispatch();
+    useEffect(() => {
+        dispatch(fetchProfileData());
+    }, [dispatch]);
+
     return (
-        <div className={className}>
-            {t('Profile page')}
+        <div>
+            <ProfileCard />
         </div>
     );
 });

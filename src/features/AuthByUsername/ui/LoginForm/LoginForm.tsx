@@ -45,7 +45,7 @@ const LoginForm: FC<LoginFormProps> = ({ className, onSuccess }) => {
         const result = await dispatch(loginByUsername({ username, password }));
         console.log('result', result);
         if (result.meta.requestStatus === 'fulfilled') {
-            onSuccess();
+            onSuccess?.();
         }
     }, [dispatch, onSuccess, password, username]);
 

@@ -1,5 +1,4 @@
 import { UserSchema } from 'entities/User';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { userActions, userReducer } from './userSlice';
 
 describe('user reducer', () => {

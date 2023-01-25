@@ -13,7 +13,7 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChan
 export const Input: VFC<InputProps> = memo(({ className, onChange, value, placeholder, autofocus, ...otherProps }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
-    const inputRef = useRef<HTMLInputElement>();
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange(e.target.value);

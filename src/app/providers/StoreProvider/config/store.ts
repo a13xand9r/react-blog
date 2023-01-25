@@ -1,8 +1,8 @@
 import { createReducerManager } from './reducerManager';
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
+import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
-import { StateSchema } from './StateSchema';
+import { StateSchema, ThunkExtraArgs } from './StateSchema';
 import { axiosInstance } from 'shared/api/api';
 import { NavigateFunction } from 'react-router-dom';
 
@@ -19,13 +19,13 @@ export const createStore = (
 
     const reducerManager = createReducerManager(rootReducer);
 
-    const thunkExtraArgs = {
+    const thunkExtraArgs: ThunkExtraArgs = {
         api: axiosInstance,
         navigate,
     };
 
     const store = configureStore({
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         preloadedState: initialState,
         devTools: __IS_DEV__,
         middleware: getDefaultMiddleware => getDefaultMiddleware({

@@ -45,6 +45,8 @@ module.exports = {
         '@typescript-eslint/prefer-ts-expect-error': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
         'react/prop-types': 'off',
+        '@typescript-eslint/no-invalid-void-type': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
     },
     globals: {
         __IS_DEV__: true,

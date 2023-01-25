@@ -25,11 +25,11 @@ export const useThemeContext = (): UseThemeReturn => {
 
     const toggleTheme = useCallback(() => {
         const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
-        setTheme(newTheme);
+        setTheme?.(newTheme);
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     }, [setTheme, theme]);
 
-    return { theme, toggleTheme };
+    return { theme: theme ?? Theme.LIGHT, toggleTheme };
 };
 
 export const ThemeProvider: FC = ({ children }) => {

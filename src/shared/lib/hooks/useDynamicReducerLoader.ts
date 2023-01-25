@@ -10,10 +10,10 @@ export const useDynamicReducerLoader = (key: StateSchemaKey, reducer: Reducer, r
 
     useEffect(() => {
         dispatch({ type: `@INIT ${key} reducer` });
-        store.reducerManager.add('login', reducer);
+        store.reducerManager.add(key, reducer);
         return () => {
             if (removeAfterUnmount) {
-                store.reducerManager.remove('login');
+                store.reducerManager.remove(key);
                 dispatch({ type: `@DESTROY ${key} reducer` });
             }
         };

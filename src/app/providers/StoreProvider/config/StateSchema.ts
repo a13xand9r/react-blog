@@ -17,6 +17,10 @@ export interface StateSchema {
 
 export type StateSchemaKey = keyof StateSchema;
 
+export type ReducersList = {
+    [name in StateSchemaKey]?: Reducer;
+};
+
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
     reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
@@ -30,7 +34,7 @@ export interface StoreWithReducerManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArgs {
     api: AxiosInstance;
-    navigate: NavigateFunction;
+    navigate?: NavigateFunction;
 }
 
 export interface ThunkConfig<T> {
