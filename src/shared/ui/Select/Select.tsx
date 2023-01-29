@@ -13,7 +13,7 @@ interface SelectProps {
     onChange?: (value: string) => void;
     options: SelectOption[];
     value?: string;
-    readOnly?: boolean
+    readOnly?: boolean;
 };
 
 export const Select: FC<SelectProps> = memo(({ label, onChange, options, value, readOnly, className }) => {
