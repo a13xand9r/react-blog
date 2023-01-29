@@ -28,11 +28,11 @@
   "profile": {
     "first": "Александр",
     "lastname": "Новиков",
-    "age": 26,
+    "age": "26",
     "currency": "RUB",
     "country": "Russia",
-    "city": "Moscow",
+    "city": "Москва",
     "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    "avatar": "https://images.ctfassets.net/1wryd5vd9xez/4DxzhQY7WFsbtTkoYntq23/a4a04701649e92a929010a6a860b66bf/https___cdn-images-1.medium.com_max_2000_1_Y6l_FDhxOI1AhjL56dHh8g.jpeg"
   }
 }

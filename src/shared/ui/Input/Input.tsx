@@ -4,13 +4,14 @@ import styles from './Input.module.scss';
 
 const LETTER_WIDTH = 9.6;
 
-interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
+interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'readOnly'> {
     className?: string;
     onChange: (value: string) => void;
     autofocus?: boolean;
+    readOnly?: boolean;
 };
 
-export const Input: VFC<InputProps> = memo(({ className, onChange, value, placeholder, autofocus, ...otherProps }) => {
+export const Input: VFC<InputProps> = memo(({ className, onChange, value, placeholder, autofocus, readOnly, ...otherProps }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -34,6 +35,8 @@ export const Input: VFC<InputProps> = memo(({ className, onChange, value, placeh
         }
     }, [autofocus]);
 
+    const isShowCaret = isFocused && !readOnly;
+
     return (
         <div className={classNames(className, styles.InputWrapper)}>
             {placeholder
@@ -46,13 +49,14 @@ export const Input: VFC<InputProps> = memo(({ className, onChange, value, placeh
                     {...otherProps}
                     ref={inputRef}
                     onBlur={onBlur}
+                    readOnly={readOnly}
                     onFocus={onFocus}
                     className={styles.input}
                     onChange={onChangeHandler}
                     value={value}
                     onSelect={onSelect}
                 />
-                {isFocused ? <span style={{ left: `${caretPosition * LETTER_WIDTH}px` }} className={styles.caret} /> : null}
+                {isShowCaret ? <span style={{ left: `${caretPosition * LETTER_WIDTH}px` }} className={styles.caret} /> : null}
             </div>
         </div>
     );

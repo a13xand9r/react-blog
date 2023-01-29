@@ -1,4 +1,4 @@
-import { ThunkConfig } from '../../../../../app/providers/StoreProvider/config/StateSchema';
+import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Profile } from '../../types/profileSchema';
 

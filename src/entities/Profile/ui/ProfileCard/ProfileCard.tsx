@@ -1,39 +1,97 @@
-import { FC, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './ProfileCard.module.scss';
-import { Title } from 'shared/ui/Title/Title';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getProfileData } from '../../model/selectors/getProfileData';
 import { getProfileLoading } from '../../model/selectors/getProfileLoading';
 import { Loader } from 'widgets/Loader';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { getProfileReadOnly } from 'entities/Profile/model/selectors/getProfileReadOnly';
+import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
+import { profileActions } from 'entities/Profile/model/slice/profileSlice';
+import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm';
+import { Title } from 'shared/ui/Title/Title';
+import { getProfileError } from 'entities/Profile/model/selectors/getProfileError';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Select } from 'shared/ui/Select/Select';
+import { Currency } from 'shared/consts/common';
 
 interface ProfileCardProps {
     className?: string;
 };
 
+interface CurrencyOption {
+    content: Currency;
+    value: Currency;
+}
+
+const currencyOptions: CurrencyOption[] = [
+    {
+        content: 'RUB',
+        value: 'RUB',
+    },
+    {
+        content: 'USD',
+        value: 'USD',
+    },
+    {
+        content: 'EUR',
+        value: 'EUR',
+    },
+];
+
 export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
     const { t } = useTranslation('profilePage');
-    const data = useSelector(getProfileData);
-    // const error = useSelector(getProfileData);
+    const data = useSelector(getProfileForm);
+    const error = useSelector(getProfileError);
     const loading = useSelector(getProfileLoading);
-    const [, setEditFirstname] = useState(data?.first);
-    const [, setEditlastname] = useState(data?.lastname);
+    const readOnly = useSelector(getProfileReadOnly);
+    const dispatch = useAppDispatch();
+    const [isFirstInputFocused, setIsFirstInputFocused] = useState(false);
+
+    const changeName = useCallback((value) => {
+        dispatch(profileActions.updateForm({ first: value }));
+    }, [dispatch]);
+    const changeLastname = useCallback((value) => {
+        dispatch(profileActions.updateForm({ lastname: value }));
+    }, [dispatch]);
+    const changeAge = useCallback((value) => {
+        dispatch(profileActions.updateForm({ age: value }));
+    }, [dispatch]);
+    const changeCity = useCallback((value) => {
+        dispatch(profileActions.updateForm({ city: value }));
+    }, [dispatch]);
+    const changeCurrency = useCallback((value) => {
+        dispatch(profileActions.updateForm({ currency: value }));
+    }, [dispatch]);
+
+    useEffect(() => {
+        if (!readOnly) {
+            setIsFirstInputFocused(true);
+        }
+    }, [readOnly]);
+
+    let content = (
+        <>
+            <Avatar src={data?.avatar} />
+            <Input autofocus={isFirstInputFocused} readOnly={readOnly} className={styles.input} placeholder={t('Your name')} value={data?.first} onChange={changeName} />
+            <Input readOnly={readOnly} className={styles.input} placeholder={t('Your lastname')} value={data?.lastname} onChange={changeLastname} />
+            <Input readOnly={readOnly} className={styles.input} placeholder={t('Age')} value={data?.age} onChange={changeAge} />
+            <Input readOnly={readOnly} className={styles.input} placeholder={t('City')} value={data?.city} onChange={changeCity} />
+            <Select readOnly={readOnly} className={styles.input} value={data?.currency} label="Валюта" onChange={changeCurrency} options={currencyOptions} />
+        </>
+    );
 
     if (loading) {
         return <Loader />;
     }
+    if (loading) {
+        content = <Title>{error}</Title>;
+    }
 
     return (
-        <div className={classNames(className, styles.ProfileCard)}>
-            <div className={styles.header}>
-                <Title>{t('Profile')}</Title>
-                <Button className={styles.editBtn} theme={ButtonTheme.OUTLINED}>{t('Edit')}</Button>
-            </div>
-            <Input className={styles.input} placeholder={t('Your name')} value={data?.first} onChange={setEditFirstname} />
-            <Input className={styles.input} placeholder={t('Your lastname')} value={data?.lastname} onChange={setEditlastname} />
+        <div className={classNames(className, styles.ProfileCard, {[styles.editMode]: !readOnly})}>
+            {content}
         </div>
     );
 };

@@ -31,6 +31,16 @@
     }
 }
 
+.outlined-error {
+    border: 1px solid var(--red-light);
+    color: var(--red-light);
+    background: none;
+
+    &:focus {
+        box-shadow: 0 0 5px var(--red-light);
+    }
+}
+
 .background {
     background: var(--bg-color);
     color: var(--primary-color);

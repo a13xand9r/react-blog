@@ -23,7 +23,7 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
                 loader: 'ts-loader',
                 options: {
                     // чтоб ошибки тайпскрипта не фейлили полностью сборку
-                    transpileOnly: options.isDev,
+                    // transpileOnly: options.isDev,
                 },
             },
         ],
