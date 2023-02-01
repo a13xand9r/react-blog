@@ -22,8 +22,8 @@ module.exports = async ({ config }: { config: webpack.Configuration }) => {
     config.module!.rules.push(getSvgLoader());
 
     config.plugins!.push(new DefinePlugin({
-        __IS_DEV__: true,
-        __API_BASE_URL__: '',
+        __IS_DEV__: JSON.stringify(true),
+        __API_BASE_URL__: JSON.stringify(''),
     }));
 
     return config;
