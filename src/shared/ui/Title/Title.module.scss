@@ -3,8 +3,10 @@
     color: var(--primary-color);
 }
 
-.error {
-    .Title {
-        color: var(--red-dark);
-    }
+.error.Title {
+    color: var(--red-dark);
+}
+
+.center.Title {
+    text-align: center;
 }

@@ -10,10 +10,11 @@ export const enum TitleTheme {
 interface TitleProps {
     className?: string;
     theme?: TitleTheme;
+    center?: boolean;
 };
 
-export const Title: FC<TitleProps> = ({ className, children, theme = TitleTheme.DEFAULT }) => {
+export const Title: FC<TitleProps> = ({ className, children, center, theme = TitleTheme.DEFAULT }) => {
     return (
-        <h2 className={classNames(className, styles.Title, styles[theme])}>{children}</h2>
+        <h2 className={classNames(className, styles.Title, styles[theme], {[styles.center]: center})}>{children}</h2>
     );
 };

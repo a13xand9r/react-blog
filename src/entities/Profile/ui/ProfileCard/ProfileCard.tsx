@@ -10,7 +10,7 @@ import { getProfileReadOnly } from 'entities/Profile/model/selectors/getProfileR
 import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
 import { profileActions } from 'entities/Profile/model/slice/profileSlice';
 import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm';
-import { Title } from 'shared/ui/Title/Title';
+import { Title, TitleTheme } from 'shared/ui/Title/Title';
 import { getProfileError } from 'entities/Profile/model/selectors/getProfileError';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Select } from 'shared/ui/Select/Select';
@@ -85,8 +85,8 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
     if (loading) {
         return <Loader />;
     }
-    if (loading) {
-        content = <Title>{error}</Title>;
+    if (error) {
+        content = <Title center theme={TitleTheme.ERROR}>{error}</Title>;
     }
 
     return (
