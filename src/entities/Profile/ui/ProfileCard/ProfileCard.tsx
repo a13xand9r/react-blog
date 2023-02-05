@@ -11,10 +11,13 @@ import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
 import { profileActions } from 'entities/Profile/model/slice/profileSlice';
 import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm';
 import { Title, TitleTheme } from 'shared/ui/Title/Title';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { getProfileError } from 'entities/Profile/model/selectors/getProfileError';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Select } from 'shared/ui/Select/Select';
 import { Currency } from 'shared/consts/common';
+import { getProfileFormValidateError } from 'entities/Profile/model/selectors/getProfileFormValidateError';
+import { ValidateError } from 'entities/Profile/model/types/profileSchema';
 
 interface ProfileCardProps {
     className?: string;
@@ -44,6 +47,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
     const { t } = useTranslation('profilePage');
     const data = useSelector(getProfileForm);
     const error = useSelector(getProfileError);
+    const validateErrors = useSelector(getProfileFormValidateError);
     const loading = useSelector(getProfileLoading);
     const readOnly = useSelector(getProfileReadOnly);
     const dispatch = useAppDispatch();
@@ -89,8 +93,22 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
         content = <Title center theme={TitleTheme.ERROR}>{error}</Title>;
     }
 
+    const validateErrorsTranslation: Record<ValidateError, string> = {
+        'NAME_ERROR': t('Name is required'),
+        'USERNAME_ERROR': t('Username is required'),
+        'AGE_ERROR': t('Age is required'),
+        'COUNTRY_ERROR': t('Country is required'),
+        'FORM_DATA_ERROR': t('Some error'),
+        'SERVER_ERROR': t('Some server error'),
+    };
+
     return (
         <div className={classNames(className, styles.ProfileCard, {[styles.editMode]: !readOnly})}>
+            {
+                validateErrors?.map(err => (
+                    <Text key={err} theme={TextTheme.ERROR}>{validateErrorsTranslation[err]}</Text>
+                ))
+            }
             {content}
         </div>
     );
