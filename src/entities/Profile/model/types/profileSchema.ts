@@ -5,11 +5,11 @@ export type ValidateError = 'NAME_ERROR' | 'AGE_ERROR' | 'COUNTRY_ERROR' | 'SERV
 export interface Profile {
     first?: string;
     lastname?: string;
-    age?: 26;
+    age?: number;
     currency?: Currency;
     country?: Country;
     city?: 'Moscow';
-    username?: 'admin';
+    username?: string;
     avatar?: string;
 };
 
