@@ -43,7 +43,6 @@ const LoginForm: FC<LoginFormProps> = ({ className, onSuccess }) => {
     const submitForm = useCallback(async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const result = await dispatch(loginByUsername({ username, password }));
-        console.log('result', result);
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess?.();
         }
