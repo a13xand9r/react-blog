@@ -1,5 +1,5 @@
 import { getProfileReadOnly } from 'entities/Profile/model/selectors/getProfileReadOnly';
-import { updateProfileData } from 'entities/Profile/model/services/fetchProfileData/updateProfileData';
+import { updateProfileData } from 'entities/Profile/model/services/updateProfileData/updateProfileData';
 import { profileActions } from 'entities/Profile/model/slice/profileSlice';
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
