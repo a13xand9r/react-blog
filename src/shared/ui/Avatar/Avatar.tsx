@@ -7,12 +7,27 @@ interface AvatarProps {
     src?: string;
     size?: number;
     alt?: string;
-};
+}
 
-export const Avatar: FC<AvatarProps> = ({ src, size = 100, alt, className }) => {
-    const inlineStyles = useMemo<CSSProperties>(() => ({
-        width: size,
-        height: size,
-    }), [size]);
-    return <img src={src} style={inlineStyles} alt={alt} className={classNames(className, styles.Avatar)} />;
+export const Avatar: FC<AvatarProps> = ({
+    src,
+    size = 100,
+    alt,
+    className,
+}) => {
+    const inlineStyles = useMemo<CSSProperties>(
+        () => ({
+            width: size,
+            height: size,
+        }),
+        [size]
+    );
+    return (
+        <img
+            src={src}
+            style={inlineStyles}
+            alt={alt}
+            className={classNames(className, styles.Avatar)}
+        />
+    );
 };

@@ -9,11 +9,12 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof Text>;
 
-const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
+const Template: ComponentStory<typeof Text> = args => <Text {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {
-    children: 'Текст (от лат. textus — ткань; сплетение, сочетание) — зафиксированная на каком-либо материальном носителе человеческая мысль; в общем плане связная и полная последовательность символов.',
+    children:
+        'Текст (от лат. textus — ткань; сплетение, сочетание) — зафиксированная на каком-либо материальном носителе человеческая мысль; в общем плане связная и полная последовательность символов.',
 };
 export const ErrorLight = Template.bind({});
 ErrorLight.args = {
@@ -23,7 +24,8 @@ ErrorLight.args = {
 
 export const Dark = Template.bind({});
 Dark.args = {
-    children: 'Текст (от лат. textus — ткань; сплетение, сочетание) — зафиксированная на каком-либо материальном носителе человеческая мысль; в общем плане связная и полная последовательность символов.',
+    children:
+        'Текст (от лат. textus — ткань; сплетение, сочетание) — зафиксированная на каком-либо материальном носителе человеческая мысль; в общем плане связная и полная последовательность символов.',
 };
 Dark.decorators = [getThemeDecorator(Theme.DARK)];
 

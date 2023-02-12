@@ -8,7 +8,7 @@ export interface SidebarItemType {
     title: string;
     Icon: React.VFC<React.SVGProps<SVGSVGElement>>;
     authOnly?: boolean;
-};
+}
 
 export const sidebarItems: SidebarItemType[] = [
     {

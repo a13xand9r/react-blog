@@ -5,7 +5,7 @@ import styles from './NotFoundPage.module.scss';
 
 interface NotFoundPageProps {
     className?: string;
-};
+}
 
 export const NotFoundPage: FC<NotFoundPageProps> = memo(({ className }) => {
     const { t } = useTranslation();

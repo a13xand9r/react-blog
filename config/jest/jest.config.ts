@@ -6,7 +6,6 @@
 import path from 'path';
 
 export default {
-
     globals: {
         __IS_DEV__: true,
         __API_BASE_URL__: '',
@@ -14,9 +13,7 @@ export default {
     // The root directory that Jest should scan for tests and modules within
     rootDir: '../../',
     // The glob patterns Jest uses to detect test files
-    testMatch: [
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-    ],
+    testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
 
     modulePaths: ['<rootDir>/src'],
 
@@ -25,22 +22,11 @@ export default {
     // The test environment that will be used for testing
     testEnvironment: 'jsdom',
 
-    coveragePathIgnorePatterns: [
-        '/node_modules/',
-    ],
+    coveragePathIgnorePatterns: ['/node_modules/'],
     // An array of directory names to be searched recursively up from the requiring module's location
-    moduleDirectories: [
-        'node_modules',
-    ],
+    moduleDirectories: ['node_modules'],
     // An array of file extensions your modules use
-    moduleFileExtensions: [
-        'js',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
-    ],
+    moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
 
     setupFilesAfterEnv: ['<rootDir>/config/jest/jestSetup.ts'],
     moduleNameMapper: {

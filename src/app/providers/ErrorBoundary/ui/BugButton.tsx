@@ -4,7 +4,7 @@ import { Button } from 'shared/ui/Button/Button';
 
 interface BugButtonProps {
     className?: string;
-};
+}
 
 // Компонент для тестирования
 export const BugButton: FC<BugButtonProps> = ({ className }) => {
@@ -21,9 +21,5 @@ export const BugButton: FC<BugButtonProps> = ({ className }) => {
         }
     }, [error]);
 
-    return (
-        <Button onClick={onThrow}>
-            {t('ThrowError')}
-        </Button>
-    );
+    return <Button onClick={onThrow}>{t('ThrowError')}</Button>;
 };

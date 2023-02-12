@@ -10,7 +10,7 @@ import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
     className?: string;
-};
+}
 
 export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     const [isCollapsed, setIsCollapsed] = useState(true);
@@ -21,10 +21,20 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     };
 
     return (
-        <div data-testid="Sidebar" className={classNames(className, styles.Sidebar, { [styles.collapsed]: isCollapsed })}>
+        <div
+            data-testid="Sidebar"
+            className={classNames(className, styles.Sidebar, {
+                [styles.collapsed]: isCollapsed,
+            })}
+        >
             <div className={styles.links}>
                 {sidebarItems.map(item => (
-                    <SidebarItem {...item} title={t(item.title)} collapsed={isCollapsed} key={item.url} />
+                    <SidebarItem
+                        {...item}
+                        title={t(item.title)}
+                        collapsed={isCollapsed}
+                        key={item.url}
+                    />
                 ))}
             </div>
             <Button
@@ -32,14 +42,17 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
                 className={styles.toggleButton}
                 onClick={toggleCollapseSidebar}
                 theme={ButtonTheme.BACKGROUND_INVERTED}
-                size='L'
+                size="L"
                 square
             >
                 {isCollapsed ? '>' : '<'}
             </Button>
             <div className={styles.switchersContainer}>
                 <ThemeSwitcher className={styles.themeSwitcher} />
-                <LangSwitcher short={isCollapsed} buttonTheme={ButtonTheme.BACKGROUND_INVERTED} />
+                <LangSwitcher
+                    short={isCollapsed}
+                    buttonTheme={ButtonTheme.BACKGROUND_INVERTED}
+                />
             </div>
         </div>
     );

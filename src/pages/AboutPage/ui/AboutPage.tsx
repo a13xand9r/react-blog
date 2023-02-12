@@ -1,7 +1,7 @@
 import { Counter } from 'entities/Counter';
 import { useTranslation } from 'react-i18next';
 
-function AboutPage () {
+function AboutPage() {
     const { t } = useTranslation('aboutPage');
     return (
         <div>

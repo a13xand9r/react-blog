@@ -21,8 +21,12 @@ export const Counter: VFC = () => {
     return (
         <div>
             <h2 data-testid="counter-value">{value}</h2>
-            <Button onClick={increment} data-testid="increment-btn">{t('increment')}</Button>
-            <Button onClick={decrement} data-testid="decrement-btn">{t('decrement')}</Button>
+            <Button onClick={increment} data-testid="increment-btn">
+                {t('increment')}
+            </Button>
+            <Button onClick={decrement} data-testid="decrement-btn">
+                {t('decrement')}
+            </Button>
         </div>
     );
 };

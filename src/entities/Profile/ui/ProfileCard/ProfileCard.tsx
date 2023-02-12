@@ -21,7 +21,7 @@ import { ValidateError } from 'entities/Profile/model/types/profileSchema';
 
 interface ProfileCardProps {
     className?: string;
-};
+}
 
 interface CurrencyOption {
     content: Currency;
@@ -53,21 +53,36 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
     const dispatch = useAppDispatch();
     const [isFirstInputFocused, setIsFirstInputFocused] = useState(false);
 
-    const changeName = useCallback((value) => {
-        dispatch(profileActions.updateForm({ first: value }));
-    }, [dispatch]);
-    const changeLastname = useCallback((value) => {
-        dispatch(profileActions.updateForm({ lastname: value }));
-    }, [dispatch]);
-    const changeAge = useCallback((value) => {
-        dispatch(profileActions.updateForm({ age: value }));
-    }, [dispatch]);
-    const changeCity = useCallback((value) => {
-        dispatch(profileActions.updateForm({ city: value }));
-    }, [dispatch]);
-    const changeCurrency = useCallback((value) => {
-        dispatch(profileActions.updateForm({ currency: value }));
-    }, [dispatch]);
+    const changeName = useCallback(
+        value => {
+            dispatch(profileActions.updateForm({ first: value }));
+        },
+        [dispatch]
+    );
+    const changeLastname = useCallback(
+        value => {
+            dispatch(profileActions.updateForm({ lastname: value }));
+        },
+        [dispatch]
+    );
+    const changeAge = useCallback(
+        value => {
+            dispatch(profileActions.updateForm({ age: value }));
+        },
+        [dispatch]
+    );
+    const changeCity = useCallback(
+        value => {
+            dispatch(profileActions.updateForm({ city: value }));
+        },
+        [dispatch]
+    );
+    const changeCurrency = useCallback(
+        value => {
+            dispatch(profileActions.updateForm({ currency: value }));
+        },
+        [dispatch]
+    );
 
     useEffect(() => {
         if (!readOnly) {
@@ -78,11 +93,43 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
     let content = (
         <>
             <Avatar src={data?.avatar} />
-            <Input autofocus={isFirstInputFocused} readOnly={readOnly} className={styles.input} placeholder={t('Your name')} value={data?.first} onChange={changeName} />
-            <Input readOnly={readOnly} className={styles.input} placeholder={t('Your lastname')} value={data?.lastname} onChange={changeLastname} />
-            <Input readOnly={readOnly} className={styles.input} placeholder={t('Age')} value={data?.age} onChange={changeAge} />
-            <Input readOnly={readOnly} className={styles.input} placeholder={t('City')} value={data?.city} onChange={changeCity} />
-            <Select readOnly={readOnly} className={styles.input} value={data?.currency} label="Валюта" onChange={changeCurrency} options={currencyOptions} />
+            <Input
+                autofocus={isFirstInputFocused}
+                readOnly={readOnly}
+                className={styles.input}
+                placeholder={t('Your name')}
+                value={data?.first}
+                onChange={changeName}
+            />
+            <Input
+                readOnly={readOnly}
+                className={styles.input}
+                placeholder={t('Your lastname')}
+                value={data?.lastname}
+                onChange={changeLastname}
+            />
+            <Input
+                readOnly={readOnly}
+                className={styles.input}
+                placeholder={t('Age')}
+                value={data?.age}
+                onChange={changeAge}
+            />
+            <Input
+                readOnly={readOnly}
+                className={styles.input}
+                placeholder={t('City')}
+                value={data?.city}
+                onChange={changeCity}
+            />
+            <Select
+                readOnly={readOnly}
+                className={styles.input}
+                value={data?.currency}
+                label="Валюта"
+                onChange={changeCurrency}
+                options={currencyOptions}
+            />
         </>
     );
 
@@ -90,25 +137,33 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
         return <Loader />;
     }
     if (error) {
-        content = <Title center theme={TitleTheme.ERROR}>{error}</Title>;
+        content = (
+            <Title center theme={TitleTheme.ERROR}>
+                {error}
+            </Title>
+        );
     }
 
     const validateErrorsTranslation: Record<ValidateError, string> = {
-        'NAME_ERROR': t('Name is required'),
-        'USERNAME_ERROR': t('Username is required'),
-        'AGE_ERROR': t('Age is required'),
-        'COUNTRY_ERROR': t('Country is required'),
-        'FORM_DATA_ERROR': t('Some error'),
-        'SERVER_ERROR': t('Some server error'),
+        NAME_ERROR: t('Name is required'),
+        USERNAME_ERROR: t('Username is required'),
+        AGE_ERROR: t('Age is required'),
+        COUNTRY_ERROR: t('Country is required'),
+        FORM_DATA_ERROR: t('Some error'),
+        SERVER_ERROR: t('Some server error'),
     };
 
     return (
-        <div className={classNames(className, styles.ProfileCard, {[styles.editMode]: !readOnly})}>
-            {
-                validateErrors?.map(err => (
-                    <Text key={err} theme={TextTheme.ERROR}>{validateErrorsTranslation[err]}</Text>
-                ))
-            }
+        <div
+            className={classNames(className, styles.ProfileCard, {
+                [styles.editMode]: !readOnly,
+            })}
+        >
+            {validateErrors?.map(err => (
+                <Text key={err} theme={TextTheme.ERROR}>
+                    {validateErrorsTranslation[err]}
+                </Text>
+            ))}
             {content}
         </div>
     );

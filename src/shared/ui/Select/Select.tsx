@@ -14,23 +14,36 @@ interface SelectProps {
     options: SelectOption[];
     value?: string;
     readOnly?: boolean;
-};
+}
 
-export const Select: FC<SelectProps> = memo(({ label, onChange, options, value, readOnly, className }) => {
-    const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-        if (onChange) {
-            onChange(e.target.value);
-        }
-    };
+export const Select: FC<SelectProps> = memo(
+    ({ label, onChange, options, value, readOnly, className }) => {
+        const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
+            if (onChange) {
+                onChange(e.target.value);
+            }
+        };
 
-    return (
-        <div className={classNames(className, styles.Wrapper)}>
-            {label && <span className={styles.label}>{`${label}>`}</span>}
-            <select className={styles.select} disabled={readOnly} onChange={onChangeHandler} value={value}>
-                {options.map(opt => (
-                    <option className={styles.option} key={opt.value} value={opt.value}>{opt.content}</option>
-                ))}
-            </select>
-        </div>
-    );
-});
+        return (
+            <div className={classNames(className, styles.Wrapper)}>
+                {label && <span className={styles.label}>{`${label}>`}</span>}
+                <select
+                    className={styles.select}
+                    disabled={readOnly}
+                    onChange={onChangeHandler}
+                    value={value}
+                >
+                    {options.map(opt => (
+                        <option
+                            className={styles.option}
+                            key={opt.value}
+                            value={opt.value}
+                        >
+                            {opt.content}
+                        </option>
+                    ))}
+                </select>
+            </div>
+        );
+    }
+);

@@ -1,6 +1,12 @@
 import { Country, Currency } from 'shared/consts/common';
 
-export type ValidateError = 'NAME_ERROR' | 'AGE_ERROR' | 'COUNTRY_ERROR' | 'SERVER_ERROR' | 'USERNAME_ERROR' | 'FORM_DATA_ERROR';
+export type ValidateError =
+    | 'NAME_ERROR'
+    | 'AGE_ERROR'
+    | 'COUNTRY_ERROR'
+    | 'SERVER_ERROR'
+    | 'USERNAME_ERROR'
+    | 'FORM_DATA_ERROR';
 
 export interface Profile {
     first?: string;
@@ -11,7 +17,7 @@ export interface Profile {
     city?: 'Moscow';
     username?: string;
     avatar?: string;
-};
+}
 
 export interface ProfileSchema {
     data?: Profile;

@@ -4,7 +4,7 @@ import './Spinner.scss';
 
 interface SpinnerProps {
     className?: string;
-};
+}
 
 export const Spinner: FC<SpinnerProps> = ({ className }) => {
     return (

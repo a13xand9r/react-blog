@@ -8,14 +8,14 @@ import { createStore } from '../config/store';
 interface StoreProviderProps {
     initialState?: StateSchema;
     asyncReducers?: ReducersMapObject<StateSchema>;
-};
+}
 
-export const StoreProvider: FC<StoreProviderProps> = ({ initialState, asyncReducers, children }) => {
+export const StoreProvider: FC<StoreProviderProps> = ({
+    initialState,
+    asyncReducers,
+    children,
+}) => {
     const navigate = useNavigate();
     const store = createStore(initialState, asyncReducers, navigate);
-    return (
-        <Provider store={store}>
-            {children}
-        </Provider>
-    );
+    return <Provider store={store}>{children}</Provider>;
 };

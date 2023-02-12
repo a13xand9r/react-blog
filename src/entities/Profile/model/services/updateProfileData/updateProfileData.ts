@@ -5,7 +5,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Profile, ValidateError } from '../../types/profileSchema';
 import { profileActions } from '../../slice/profileSlice';
 
-export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<ValidateError[]>>(
+export const updateProfileData = createAsyncThunk<
+    Profile,
+    void,
+    ThunkConfig<ValidateError[]>
+>(
     'profile/updateProfileDate',
     async (_, { dispatch, rejectWithValue, extra, getState }) => {
         const formData = getProfileForm(getState());
@@ -29,5 +33,5 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
             console.log(error);
             return rejectWithValue(['SERVER_ERROR']);
         }
-    },
+    }
 );

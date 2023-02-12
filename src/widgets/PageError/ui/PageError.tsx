@@ -6,7 +6,7 @@ import styles from './PageError.module.scss';
 
 interface PageErrorProps {
     className?: string;
-};
+}
 
 export const PageError: FC<PageErrorProps> = ({ className }) => {
     const { t } = useTranslation();

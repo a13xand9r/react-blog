@@ -10,15 +10,16 @@ export interface ComponentRenderOptions {
     initialState?: Partial<StateSchema>;
 }
 
-export const renderComponent = (component: ReactNode, options: ComponentRenderOptions = {}) => {
+export const renderComponent = (
+    component: ReactNode,
+    options: ComponentRenderOptions = {}
+) => {
     const { route = '/', initialState } = options;
     return render(
         <MemoryRouter initialEntries={[route]}>
             <StoreProvider initialState={initialState as StateSchema}>
-                <I18nextProvider i18n={i18n}>
-                    {component}
-                </I18nextProvider>
+                <I18nextProvider i18n={i18n}>{component}</I18nextProvider>
             </StoreProvider>
-        </MemoryRouter>,
+        </MemoryRouter>
     );
 };

@@ -7,6 +7,6 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
+const Template: ComponentStory<typeof Sidebar> = args => <Sidebar {...args} />;
 
 export const Default = Template.bind({});

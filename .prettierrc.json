@@ -1,4 +1,8 @@
 {
     "tabWidth": 4,
-    "printWidth": 60
+    "printWidth": 80,
+    "max-len": ["error", 80, 2],
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "avoid"
 }

@@ -1,4 +1,9 @@
-import { fetchProfileData, ProfileCard, ProfileHeader, profileReducer } from 'entities/Profile';
+import {
+    fetchProfileData,
+    ProfileCard,
+    ProfileHeader,
+    profileReducer,
+} from 'entities/Profile';
 import { FC, memo, useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';

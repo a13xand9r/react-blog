@@ -28,17 +28,34 @@ export const ProfileHeader: FC = memo(() => {
     return (
         <div className={styles.header}>
             <Title>{t('Profile')}</Title>
-            {
-                isReadOnly ?
-                    <>
-                        <Button onClick={onEdit} className={styles.editBtn} theme={ButtonTheme.OUTLINED}>{t('Edit')}</Button>
-                    </> :
-                    <div className={styles.buttonsContainer}>
-                        <Button onClick={onSave} className={styles.editBtn} theme={ButtonTheme.OUTLINED}>{t('Save')}</Button>
-                        <Button onClick={onCancel} className={styles.editBtn} theme={ButtonTheme.OUTLINED_ERROR}>{t('Cancel')}</Button>
-                    </div>
-            }
-
+            {isReadOnly ? (
+                <>
+                    <Button
+                        onClick={onEdit}
+                        className={styles.editBtn}
+                        theme={ButtonTheme.OUTLINED}
+                    >
+                        {t('Edit')}
+                    </Button>
+                </>
+            ) : (
+                <div className={styles.buttonsContainer}>
+                    <Button
+                        onClick={onSave}
+                        className={styles.editBtn}
+                        theme={ButtonTheme.OUTLINED}
+                    >
+                        {t('Save')}
+                    </Button>
+                    <Button
+                        onClick={onCancel}
+                        className={styles.editBtn}
+                        theme={ButtonTheme.OUTLINED_ERROR}
+                    >
+                        {t('Cancel')}
+                    </Button>
+                </div>
+            )}
         </div>
     );
 });

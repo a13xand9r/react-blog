@@ -10,20 +10,25 @@ interface SidebarItemProps extends SidebarItemType {
     collapsed: boolean;
 }
 
-export const SidebarItem: FC<SidebarItemProps> = memo(({ url, title, Icon, collapsed, authOnly }) => {
-    const isUserAuth = useSelector(getUserAuthData);
+export const SidebarItem: FC<SidebarItemProps> = memo(
+    ({ url, title, Icon, collapsed, authOnly }) => {
+        const isUserAuth = useSelector(getUserAuthData);
 
-    if (!isUserAuth && authOnly) {
-        return null;
+        if (!isUserAuth && authOnly) {
+            return null;
+        }
+
+        return (
+            <AppLink
+                className={classNames(styles.linkContainer, {
+                    [styles.collapsed]: collapsed,
+                })}
+                theme={AppLinkTheme.SECONDARY}
+                to={url}
+            >
+                <Icon className={styles.menuIcon} />
+                <span className={styles.link}>{title}</span>
+            </AppLink>
+        );
     }
-
-    return (
-        <AppLink
-            className={classNames(styles.linkContainer, { [styles.collapsed]: collapsed })}
-            theme={AppLinkTheme.SECONDARY} to={url}
-        >
-            <Icon className={styles.menuIcon} />
-            <span className={styles.link}>{title}</span>
-        </AppLink>
-    );
-});
+);

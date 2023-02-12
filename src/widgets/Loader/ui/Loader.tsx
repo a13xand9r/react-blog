@@ -5,7 +5,7 @@ import styles from './Loader.module.scss';
 
 interface LoaderProps {
     className?: string;
-};
+}
 
 export const Loader: FC<LoaderProps> = ({ className }) => {
     return (

@@ -10,7 +10,7 @@ import styles from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;
-};
+}
 
 export const Navbar: FC<NavbarProps> = memo(({ className }) => {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -39,7 +39,8 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
                     <Button
                         onClick={onLogoutClick}
                         theme={ButtonTheme.CLEAR_INVERTED}
-                        size='M'>
+                        size="M"
+                    >
                         {t('Logout')}
                     </Button>
                 </div>
@@ -53,7 +54,8 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
                 <Button
                     onClick={openLoginModal}
                     theme={ButtonTheme.CLEAR_INVERTED}
-                    size='M'>
+                    size="M"
+                >
                     {t('Login')}
                 </Button>
             </div>

@@ -5,10 +5,8 @@ import { ProfileSchema } from '../../types/profileSchema';
 describe('updateProfileData thunk', () => {
     test('success update', async () => {
         const profile: DeepPartial<ProfileSchema> = {
-            form:
-            {
-                first:
-                    'alex',
+            form: {
+                first: 'alex',
                 lastname: 'novikov',
                 age: 26,
                 username: 'admin',
@@ -16,7 +14,7 @@ describe('updateProfileData thunk', () => {
             },
         };
 
-        const thunk = new TestAsyncThunk(updateProfileData, {profile});
+        const thunk = new TestAsyncThunk(updateProfileData, { profile });
         thunk.api.put.mockReturnValue(Promise.resolve({ data: profile.form }));
 
         const result = await thunk.callThunk();
@@ -29,16 +27,14 @@ describe('updateProfileData thunk', () => {
 
     test('validation error', async () => {
         const profile: DeepPartial<ProfileSchema> = {
-            form:
-            {
-                first:
-                    '',
+            form: {
+                first: '',
                 lastname: 'novikov',
                 username: 'admin',
                 country: 'Russia',
             },
         };
-        const thunk = new TestAsyncThunk(updateProfileData, {profile});
+        const thunk = new TestAsyncThunk(updateProfileData, { profile });
 
         const result = await thunk.callThunk();
 
@@ -48,10 +44,8 @@ describe('updateProfileData thunk', () => {
     });
     test('server error', async () => {
         const profile: DeepPartial<ProfileSchema> = {
-            form:
-            {
-                first:
-                    'alex',
+            form: {
+                first: 'alex',
                 lastname: 'novikov',
                 age: 26,
                 username: 'admin',
@@ -59,7 +53,7 @@ describe('updateProfileData thunk', () => {
             },
         };
 
-        const thunk = new TestAsyncThunk(updateProfileData, {profile});
+        const thunk = new TestAsyncThunk(updateProfileData, { profile });
         thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
 
         const result = await thunk.callThunk();

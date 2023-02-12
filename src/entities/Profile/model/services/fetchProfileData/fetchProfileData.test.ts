@@ -4,13 +4,13 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 describe('fetchProfileData thunk', () => {
     test('success fetch', async () => {
         const profileData = {
-            first: "Александр",
-            lastname: "Новиков",
-            age: "26",
-            currency: "RUB",
-            country: "Russia",
-            city: "Москва",
-            username: "admin",
+            first: 'Александр',
+            lastname: 'Новиков',
+            age: '26',
+            currency: 'RUB',
+            country: 'Russia',
+            city: 'Москва',
+            username: 'admin',
         };
 
         const thunk = new TestAsyncThunk(fetchProfileData);

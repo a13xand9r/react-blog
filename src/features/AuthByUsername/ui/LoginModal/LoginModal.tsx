@@ -6,7 +6,7 @@ import { LoginFormLazy } from '../LoginForm/LoginFormLazy';
 interface LoginModalProps {
     isOpen: boolean;
     onClose: () => void;
-};
+}
 
 export const LoginModal: FC<LoginModalProps> = ({ isOpen, onClose }) => {
     return (

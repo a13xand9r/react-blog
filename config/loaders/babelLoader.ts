@@ -1,6 +1,6 @@
 import { BuildOptions } from './../build/types/config';
 
-export const getBabelLoader = ({isDev}: BuildOptions) => {
+export const getBabelLoader = ({ isDev }: BuildOptions) => {
     return {
         test: /\.(js|jsx|tsx|ts)$/,
         exclude: /node_modules/,
@@ -8,7 +8,9 @@ export const getBabelLoader = ({isDev}: BuildOptions) => {
             loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
-                plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
+                plugins: [
+                    isDev && require.resolve('react-refresh/babel'),
+                ].filter(Boolean),
             },
         },
     };
