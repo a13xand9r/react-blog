@@ -2,6 +2,7 @@ import { getSvgLoader } from './../loaders/svgLoader';
 import { getScssLoader } from './../loaders/scssLoader';
 import { BuildOptions } from './types/config';
 import webpack from 'webpack';
+import { getBabelLoader } from '../loaders/babelLoader';
 
 export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
     const svgLoader = getSvgLoader();
@@ -30,16 +31,7 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
         exclude: /node_modules/,
     };
 
-    const babelLoader = {
-        test: /\.(js|jsx|tsx|ts)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-            },
-        },
-    };
+    const babelLoader = getBabelLoader(options);
 
     return [
         fileLoader,
