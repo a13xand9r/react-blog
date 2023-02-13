@@ -7,10 +7,13 @@ import { Suspense, useEffect } from 'react';
 import { Loader } from 'widgets/Loader';
 import { userActions } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
+import { useSelector } from 'react-redux';
+import { getIsUserInit } from 'entities/User/model/selectors/getIsUserInit';
 
 export const App = () => {
     const { theme } = useThemeContext();
     const dispatch = useAppDispatch();
+    const isUserInit = useSelector(getIsUserInit);
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
@@ -22,7 +25,7 @@ export const App = () => {
                 <Navbar />
                 <div className="content-page">
                     <Sidebar />
-                    <AppRouter />
+                    {isUserInit && <AppRouter />}
                 </div>
             </Suspense>
         </div>
