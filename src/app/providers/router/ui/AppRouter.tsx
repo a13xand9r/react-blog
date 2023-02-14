@@ -9,12 +9,21 @@ export const AppRouter = memo(() => {
         <div className="content-wrapper">
             <Suspense fallback={<Loader />}>
                 <Routes>
-                    {Object.values(routesConfig).map(({ path, element, authOnly }) => (
-                        <Route
-                            key={path}
-                            path={path}
-                            element={authOnly ? <RequireAuth>{element}</RequireAuth> : element} />
-                    ))}
+                    {Object.values(routesConfig).map(
+                        ({ path, element, authOnly }) => (
+                            <Route
+                                key={path}
+                                path={path}
+                                element={
+                                    authOnly ? (
+                                        <RequireAuth>{element}</RequireAuth>
+                                    ) : (
+                                        element
+                                    )
+                                }
+                            />
+                        )
+                    )}
                 </Routes>
             </Suspense>
         </div>
