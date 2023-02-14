@@ -16,5 +16,6 @@
 	"Enter login": "Введите логин",
 	"Enter Password": "Введите пароль",
 	"Authorization form": "Форма авторизации",
-	"Logout": "Выйти"
+	"Logout": "Выйти",
+    "Articles": "Статьи"
 }
