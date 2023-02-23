@@ -9,21 +9,11 @@ interface SkeletonProps {
     border?: string;
 }
 
-export const Skeleton: FC<SkeletonProps> = ({
-    className,
-    border,
-    height,
-    width,
-}) => {
+export const Skeleton: FC<SkeletonProps> = ({ className, border, height, width }) => {
     const inlineStyles: CSSProperties = {
         maxWidth: width,
         height,
         borderRadius: border,
     };
-    return (
-        <div
-            style={inlineStyles}
-            className={classNames(className, styles.Skeleton)}
-        ></div>
-    );
+    return <div style={inlineStyles} className={classNames(className, styles.Skeleton)}></div>;
 };

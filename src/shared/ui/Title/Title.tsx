@@ -25,15 +25,9 @@ export const Title: FC<TitleProps> = ({
 }) => {
     return (
         <h2
-            className={classNames(
-                className,
-                styles.Title,
-                styles[theme],
-                styles[size],
-                {
-                    [styles.center]: center,
-                }
-            )}
+            className={classNames(className, styles.Title, styles[theme], styles[size], {
+                [styles.center]: center,
+            })}
         >
             {children}
         </h2>

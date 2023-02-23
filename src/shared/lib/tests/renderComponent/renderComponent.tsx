@@ -10,10 +10,7 @@ export interface ComponentRenderOptions {
     initialState?: Partial<StateSchema>;
 }
 
-export const renderComponent = (
-    component: ReactNode,
-    options: ComponentRenderOptions = {}
-) => {
+export const renderComponent = (component: ReactNode, options: ComponentRenderOptions = {}) => {
     const { route = '/', initialState } = options;
     return render(
         <MemoryRouter initialEntries={[route]}>

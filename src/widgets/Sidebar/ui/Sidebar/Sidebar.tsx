@@ -49,10 +49,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
             </Button>
             <div className={styles.switchersContainer}>
                 <ThemeSwitcher className={styles.themeSwitcher} />
-                <LangSwitcher
-                    short={isCollapsed}
-                    buttonTheme={ButtonTheme.BACKGROUND_INVERTED}
-                />
+                <LangSwitcher short={isCollapsed} buttonTheme={ButtonTheme.BACKGROUND_INVERTED} />
             </div>
         </div>
     );

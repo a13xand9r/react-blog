@@ -39,9 +39,7 @@ describe('loginByUserName thunk', () => {
         });
 
         expect(thunk.api.post).toHaveBeenCalled();
-        expect(thunk.dispatch).toHaveBeenCalledWith(
-            userActions.setAuthData(userData)
-        );
+        expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userData));
         expect(thunk.dispatch).toHaveBeenCalledTimes(3);
         expect(result.meta.requestStatus).toBe('fulfilled');
         expect(result.payload).toEqual(userData);

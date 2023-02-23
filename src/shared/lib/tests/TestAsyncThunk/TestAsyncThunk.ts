@@ -13,11 +13,7 @@ export class TestAsyncThunk<Returned, ThunkArg, RejectValue> {
     navigate: jest.MockedFn<any>;
 
     constructor(
-        asyncThunk: AsyncThunk<
-            Returned,
-            ThunkArg,
-            { rejectValue: RejectValue }
-        >,
+        asyncThunk: AsyncThunk<Returned, ThunkArg, { rejectValue: RejectValue }>,
         state?: DeepPartial<StateSchema>
     ) {
         this.dispatch = jest.fn();

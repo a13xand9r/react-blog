@@ -1,11 +1,4 @@
-import {
-    createContext,
-    FC,
-    useCallback,
-    useContext,
-    useMemo,
-    useState,
-} from 'react';
+import { createContext, FC, useCallback, useContext, useMemo, useState } from 'react';
 
 export enum Theme {
     LIGHT = 'light',
@@ -23,8 +16,7 @@ interface UseThemeReturn {
 }
 
 const LOCAL_STORAGE_THEME_KEY = 'theme';
-const defaultTheme =
-    (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
+const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
 const ThemeContext = createContext<ThemeContextProps>({});
 
@@ -47,9 +39,5 @@ export const ThemeProvider: FC = ({ children }) => {
 
     document.body.className = theme;
 
-    return (
-        <ThemeContext.Provider value={contextValue}>
-            {children}
-        </ThemeContext.Provider>
-    );
+    return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
 };

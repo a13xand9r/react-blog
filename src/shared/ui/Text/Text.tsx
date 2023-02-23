@@ -12,11 +12,7 @@ interface TextProps {
     theme?: TextTheme;
 }
 
-export const Text: FC<TextProps> = ({
-    className,
-    children,
-    theme = TextTheme.DEFAULT,
-}) => {
+export const Text: FC<TextProps> = ({ className, children, theme = TextTheme.DEFAULT }) => {
     return (
         <div className={classNames(className, styles.Text, styles[theme])}>
             <p className={styles.text}>{children}</p>

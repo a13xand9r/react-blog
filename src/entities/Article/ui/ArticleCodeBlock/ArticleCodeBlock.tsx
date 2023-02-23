@@ -9,14 +9,8 @@ interface ArticleCodeBlockProps {
     className?: string;
 }
 
-export const ArticleCodeBlock: FC<ArticleCodeBlockProps> = ({
-    codeBlock,
-    className,
-}) => {
+export const ArticleCodeBlock: FC<ArticleCodeBlockProps> = ({ codeBlock, className }) => {
     return (
-        <Code
-            text={codeBlock.code}
-            className={classNames(className, styles.ArticleCodeBlock)}
-        />
+        <Code text={codeBlock.code} className={classNames(className, styles.ArticleCodeBlock)} />
     );
 };

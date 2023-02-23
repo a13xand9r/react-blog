@@ -80,15 +80,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = ({ id, className }) => {
     } else {
         content = (
             <>
-                <Avatar
-                    src={articleData?.img}
-                    size={200}
-                    className={styles.articleMainImage}
-                />
+                <Avatar src={articleData?.img} size={200} className={styles.articleMainImage} />
                 <Title size="l">{articleData?.title}</Title>
-                <Title className={styles.subtitle}>
-                    {articleData?.subtitle}
-                </Title>
+                <Title className={styles.subtitle}>{articleData?.subtitle}</Title>
                 <div className={styles.views}>
                     <Icon SvgIcon={EyeIcon} />
                     <Text>{articleData?.views}</Text>
@@ -102,9 +96,5 @@ export const ArticleDetails: FC<ArticleDetailsProps> = ({ id, className }) => {
         );
     }
 
-    return (
-        <div className={classNames(className, styles.ArticleDetails)}>
-            {content}
-        </div>
-    );
+    return <div className={classNames(className, styles.ArticleDetails)}>{content}</div>;
 };

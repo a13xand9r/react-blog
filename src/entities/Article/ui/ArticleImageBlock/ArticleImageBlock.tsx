@@ -9,10 +9,7 @@ interface ArticleImageBlockProps {
     className?: string;
 }
 
-export const ArticleImageBlock: FC<ArticleImageBlockProps> = ({
-    imageBlock,
-    className,
-}) => {
+export const ArticleImageBlock: FC<ArticleImageBlockProps> = ({ imageBlock, className }) => {
     return (
         <div className={classNames(className, styles.ArticleImageBlock)}>
             <img src={imageBlock.src} alt={imageBlock.title} />

@@ -16,11 +16,7 @@ export const Code: FC<CodeProps> = memo(({ text, className }) => {
 
     return (
         <pre className={classNames(className, styles.Code)}>
-            <Button
-                theme={ButtonTheme.CLEAR}
-                onClick={onCopy}
-                className={styles.copyBtn}
-            >
+            <Button theme={ButtonTheme.CLEAR} onClick={onCopy} className={styles.copyBtn}>
                 <CopyIcon className={styles.copyIcon} />
             </Button>
             <code>{text}</code>

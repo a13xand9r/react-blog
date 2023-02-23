@@ -9,12 +9,7 @@ interface AvatarProps {
     alt?: string;
 }
 
-export const Avatar: FC<AvatarProps> = ({
-    src,
-    size = 100,
-    alt,
-    className,
-}) => {
+export const Avatar: FC<AvatarProps> = ({ src, size = 100, alt, className }) => {
     const inlineStyles = useMemo<CSSProperties>(
         () => ({
             width: size,

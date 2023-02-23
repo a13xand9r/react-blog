@@ -9,12 +9,7 @@ export interface ModalProps {
     onClose: () => void;
 }
 
-export const Modal: FC<ModalProps> = ({
-    className,
-    children,
-    isOpen,
-    onClose,
-}) => {
+export const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose }) => {
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
     };
@@ -46,11 +41,7 @@ export const Modal: FC<ModalProps> = ({
                 exit: styles.modalTransitionExit,
             }}
         >
-            <div
-                ref={modalRef}
-                onClick={onClose}
-                className={classNames(styles.Modal, className)}
-            >
+            <div ref={modalRef} onClick={onClose} className={classNames(styles.Modal, className)}>
                 <div onClick={onContentClick} className={styles.content}>
                     {children}
                 </div>

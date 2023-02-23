@@ -10,15 +10,10 @@ interface ArticleTextBlockProps {
     className?: string;
 }
 
-export const ArticleTextBlock: FC<ArticleTextBlockProps> = ({
-    className,
-    textBlock,
-}) => {
+export const ArticleTextBlock: FC<ArticleTextBlockProps> = ({ className, textBlock }) => {
     return (
         <div className={classNames(className, styles.ArticleTextBlock)}>
-            {textBlock.title && (
-                <Title className={styles.title}>{textBlock.title}</Title>
-            )}
+            {textBlock.title && <Title className={styles.title}>{textBlock.title}</Title>}
             {textBlock.paragraphs.map(par => (
                 <Text className={styles.paragraph} key={par}>
                     {par}

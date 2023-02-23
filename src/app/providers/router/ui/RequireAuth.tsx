@@ -13,13 +13,7 @@ export const RequireAuth: FC<RequireAuthProps> = ({ children }) => {
     const location = useLocation();
 
     if (!isAuth) {
-        return (
-            <Navigate
-                to={routesPaths.main}
-                state={{ from: location }}
-                replace
-            />
-        );
+        return <Navigate to={routesPaths.main} state={{ from: location }} replace />;
     }
     return <>{children}</>;
 };

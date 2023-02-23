@@ -1,9 +1,6 @@
 import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername';
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUserName/loginByUserName';
-import {
-    loginActions,
-    loginReducer,
-} from 'features/AuthByUsername/model/slice/loginSlice';
+import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { FC, FormEvent, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -52,9 +49,7 @@ const LoginForm: FC<LoginFormProps> = ({ className, onSuccess }) => {
     const submitForm = useCallback(
         async (e: FormEvent<HTMLFormElement>) => {
             e.preventDefault();
-            const result = await dispatch(
-                loginByUsername({ username, password })
-            );
+            const result = await dispatch(loginByUsername({ username, password }));
             if (result.meta.requestStatus === 'fulfilled') {
                 onSuccess?.();
             }
@@ -63,10 +58,7 @@ const LoginForm: FC<LoginFormProps> = ({ className, onSuccess }) => {
     );
 
     return (
-        <form
-            onSubmit={submitForm}
-            className={classNames(className, styles.LoginForm)}
-        >
+        <form onSubmit={submitForm} className={classNames(className, styles.LoginForm)}>
             <Title>{t('Authorization form')}</Title>
             {error && <Text theme={TextTheme.ERROR}>{t(error)}</Text>}
             <Input

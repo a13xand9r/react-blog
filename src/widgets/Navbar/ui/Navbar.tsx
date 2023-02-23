@@ -36,11 +36,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
         return (
             <div className={classNames(className, styles.Navbar)}>
                 <div className={styles.links}>
-                    <Button
-                        onClick={onLogoutClick}
-                        theme={ButtonTheme.CLEAR_INVERTED}
-                        size="M"
-                    >
+                    <Button onClick={onLogoutClick} theme={ButtonTheme.CLEAR_INVERTED} size="M">
                         {t('Logout')}
                     </Button>
                 </div>
@@ -51,11 +47,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
     return (
         <div className={classNames(className, styles.Navbar)}>
             <div className={styles.links}>
-                <Button
-                    onClick={openLoginModal}
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    size="M"
-                >
+                <Button onClick={openLoginModal} theme={ButtonTheme.CLEAR_INVERTED} size="M">
                     {t('Login')}
                 </Button>
             </div>
