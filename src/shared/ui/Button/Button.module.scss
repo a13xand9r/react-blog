@@ -3,6 +3,10 @@
     outline: none;
     padding: 5px 10px;
     border: none;
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .clear,
