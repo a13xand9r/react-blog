@@ -16,7 +16,6 @@ export const CommentsList: FC<CommentsListProps> = ({ comments, isLoading, class
     const { t } = useTranslation();
     return (
         <div className={classNames(className, styles.CommentsList)}>
-            <Title>{t('Comments')}</Title>
             {comments?.length ? (
                 comments.map(comment => (
                     <CommentCard

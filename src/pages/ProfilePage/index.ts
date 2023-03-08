@@ -1,3 +1,3 @@
-import { ProfilePageLazy } from './ui/ProfilePageLazy';
+import { ProfilePageLazy } from './ui/ProfilePage/ProfilePageLazy';
 
 export { ProfilePageLazy };

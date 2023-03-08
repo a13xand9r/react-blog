@@ -6,6 +6,8 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Title } from 'shared/ui/Title/Title';
 import { Text } from 'shared/ui/Text/Text';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { routesPaths } from 'shared/config/routeConfig/routeConfig';
 
 interface CommentCardProps {
     comment: CommentType;
@@ -29,10 +31,13 @@ export const CommentCard: FC<CommentCardProps> = ({ comment, isLoading, classNam
     } else {
         content = (
             <>
-                <div className={styles.cardHeader}>
+                <AppLink
+                    to={`${routesPaths.profile}/${comment.user.id}`}
+                    className={styles.cardHeader}
+                >
                     <Avatar src={comment.user.avatar} size={30} />
                     <Title>{comment.user.username}</Title>
-                </div>
+                </AppLink>
                 <Text>{comment.text}</Text>
             </>
         );

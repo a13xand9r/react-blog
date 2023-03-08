@@ -1,3 +1,4 @@
+import { AddCommentFormSchema } from './../../../../features/AddCommentForm/model/types/addCommentForm';
 import {
     AnyAction,
     CombinedState,
@@ -23,6 +24,7 @@ export interface StateSchema {
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;
+    addCommentForm?: AddCommentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
