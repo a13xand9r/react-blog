@@ -3,10 +3,12 @@ import { Story } from '@storybook/react';
 import { ReducersList, StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { profileReducer } from 'entities/Profile';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
+import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice';
 
 const defaultAsyncReducers: ReducersList = {
     login: loginReducer,
     profile: profileReducer,
+    articleDetails: articleDetailsCommentsReducer,
 };
 
 export const getStoreDecorator =

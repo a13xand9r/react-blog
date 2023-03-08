@@ -18,6 +18,7 @@ export const buildPlugins = ({ html }: BuildPaths, isDev: boolean, apiBaseUrl: s
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API_BASE_URL__: JSON.stringify(apiBaseUrl),
+            __PROJECT__: JSON.stringify('app'),
         }),
     ];
 

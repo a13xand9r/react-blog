@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import styles from './ArticleDetails.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { articleDetailsReducer } from '../../model/slice/articleSlice';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 import { fetchArticleDetails } from '../../model/services/fetchArticleDetails';
 import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
@@ -51,7 +51,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = ({ id, className }) => {
     const error = useSelector(getArticleDetailsError);
 
     useEffect(() => {
-        dispatch(fetchArticleDetails(id));
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchArticleDetails(id));
+        }
     }, [dispatch, id]);
 
     let content;
@@ -89,7 +91,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = ({ id, className }) => {
                 </div>
                 <div className={styles.date}>
                     <Icon SvgIcon={CalendarIcon} />
-                    <Text>{articleData?.views}</Text>
+                    <Text>{articleData?.createdAt}</Text>
                 </div>
                 {articleData?.blocks.map(renderBlock)}
             </>

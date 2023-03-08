@@ -17,5 +17,7 @@
 	"Enter Password": "Введите пароль",
 	"Authorization form": "Форма авторизации",
 	"Logout": "Выйти",
-    "Articles": "Статьи"
+	"Articles": "Статьи",
+	"Comments": "Комментарии",
+	"No comments": "Комментарии отсутствуют"
 }

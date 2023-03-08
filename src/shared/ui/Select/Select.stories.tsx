@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Select } from './Select';
 
 export default {
-    title: 'shared/Avatar',
+    title: 'shared/Select',
     component: Select,
     argTypes: {},
 } as ComponentMeta<typeof Select>;
