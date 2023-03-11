@@ -32,7 +32,7 @@ export const CommentCard: FC<CommentCardProps> = ({ comment, isLoading, classNam
         content = (
             <>
                 <AppLink
-                    to={`${routesPaths.profile}/${comment.user.id}`}
+                    to={`${routesPaths.profile}${comment.user.id}`}
                     className={styles.cardHeader}
                 >
                     <Avatar src={comment.user.avatar} size={30} />
