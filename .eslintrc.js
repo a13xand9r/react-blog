@@ -37,6 +37,7 @@ module.exports = {
         'react/prop-types': 'off',
         '@typescript-eslint/no-invalid-void-type': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/restrict-plus-operands': 'off',
     },
     globals: {
         __IS_DEV__: true,

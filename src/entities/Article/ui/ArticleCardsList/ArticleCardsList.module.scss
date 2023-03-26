@@ -1,0 +1,15 @@
+.SMALL {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    .card {
+        width: 330px;
+    }
+}
+
+.BIG {
+    .card {
+        margin-bottom: 18px;
+    }
+}

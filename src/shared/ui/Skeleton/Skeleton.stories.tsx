@@ -1,4 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { getThemeDecorator } from 'shared/lib/storybook/decorators/ThemeDecorator';
+import { Theme } from 'shared/theme/ThemeContext';
 import { Skeleton } from './Skeleton';
 
 export default {
@@ -9,5 +11,9 @@ export default {
 
 const Template: ComponentStory<typeof Skeleton> = args => <Skeleton {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Light = Template.bind({});
+Light.args = {};
+
+export const Dark = Template.bind({});
+Dark.args = {};
+Dark.decorators = [getThemeDecorator(Theme.DARK)];
