@@ -6,18 +6,16 @@ import { RequireAuth } from './RequireAuth';
 
 export const AppRouter = memo(() => {
     return (
-        <div className="content-wrapper">
-            <Suspense fallback={<Loader />}>
-                <Routes>
-                    {Object.values(routesConfig).map(({ path, element, authOnly }) => (
-                        <Route
-                            key={path}
-                            path={path}
-                            element={authOnly ? <RequireAuth>{element}</RequireAuth> : element}
-                        />
-                    ))}
-                </Routes>
-            </Suspense>
-        </div>
+        <Suspense fallback={<Loader />}>
+            <Routes>
+                {Object.values(routesConfig).map(({ path, element, authOnly }) => (
+                    <Route
+                        key={path}
+                        path={path}
+                        element={authOnly ? <RequireAuth>{element}</RequireAuth> : element}
+                    />
+                ))}
+            </Routes>
+        </Suspense>
     );
 });

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 import { addCommentFormActions, addCommentFormReducer } from '../model/slice/addCommentFormSlice';
-import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
 import { getCommentFormText } from '../model/selectors/getCommentFormData';

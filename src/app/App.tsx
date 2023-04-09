@@ -6,7 +6,7 @@ import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { Loader } from 'widgets/Loader';
 import { userActions } from 'entities/User';
-import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { getIsUserInit } from 'entities/User/model/selectors/getIsUserInit';
 

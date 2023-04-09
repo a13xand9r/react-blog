@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import styles from './ArticleCardsList.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Article } from '../../model/types/Article';
 import { ArticleCard, ArticleCardView } from '../ArticleCard/ArticleCard';
 import { ArticleCardSkeleton } from '../ArticleCard/ArticleCardSkeleton';
+import { Article } from '../../model/types/article';
 
 interface ArticleCardsListProps {
     articles?: Article[];
@@ -24,14 +24,6 @@ export const ArticleCardsList: FC<ArticleCardsListProps> = ({
     view = 'SMALL',
     className,
 }) => {
-    if (isLoading) {
-        return (
-            <div className={classNames(className, styles[view], styles.ArticleCardsList)}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     return (
         <div className={classNames(className, styles[view], styles.ArticleCardsList)}>
             {!!articles?.length &&
@@ -43,6 +35,7 @@ export const ArticleCardsList: FC<ArticleCardsListProps> = ({
                         className={styles.card}
                     />
                 ))}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 };

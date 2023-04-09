@@ -5,7 +5,7 @@ import { FC, memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 import { Title } from 'shared/ui/Title/Title';
 import { getArticleCommentsIsLoading } from '../model/selectors/comments';
@@ -15,6 +15,7 @@ import {
     articleDetailsCommentsReducer,
     commentsSelectors,
 } from '../model/slice/articleDetailsCommentsSlice';
+import { Page } from 'shared/ui/Page/Page';
 
 const ArticleDetailsPage: FC = () => {
     const { t } = useTranslation('articleDetailsPage');
@@ -41,12 +42,12 @@ const ArticleDetailsPage: FC = () => {
     }
 
     return (
-        <>
+        <Page>
             <ArticleDetails id={id} />
             <Title>{t('Comments')}</Title>
             <AddCommentForm onSend={onSendComment} />
             <CommentsList comments={comments} isLoading={commentsIsLoading} />
-        </>
+        </Page>
     );
 };
 

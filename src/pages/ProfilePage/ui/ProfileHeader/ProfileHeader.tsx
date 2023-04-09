@@ -6,7 +6,7 @@ import { getUserAuthData } from 'entities/User';
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Title } from 'shared/ui/Title/Title';
 import styles from './ProfileHeader.module.scss';

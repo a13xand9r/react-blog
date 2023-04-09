@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 import { fetchArticleDetails } from '../../model/services/fetchArticleDetails';
-import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import {
     getArticleDetailsData,
     getArticleDetailsError,

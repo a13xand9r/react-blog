@@ -7,7 +7,7 @@ import { getProfileLoading } from '../../model/selectors/getProfileLoading';
 import { Loader } from 'widgets/Loader';
 import { Input } from 'shared/ui/Input/Input';
 import { getProfileReadOnly } from 'entities/Profile/model/selectors/getProfileReadOnly';
-import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { profileActions } from 'entities/Profile/model/slice/profileSlice';
 import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm';
 import { Title, TitleTheme } from 'shared/ui/Title/Title';

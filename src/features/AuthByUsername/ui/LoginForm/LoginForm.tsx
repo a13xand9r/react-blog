@@ -14,7 +14,7 @@ import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLog
 import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginIsLoading';
 import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
-import { useAppDispatch } from 'shared/lib/hooks/AppDispatch';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 
 interface LoginFormProps {
     className?: string;
