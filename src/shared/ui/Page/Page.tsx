@@ -14,9 +14,9 @@ export const Page: FC<PageProps> = ({ onScrollEnd, className, children }) => {
     useInfiniteScroll({ targetRef: intersectScrollElRef, wrapperRef, callback: onScrollEnd });
 
     return (
-        <div ref={wrapperRef} className={classNames(className, styles.Page)}>
+        <section ref={wrapperRef} className={classNames(className, styles.Page)}>
             {children}
             <div ref={intersectScrollElRef} />
-        </div>
+        </section>
     );
 };
