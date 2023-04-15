@@ -14,10 +14,12 @@ import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { PageSchema } from 'widgets/Page';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    page: PageSchema;
 
     // Асинхронные редюсеры
     login?: LoginSchema;

@@ -15,7 +15,7 @@ import {
     articleDetailsCommentsReducer,
     commentsSelectors,
 } from '../model/slice/articleDetailsCommentsSlice';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { routesPaths } from 'shared/config/routeConfig/routeConfig';
 

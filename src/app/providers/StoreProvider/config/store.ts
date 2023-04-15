@@ -4,6 +4,7 @@ import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { StateSchema, ThunkExtraArgs } from './StateSchema';
 import { axiosInstance } from 'shared/api/api';
+import { pageReducer } from 'widgets/Page';
 
 export const createStore = (
     initialState?: StateSchema,
@@ -13,6 +14,7 @@ export const createStore = (
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        page: pageReducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);

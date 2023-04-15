@@ -9,7 +9,7 @@ import {
     getArticlesPageView,
 } from '../model/selectors/articlesPageSelectors';
 import styles from './ArticlesPage.module.scss';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page';
 import {
     articlesPageActions,
     articlesPageReducer,
@@ -46,7 +46,7 @@ const ArticlesPage: FC = () => {
     }, [dispatch]);
 
     return (
-        <Page onScrollEnd={onLoadMore}>
+        <Page onScrollEnd={onLoadMore} isSaveScrollPosition>
             <ArticlesViewSelector
                 onChangeView={onChangeView}
                 currentView={view}
