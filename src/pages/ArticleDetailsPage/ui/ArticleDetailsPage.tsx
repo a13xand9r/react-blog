@@ -16,6 +16,8 @@ import {
     commentsSelectors,
 } from '../model/slice/articleDetailsCommentsSlice';
 import { Page } from 'shared/ui/Page/Page';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { routesPaths } from 'shared/config/routeConfig/routeConfig';
 
 const ArticleDetailsPage: FC = () => {
     const { t } = useTranslation('articleDetailsPage');
@@ -43,6 +45,7 @@ const ArticleDetailsPage: FC = () => {
 
     return (
         <Page>
+            <AppLink to={routesPaths.articles}>{`< ${t('Go to all articles')}`}</AppLink>
             <ArticleDetails id={id} />
             <Title>{t('Comments')}</Title>
             <AddCommentForm onSend={onSendComment} />

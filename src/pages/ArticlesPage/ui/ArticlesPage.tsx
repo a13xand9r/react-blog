@@ -8,7 +8,6 @@ import {
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from '../model/selectors/articlesPageSelectors';
-import { fetchArticles } from '../model/services/fetchArticles';
 import styles from './ArticlesPage.module.scss';
 import { Page } from 'shared/ui/Page/Page';
 import {
@@ -17,6 +16,7 @@ import {
     articlesSelectors,
 } from '../model/slice/articlesPageSlice';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage';
+import { initArticlesPage } from '../model/services/initArticlesPage';
 
 const ArticlesPage: FC = () => {
     const view = useSelector(getArticlesPageView);
@@ -26,13 +26,12 @@ const ArticlesPage: FC = () => {
 
     const dispatch = useAppDispatch();
 
-    useDynamicReducerLoader('articlesPage', articlesPageReducer);
+    useDynamicReducerLoader('articlesPage', articlesPageReducer, false);
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticles());
+            dispatch(initArticlesPage());
         }
-        dispatch(articlesPageActions.initState());
     }, [dispatch]);
 
     const onChangeView = useCallback(

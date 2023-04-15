@@ -13,8 +13,12 @@ export const useDynamicReducerLoader = (
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch({ type: `@INIT ${key} reducer` });
-        store.reducerManager.add(key, reducer);
+        const reducers = store.reducerManager.getReducerMap();
+
+        if (!reducers[key]) {
+            dispatch({ type: `@INIT ${key} reducer` });
+            store.reducerManager.add(key, reducer);
+        }
         return () => {
             if (removeAfterUnmount) {
                 store.reducerManager.remove(key);

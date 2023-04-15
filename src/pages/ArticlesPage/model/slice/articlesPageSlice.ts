@@ -25,6 +25,7 @@ const articlesPageSlice = createSlice({
         view: 'SMALL',
         hasMore: true,
         page: 1,
+        isInitialized: false,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleCardView>) => {
@@ -35,6 +36,7 @@ const articlesPageSlice = createSlice({
             const view = localStorage.getItem(ARTICLES_VIEW_KEY) as ArticleCardView;
             state.view = view;
             state.limit = view === 'BIG' ? 4 : 9;
+            state.isInitialized = true;
         },
         setPage: (state, action: PayloadAction<number>) => {
             state.page = action.payload;

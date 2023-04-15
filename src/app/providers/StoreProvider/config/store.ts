@@ -4,12 +4,10 @@ import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { StateSchema, ThunkExtraArgs } from './StateSchema';
 import { axiosInstance } from 'shared/api/api';
-import { NavigateFunction } from 'react-router-dom';
 
 export const createStore = (
     initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?: NavigateFunction
+    asyncReducers?: ReducersMapObject<StateSchema>
 ) => {
     const rootReducer: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
@@ -21,7 +19,6 @@ export const createStore = (
 
     const thunkExtraArgs: ThunkExtraArgs = {
         api: axiosInstance,
-        navigate,
     };
 
     const store = configureStore({
