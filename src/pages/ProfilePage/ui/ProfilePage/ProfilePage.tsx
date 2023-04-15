@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 import { ProfileHeader } from '../ProfileHeader/ProfileHeader';
+import { Page } from 'shared/ui/Page/Page';
 
 const ProfilePage: FC = memo(() => {
     useDynamicReducerLoader('profile', profileReducer);
@@ -18,10 +19,10 @@ const ProfilePage: FC = memo(() => {
     }, [dispatch, id]);
 
     return (
-        <>
+        <Page>
             <ProfileHeader />
             <ProfileCard />
-        </>
+        </Page>
     );
 });
 
