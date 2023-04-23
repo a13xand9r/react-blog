@@ -17,7 +17,12 @@ module.exports = {
     },
     plugins: ['react', 'i18next', 'react-hooks', 'prettier'],
     rules: {
-        'prettier/prettier': 'error',
+        'prettier/prettier': [
+            'error',
+            {
+                endOfLine: 'auto',
+            },
+        ],
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
