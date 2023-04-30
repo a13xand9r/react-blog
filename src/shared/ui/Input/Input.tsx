@@ -4,15 +4,27 @@ import styles from './Input.module.scss';
 
 const LETTER_WIDTH = 9.6;
 
+type InputTheme = 'clear' | 'outlined';
+
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'readOnly'> {
     className?: string;
     onChange: (value: string) => void;
     autofocus?: boolean;
     readOnly?: boolean;
+    theme?: InputTheme;
 }
 
 export const Input: VFC<InputProps> = memo(
-    ({ className, onChange, value, placeholder, autofocus, readOnly, ...otherProps }) => {
+    ({
+        className,
+        onChange,
+        value,
+        placeholder,
+        autofocus,
+        readOnly,
+        theme = 'clear',
+        ...otherProps
+    }) => {
         const [isFocused, setIsFocused] = useState(false);
         const [caretPosition, setCaretPosition] = useState(0);
         const inputRef = useRef<HTMLInputElement>(null);
@@ -39,7 +51,7 @@ export const Input: VFC<InputProps> = memo(
         const isShowCaret = isFocused && !readOnly;
 
         return (
-            <div className={classNames(className, styles.InputWrapper)}>
+            <div className={classNames(className, styles.InputWrapper, styles[theme])}>
                 {placeholder ? <div className={styles.placeholder}>{`${placeholder}>`}</div> : null}
                 <div className={styles.caretWrapper}>
                     <input

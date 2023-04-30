@@ -30,6 +30,11 @@
     animation: blink forwards 0.7s infinite;
 }
 
+.outlined {
+    border: 1px solid var(--secondary-color);
+    padding: 5px;
+}
+
 @keyframes blink {
     0% {
         opacity: 0;

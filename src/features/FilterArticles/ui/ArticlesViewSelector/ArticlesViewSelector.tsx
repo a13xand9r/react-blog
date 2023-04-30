@@ -7,7 +7,7 @@ import ListIcon from 'shared/assets/icons/list-icon.svg';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
 
-interface ArticlesViewSelectorProps {
+export interface ArticlesViewSelectorProps {
     className?: string;
     currentView: ArticleCardView;
     onChangeView: (view: ArticleCardView) => void;

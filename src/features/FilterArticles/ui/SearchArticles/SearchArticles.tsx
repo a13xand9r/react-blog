@@ -1,0 +1,41 @@
+import { FC, useCallback } from 'react';
+import styles from './SearchArticles.module.scss';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import { Input } from 'shared/ui/Input/Input';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { filterArticlesActions } from 'features/FilterArticles/model/slice/filterArticlesSlice';
+import { useSelector } from 'react-redux';
+import { getArticlesFilterSearchText } from 'features/FilterArticles/model/selectors/getFilters';
+import { useDebounce } from 'shared/lib/hooks/useDebounce';
+
+interface SearchArticlesProps {
+    className?: string;
+    onChange: () => void;
+}
+
+export const SearchArticles: FC<SearchArticlesProps> = ({ className, onChange }) => {
+    const { t } = useTranslation('articlesPage');
+    const dispatch = useAppDispatch();
+    const currentValue = useSelector(getArticlesFilterSearchText);
+
+    const onChangeDebounced = useDebounce(onChange, 500);
+
+    const onTextChange = useCallback(
+        (value: string) => {
+            dispatch(filterArticlesActions.setSearchText(value));
+            onChangeDebounced();
+        },
+        [dispatch, onChangeDebounced]
+    );
+
+    return (
+        <Input
+            value={currentValue}
+            placeholder={t('Search')}
+            onChange={onTextChange}
+            className={classNames(className, styles.SearchArticles)}
+            // theme="outlined"
+        />
+    );
+};
