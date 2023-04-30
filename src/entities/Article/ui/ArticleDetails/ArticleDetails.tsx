@@ -15,7 +15,7 @@ import { useSelector } from 'react-redux';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Title, TitleTheme } from 'shared/ui/Title/Title';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { ArticleBlocks } from 'entities/Article/model/types/Article';
+import { ArticleBlocks } from '../../model/types/article';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import styles from './ArticleCodeBlock.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Code } from 'shared/ui/Code/Code';
-import { ArticleCodeBlockType } from 'entities/Article/model/types/Article';
+import { ArticleCodeBlockType } from '../../model/types/article';
 
 interface ArticleCodeBlockProps {
     codeBlock: ArticleCodeBlockType;

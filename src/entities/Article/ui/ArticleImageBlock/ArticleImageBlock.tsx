@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styles from './ArticleImageBlock.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleImageBlockType } from 'entities/Article/model/types/Article';
+import { ArticleImageBlockType } from '../../model/types/article';
 import { Title } from 'shared/ui/Title/Title';
 
 interface ArticleImageBlockProps {
