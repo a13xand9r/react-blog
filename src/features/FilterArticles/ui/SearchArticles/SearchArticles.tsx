@@ -1,6 +1,4 @@
 import { FC, useCallback } from 'react';
-import styles from './SearchArticles.module.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
@@ -34,8 +32,7 @@ export const SearchArticles: FC<SearchArticlesProps> = ({ className, onChange })
             value={currentValue}
             placeholder={t('Search')}
             onChange={onTextChange}
-            className={classNames(className, styles.SearchArticles)}
-            // theme="outlined"
+            className={className}
         />
     );
 };
