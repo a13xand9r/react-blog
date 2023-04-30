@@ -1,0 +1,12 @@
+.Tabs {
+    display: flex;
+    gap: 12px;
+}
+
+.active {
+    background-color: var(--secondary-color);
+}
+
+.tab {
+    cursor: pointer;
+}

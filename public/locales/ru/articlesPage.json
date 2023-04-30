@@ -1,5 +1,17 @@
 {
 	"Articles Page": "Страница со статьями",
 	"Article not found": "Статья не найдена",
-	"Article page loading error": "Произошла ошибка при загрузке статьи"
+	"Article page loading error": "Произошла ошибка при загрузке статьи",
+	"creation date": "дате создания",
+	"title": "заголовку",
+	"views": "просмотрам",
+	"increase": "возрастанию",
+	"decrease": "убыванию",
+	"Sort by": "Сортировать ПО",
+	"by": "по",
+	"Search": "Поиск",
+	"Economics": "Экономика",
+	"IT": "IT",
+	"Science": "Наука",
+	"All": "Все"
 }

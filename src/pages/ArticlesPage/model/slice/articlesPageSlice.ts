@@ -16,7 +16,7 @@ export const articlesSelectors = articlesAdapter.getSelectors<StateSchema>(
 );
 
 const articlesPageSlice = createSlice({
-    name: 'articleDetailsComments',
+    name: 'articlesPage',
     initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
         entities: {},
         ids: [],
@@ -47,12 +47,18 @@ const articlesPageSlice = createSlice({
             .addCase(fetchArticles.fulfilled, (state, action) => {
                 state.error = undefined;
                 state.isLoading = false;
+                if (action.meta.arg.replace) {
+                    articlesAdapter.setAll(state, action.payload);
+                }
                 articlesAdapter.addMany(state, action.payload);
-                state.hasMore = action.payload.length > 0;
+                state.hasMore = action.payload.length >= (state.limit as number);
             })
             .addCase(fetchArticles.pending, (state, action) => {
                 state.error = undefined;
                 state.isLoading = true;
+                if (action.meta.arg.replace) {
+                    articlesAdapter.removeAll(state);
+                }
             })
             .addCase(fetchArticles.rejected, (state, action) => {
                 state.error = action.payload;

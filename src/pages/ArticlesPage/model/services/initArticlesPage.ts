@@ -10,10 +10,11 @@ export const initArticlesPage = createAsyncThunk<void, void, ThunkConfig<void>>(
         const isInitialized = getIsArticlesPageInitialized(getState());
 
         if (!isInitialized) {
-            if (__PROJECT__ !== 'storybook') {
-                dispatch(fetchArticles());
-            }
             dispatch(articlesPageActions.initState());
+
+            if (__PROJECT__ !== 'storybook') {
+                dispatch(fetchArticles({ replace: false }));
+            }
         }
     }
 );
