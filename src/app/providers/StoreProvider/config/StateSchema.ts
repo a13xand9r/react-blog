@@ -18,11 +18,11 @@ import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { PageSchema } from 'widgets/Page';
 
 export interface StateSchema {
-    counter: CounterSchema;
     user: UserSchema;
     page: PageSchema;
 
     // Асинхронные редюсеры
+    counter?: CounterSchema;
     login?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
