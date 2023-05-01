@@ -10,6 +10,7 @@ interface ArticleCardsListProps {
     view?: ArticleCardView;
     isLoading?: boolean;
     className?: string;
+    target?: string;
 }
 
 const getSkeletons = (view: ArticleCardView) => {
@@ -22,6 +23,7 @@ export const ArticleCardsList: FC<ArticleCardsListProps> = ({
     articles,
     isLoading,
     view = 'SMALL',
+    target,
     className,
 }) => {
     return (
@@ -32,6 +34,7 @@ export const ArticleCardsList: FC<ArticleCardsListProps> = ({
                         view={view}
                         article={article}
                         key={article.id}
+                        target={target}
                         className={styles.card}
                     />
                 ))}

@@ -1,4 +1,4 @@
-import { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema';
+import { ArticleDetailsPageSchema } from './model/types/ArticleDetailsPageSchema';
 import { ArticleDetailsPageLazy } from './ui/ArticleDetailsPageLazy';
 
-export { ArticleDetailsPageLazy, ArticleDetailsCommentsSchema };
+export { ArticleDetailsPageLazy, ArticleDetailsPageSchema };

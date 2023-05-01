@@ -1,4 +1,4 @@
-import { FC, useCallback } from 'react';
+import { FC } from 'react';
 import styles from './ArticleCard.module.scss';
 import { Article, ArticleTextBlockType } from '../../model/types/article';
 import { Card } from 'shared/ui/Card/Card';
@@ -10,8 +10,8 @@ import { Title } from 'shared/ui/Title/Title';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { routesPaths } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 
 export type ArticleCardView = 'SMALL' | 'BIG';
 
@@ -19,17 +19,12 @@ interface ArticleCardProps {
     view: ArticleCardView;
     article?: Article;
     className?: string;
+    target?: string;
 }
 
-export const ArticleCard: FC<ArticleCardProps> = ({ article, view, className }) => {
+export const ArticleCard: FC<ArticleCardProps> = ({ article, view, target, className }) => {
     const articleTypes = article?.type.join(', ');
     const { t } = useTranslation();
-
-    const navigate = useNavigate();
-
-    const onOpenArticle = useCallback(() => {
-        navigate(routesPaths.articleDetails + article?.id);
-    }, [article?.id, navigate]);
 
     if (view === 'BIG') {
         const textBlock = article?.blocks.find(
@@ -56,9 +51,13 @@ export const ArticleCard: FC<ArticleCardProps> = ({ article, view, className }) 
                 <img className={styles.img} src={article?.img} alt={article?.title} />
                 {textBlock && <ArticleTextBlock className={styles.text} textBlock={textBlock} />}
                 <div className={styles.bottomTopContainer}>
-                    <Button onClick={onOpenArticle} theme={ButtonTheme.OUTLINED}>
-                        {t('Read more...')}
-                    </Button>
+                    <AppLink
+                        target={target}
+                        className={styles.link}
+                        to={routesPaths.articleDetails + article?.id}
+                    >
+                        <Button theme={ButtonTheme.OUTLINED}>{t('Read more...')}</Button>
+                    </AppLink>
                     <Text className={styles.views}>
                         <EyeIcon />
                         {article?.views}
@@ -68,24 +67,27 @@ export const ArticleCard: FC<ArticleCardProps> = ({ article, view, className }) 
         );
     }
     return (
-        <Card
-            onClick={onOpenArticle}
-            className={classNames(styles.ArticleCardContent, styles[view], className)}
+        <AppLink
+            target={target}
+            className={styles.link}
+            to={routesPaths.articleDetails + article?.id}
         >
-            <div className={styles.imgWrapper}>
-                <Text className={styles.date}>{article?.createdAt}</Text>
-                <img className={styles.img} src={article?.img} alt={article?.title} />
-            </div>
-            <div className={styles.bottomBlock}>
-                <div className={styles.bottomTopContainer}>
-                    <Text className={styles.types}>{articleTypes}</Text>
-                    <Text className={styles.views}>
-                        <EyeIcon />
-                        {article?.views}
-                    </Text>
+            <Card className={classNames(styles.ArticleCardContent, styles[view], className)}>
+                <div className={styles.imgWrapper}>
+                    <Text className={styles.date}>{article?.createdAt}</Text>
+                    <img className={styles.img} src={article?.img} alt={article?.title} />
                 </div>
-                <Text className={styles.title}>{article?.title}</Text>
-            </div>
-        </Card>
+                <div className={styles.bottomBlock}>
+                    <div className={styles.bottomTopContainer}>
+                        <Text className={styles.types}>{articleTypes}</Text>
+                        <Text className={styles.views}>
+                            <EyeIcon />
+                            {article?.views}
+                        </Text>
+                    </div>
+                    <Text className={styles.title}>{article?.title}</Text>
+                </div>
+            </Card>
+        </AppLink>
     );
 };

@@ -8,6 +8,10 @@
     }
 }
 
+.link:hover {
+    opacity: 1;
+}
+
 .BIG {
     width: 100%;
 
@@ -61,6 +65,8 @@
 .SMALL {
     cursor: pointer;
     transition: 0.2s;
+    width: 330px;
+    min-width: 330px;
 
     &:hover {
         transform: scale(1.01);
