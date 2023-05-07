@@ -4,8 +4,9 @@ import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import CopyPlugin from "copy-webpack-plugin";
 
-export const buildPlugins = ({ html }: BuildPaths, isDev: boolean, apiBaseUrl: string): webpack.WebpackPluginInstance[] => {
+export const buildPlugins = ({ html, locales, buildLocales }: BuildPaths, isDev: boolean, apiBaseUrl: string): webpack.WebpackPluginInstance[] => {
     const plugins = [
         new HtmlWebpackPlugin({
             template: html,
@@ -20,6 +21,11 @@ export const buildPlugins = ({ html }: BuildPaths, isDev: boolean, apiBaseUrl: s
             __API_BASE_URL__: JSON.stringify(apiBaseUrl),
             __PROJECT__: JSON.stringify('app'),
         }),
+        new CopyPlugin({
+            patterns: [
+              { from: locales, to: buildLocales },
+            ],
+          }),
     ];
 
     if (isDev) {
