@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:dev": "webpack build --env MODE=development",
-    "build": "webpack build --env MODE=production",
+    "build": "webpack build --env MODE=production --env API_BASE_URL=https://react-blog-server-ksyquapm3-a13xand9r.vercel.app",
     "start:build": "webpack start",
     "start": "webpack serve --env MODE=development --env PORT=4000",
     "start:dev:server": "node ./json-server/index.js",
