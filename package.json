@@ -107,7 +107,8 @@
     "react-i18next": "^11.18.6",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.4.2",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "react-virtuoso": "^4.3.5"
   },
   "loki": {
     "configurations": {

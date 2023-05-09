@@ -33,7 +33,7 @@ export const ArticlesFilters: FC<ArticlesFiltersProps> = ({
     onChangeView,
     onSomeFilterChange,
 }) => {
-    useDynamicReducerLoader('filterArticles', filterArticlesReducer);
+    useDynamicReducerLoader('filterArticles', filterArticlesReducer, false);
     const [searchParams] = useSearchParams();
     const dispatch = useAppDispatch();
 

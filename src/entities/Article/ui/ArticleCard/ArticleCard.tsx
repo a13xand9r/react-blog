@@ -20,9 +20,16 @@ interface ArticleCardProps {
     article?: Article;
     className?: string;
     target?: string;
+    onArticleOpen?: () => void;
 }
 
-export const ArticleCard: FC<ArticleCardProps> = ({ article, view, target, className }) => {
+export const ArticleCard: FC<ArticleCardProps> = ({
+    article,
+    view,
+    target,
+    onArticleOpen,
+    className,
+}) => {
     const articleTypes = article?.type.join(', ');
     const { t } = useTranslation();
 
@@ -48,10 +55,13 @@ export const ArticleCard: FC<ArticleCardProps> = ({ article, view, target, class
                     </Title>
                     <Text className={styles.types}>{articleTypes}</Text>
                 </div>
-                <img className={styles.img} src={article?.img} alt={article?.title} />
+                <div className={styles.imgContainer}>
+                    <img className={styles.img} src={article?.img} alt={article?.title} />
+                </div>
                 {textBlock && <ArticleTextBlock className={styles.text} textBlock={textBlock} />}
                 <div className={styles.bottomTopContainer}>
                     <AppLink
+                        onClick={onArticleOpen}
                         target={target}
                         className={styles.link}
                         to={routesPaths.articleDetails + article?.id}
@@ -68,6 +78,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({ article, view, target, class
     }
     return (
         <AppLink
+            onClick={onArticleOpen}
             target={target}
             className={styles.link}
             to={routesPaths.articleDetails + article?.id}

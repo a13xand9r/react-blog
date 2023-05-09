@@ -41,12 +41,15 @@
         margin-top: 10px;
     }
 
+    .imgContainer {
+        height: 250px;
+    }
+
     .img {
         width: 100%;
         object-fit: cover;
 
-        // max-height: 250px;
-        height: 250px;
+        height: 100%;
         margin-top: 12px;
     }
 
@@ -67,6 +70,7 @@
     transition: 0.2s;
     width: 330px;
     min-width: 330px;
+    height: 420px;
 
     &:hover {
         transform: scale(1.01);

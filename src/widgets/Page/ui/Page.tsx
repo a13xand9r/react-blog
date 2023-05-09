@@ -1,4 +1,4 @@
-import { FC, MutableRefObject, useRef, UIEvent, useEffect } from 'react';
+import { FC, MutableRefObject, useRef, UIEvent, useEffect, useMemo } from 'react';
 import styles from './Page.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { getPageScrollPosition } from '../model/selectors/getPageScrollPosition';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { useThrottle } from 'shared/lib/hooks/useThrottle';
+import { PageContext } from 'shared/lib/contexts/PageContext';
 
 interface PageProps {
     className?: string;
@@ -48,13 +49,16 @@ export const Page: FC<PageProps> = ({
         }
     }, 300);
 
+    const pageContextValue = useMemo(() => ({ pageSectionRef: wrapperRef }), [wrapperRef]);
+
     return (
         <section
+            id="page-section-scroll"
             onScroll={onScroll}
             ref={wrapperRef}
             className={classNames(className, styles.Page)}
         >
-            {children}
+            <PageContext.Provider value={pageContextValue}>{children}</PageContext.Provider>
             <div ref={intersectScrollElRef} />
         </section>
     );

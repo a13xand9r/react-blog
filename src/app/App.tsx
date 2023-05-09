@@ -9,15 +9,28 @@ import { userActions } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { getIsUserInit } from 'entities/User/model/selectors/getIsUserInit';
+import { useLocation } from 'react-router-dom';
+import { ARTICLES_LIST_CLICKED_ITEM_IDX } from 'shared/consts/sessionStorage';
+import { routesPaths } from 'shared/config/routeConfig/routeConfig';
 
 export const App = () => {
     const { theme } = useThemeContext();
     const dispatch = useAppDispatch();
     const isUserInit = useSelector(getIsUserInit);
+    const { pathname } = useLocation();
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
     }, [dispatch]);
+
+    useEffect(() => {
+        sessionStorage.removeItem(ARTICLES_LIST_CLICKED_ITEM_IDX);
+    }, []);
+    useEffect(() => {
+        if (pathname !== routesPaths.articles && !pathname.includes(routesPaths.articleDetails)) {
+            sessionStorage.removeItem(ARTICLES_LIST_CLICKED_ITEM_IDX);
+        }
+    }, [pathname]);
 
     return (
         <div className={classNames('app', theme)}>

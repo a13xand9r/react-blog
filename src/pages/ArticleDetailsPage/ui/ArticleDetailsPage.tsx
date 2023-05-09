@@ -61,6 +61,7 @@ const ArticleDetailsPage: FC = () => {
                 className={styles.recommendations}
                 view="SMALL"
                 target="_blank"
+                isRecommendations
             />
             <Title>{t('Comments')}</Title>
             <AddCommentForm onSend={onSendComment} />

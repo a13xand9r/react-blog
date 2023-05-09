@@ -1,11 +1,30 @@
-.SMALL {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-}
+$small-grid-gap: 30px;
+$big-cards-margin: 18px;
 
 .BIG {
     .card {
-        margin-bottom: 18px;
+        margin-bottom: $big-cards-margin;
     }
+
+    .list {
+        margin-bottom: $big-cards-margin;
+    }
+}
+
+.SMALL {
+    .list,
+    .skeletonsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $small-grid-gap;
+    }
+
+    .skeletonsContainer {
+        margin-top: $small-grid-gap;
+    }
+}
+
+.recommendationsContainer {
+    display: flex;
+    gap: $small-grid-gap;
 }
