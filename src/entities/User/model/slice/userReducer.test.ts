@@ -1,4 +1,4 @@
-import { UserSchema } from 'entities/User';
+import { UserSchema } from '../types/UserSchema';
 import { userActions, userReducer } from './userSlice';
 
 describe('user reducer', () => {

@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { TabType, Tabs } from 'shared/ui/Tabs/Tabs';
 import { ArticleType } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { filterArticlesActions } from 'features/FilterArticles/model/slice/filterArticlesSlice';
+import { filterArticlesActions } from '../../model/slice/filterArticlesSlice';
 import { useSelector } from 'react-redux';
-import { getArticlesFilterTabValue } from 'features/FilterArticles/model/selectors/getFilters';
+import { getArticlesFilterTabValue } from '../../model/selectors/getFilters';
 
 interface FilterArticlesTypesProps {
     className?: string;

@@ -1,17 +1,14 @@
 import { FC, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Select, SelectOption } from 'shared/ui/Select/Select';
-import {
-    ArticleSortField,
-    ArticleSortOrder,
-} from 'features/FilterArticles/model/types/filterArticles';
+import { ArticleSortField, ArticleSortOrder } from '../../model/types/filterArticles';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import {
     getArticlesFilterSortByField,
     getArticlesFilterSortOrder,
 } from '../../model/selectors/getFilters';
-import { filterArticlesActions } from 'features/FilterArticles/model/slice/filterArticlesSlice';
+import { filterArticlesActions } from '../../model/slice/filterArticlesSlice';
 import styles from './SortArticles.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 

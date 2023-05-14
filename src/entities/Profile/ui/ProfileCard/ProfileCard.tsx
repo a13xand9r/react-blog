@@ -6,18 +6,18 @@ import { useSelector } from 'react-redux';
 import { getProfileLoading } from '../../model/selectors/getProfileLoading';
 import { Loader } from 'widgets/Loader';
 import { Input } from 'shared/ui/Input/Input';
-import { getProfileReadOnly } from 'entities/Profile/model/selectors/getProfileReadOnly';
+import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { profileActions } from 'entities/Profile/model/slice/profileSlice';
-import { getProfileForm } from 'entities/Profile/model/selectors/getProfileForm';
+import { profileActions } from '../../model/slice/profileSlice';
+import { getProfileForm } from '../../model/selectors/getProfileForm';
 import { Title, TitleTheme } from 'shared/ui/Title/Title';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { getProfileError } from 'entities/Profile/model/selectors/getProfileError';
+import { getProfileError } from '../../model/selectors/getProfileError';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Select } from 'shared/ui/Select/Select';
 import { Currency } from 'shared/consts/common';
-import { getProfileFormValidateError } from 'entities/Profile/model/selectors/getProfileFormValidateError';
-import { ValidateError } from 'entities/Profile/model/types/profileSchema';
+import { getProfileFormValidateError } from '../../model/selectors/getProfileFormValidateError';
+import { ValidateError } from '../../model/types/profileSchema';
 
 interface ProfileCardProps {
     className?: string;

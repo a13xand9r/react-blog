@@ -10,7 +10,7 @@ import {
     getArticleDetailsData,
     getArticleDetailsError,
     getArticleDetailsLoading,
-} from 'entities/Article/model/selectors/getArticleDetails';
+} from '../../model/selectors/getArticleDetails';
 import { useSelector } from 'react-redux';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Title, TitleTheme } from 'shared/ui/Title/Title';

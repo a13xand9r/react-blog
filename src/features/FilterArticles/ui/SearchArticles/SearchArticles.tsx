@@ -2,9 +2,9 @@ import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { filterArticlesActions } from 'features/FilterArticles/model/slice/filterArticlesSlice';
+import { filterArticlesActions } from '../../model/slice/filterArticlesSlice';
 import { useSelector } from 'react-redux';
-import { getArticlesFilterSearchText } from 'features/FilterArticles/model/selectors/getFilters';
+import { getArticlesFilterSearchText } from '../../model/selectors/getFilters';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
 
 interface SearchArticlesProps {

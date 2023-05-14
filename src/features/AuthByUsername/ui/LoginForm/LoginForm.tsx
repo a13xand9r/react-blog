@@ -1,6 +1,6 @@
-import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUserName/loginByUserName';
-import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername';
+import { loginByUsername } from '../../model/services/loginByUserName/loginByUserName';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { FC, FormEvent, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -10,9 +10,9 @@ import { Input } from 'shared/ui/Input/Input';
 import { Title } from 'shared/ui/Title/Title';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import styles from './LoginForm.module.scss';
-import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword';
-import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginIsLoading';
-import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading';
+import { getLoginError } from '../../model/selectors/getLoginError';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 

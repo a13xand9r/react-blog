@@ -12,13 +12,10 @@ import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoade
 import {
     filterArticlesActions,
     filterArticlesReducer,
-} from 'features/FilterArticles/model/slice/filterArticlesSlice';
+} from '../../model/slice/filterArticlesSlice';
 import { useSearchParams } from 'react-router-dom';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import {
-    ArticleSortField,
-    ArticleSortOrder,
-} from 'features/FilterArticles/model/types/filterArticles';
+import { ArticleSortField, ArticleSortOrder } from '../../model/types/filterArticles';
 import { ArticleType } from 'entities/Article';
 import { FilterArticlesTypes } from '../FilterArticlesTypes/FilterArticlesTypes';
 
