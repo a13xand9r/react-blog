@@ -15,7 +15,7 @@ module.exports = {
         sourceType: 'module',
         project: ['tsconfig.json'],
     },
-    plugins: ['react', 'i18next', 'react-hooks', 'prettier'],
+    plugins: ['react', 'i18next', 'react-hooks', 'prettier', 'fsd-imports-plugin'],
     rules: {
         'prettier/prettier': [
             'error',
@@ -45,6 +45,7 @@ module.exports = {
         '@typescript-eslint/restrict-plus-operands': 'off',
         'n/no-callback-literal': 'off',
         '@typescript-eslint/array-type': 'off',
+        'fsd-imports-plugin/absolute-relative-imports-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
