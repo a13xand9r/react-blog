@@ -5,6 +5,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 import { ProfileHeader } from '../ProfileHeader/ProfileHeader';
 import { Page } from 'widgets/Page';
+import { VStack } from 'shared/ui/Stack';
 
 const ProfilePage: FC = memo(() => {
     useDynamicReducerLoader('profile', profileReducer);
@@ -20,8 +21,10 @@ const ProfilePage: FC = memo(() => {
 
     return (
         <Page>
-            <ProfileHeader />
-            <ProfileCard />
+            <VStack gap="12" align="start" fullWidth>
+                <ProfileHeader />
+                <ProfileCard />
+            </VStack>
         </Page>
     );
 });

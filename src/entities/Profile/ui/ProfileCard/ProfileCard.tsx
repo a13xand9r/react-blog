@@ -18,6 +18,7 @@ import { Select } from 'shared/ui/Select/Select';
 import { Currency } from 'shared/consts/common';
 import { getProfileFormValidateError } from '../../model/selectors/getProfileFormValidateError';
 import { ValidateError } from '../../model/types/profileSchema';
+import { VStack } from 'shared/ui/Stack';
 
 interface ProfileCardProps {
     className?: string;
@@ -96,35 +97,30 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
             <Input
                 autofocus={isFirstInputFocused}
                 readOnly={readOnly}
-                className={styles.input}
                 placeholder={t('Your name')}
                 value={data?.first}
                 onChange={changeName}
             />
             <Input
                 readOnly={readOnly}
-                className={styles.input}
                 placeholder={t('Your lastname')}
                 value={data?.lastname}
                 onChange={changeLastname}
             />
             <Input
                 readOnly={readOnly}
-                className={styles.input}
                 placeholder={t('Age')}
                 value={data?.age}
                 onChange={changeAge}
             />
             <Input
                 readOnly={readOnly}
-                className={styles.input}
                 placeholder={t('City')}
                 value={data?.city}
                 onChange={changeCity}
             />
             <Select
                 readOnly={readOnly}
-                className={styles.input}
                 value={data?.currency}
                 label="Валюта"
                 onChange={changeCurrency}
@@ -154,7 +150,9 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
     };
 
     return (
-        <div
+        <VStack
+            align="start"
+            gap="4"
             className={classNames(className, styles.ProfileCard, {
                 [styles.editMode]: !readOnly,
             })}
@@ -165,6 +163,6 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
                 </Text>
             ))}
             {content}
-        </div>
+        </VStack>
     );
 };

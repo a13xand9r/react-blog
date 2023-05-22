@@ -20,13 +20,6 @@
     right: calc(-1 * var(--font-line-l));
 }
 
-.links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
 .themeSwitcher {
     overflow-wrap: anywhere;
 }
