@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Title } from 'shared/ui/Title/Title';
-import styles from './ProfileHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 
 export const ProfileHeader: FC = memo(() => {
     const { t } = useTranslation('profilePage');
@@ -31,38 +31,26 @@ export const ProfileHeader: FC = memo(() => {
     }, [dispatch]);
 
     return (
-        <div className={styles.header}>
+        <HStack justify="between">
             <Title>{t('Profile')}</Title>
             {canEdit ? (
                 isReadOnly ? (
                     <>
-                        <Button
-                            onClick={onEdit}
-                            className={styles.editBtn}
-                            theme={ButtonTheme.OUTLINED}
-                        >
+                        <Button onClick={onEdit} theme={ButtonTheme.OUTLINED}>
                             {t('Edit')}
                         </Button>
                     </>
                 ) : (
-                    <div className={styles.buttonsContainer}>
-                        <Button
-                            onClick={onSave}
-                            className={styles.editBtn}
-                            theme={ButtonTheme.OUTLINED}
-                        >
+                    <HStack gap="16">
+                        <Button onClick={onSave} theme={ButtonTheme.OUTLINED}>
                             {t('Save')}
                         </Button>
-                        <Button
-                            onClick={onCancel}
-                            className={styles.editBtn}
-                            theme={ButtonTheme.OUTLINED_ERROR}
-                        >
+                        <Button onClick={onCancel} theme={ButtonTheme.OUTLINED_ERROR}>
                             {t('Cancel')}
                         </Button>
-                    </div>
+                    </HStack>
                 )
             ) : null}
-        </div>
+        </HStack>
     );
 });

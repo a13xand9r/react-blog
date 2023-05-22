@@ -8,6 +8,7 @@ import styles from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { VStack } from 'shared/ui/Stack';
 
 interface SidebarProps {
     className?: string;
@@ -29,7 +30,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
                 [styles.collapsed]: isCollapsed,
             })}
         >
-            <div className={styles.links}>
+            <VStack gap="12">
                 {sidebarItems.map(item => (
                     <SidebarItem
                         {...item}
@@ -38,7 +39,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
                         key={item.url}
                     />
                 ))}
-            </div>
+            </VStack>
             <Button
                 data-testid="Sidebar-toggle"
                 className={styles.toggleButton}
