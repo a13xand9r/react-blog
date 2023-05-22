@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { DetailedHTMLProps, FC, HTMLAttributes } from 'react';
 import styles from './Flex.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -7,7 +7,8 @@ type AlignItems = 'start' | 'end' | 'center';
 type Direction = 'column' | 'row';
 type Gap = '0' | '4' | '8' | '12' | '16' | '24' | '32';
 
-export interface FlexProps {
+export interface FlexProps
+    extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     direction: Direction;
     justify?: JustifyContent;
     align?: AlignItems;

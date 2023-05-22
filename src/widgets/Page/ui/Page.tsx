@@ -52,7 +52,7 @@ export const Page: FC<PageProps> = ({
     const pageContextValue = useMemo(() => ({ pageSectionRef: wrapperRef }), [wrapperRef]);
 
     return (
-        <section
+        <main
             id="page-section-scroll"
             onScroll={onScroll}
             ref={wrapperRef}
@@ -60,6 +60,6 @@ export const Page: FC<PageProps> = ({
         >
             <PageContext.Provider value={pageContextValue}>{children}</PageContext.Provider>
             <div ref={intersectScrollElRef} />
-        </section>
+        </main>
     );
 };

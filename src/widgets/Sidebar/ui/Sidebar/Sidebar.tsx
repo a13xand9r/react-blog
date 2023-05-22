@@ -24,13 +24,13 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     };
 
     return (
-        <menu
+        <aside
             data-testid="Sidebar"
             className={classNames(className, styles.Sidebar, {
                 [styles.collapsed]: isCollapsed,
             })}
         >
-            <VStack gap="12">
+            <VStack gap="12" role="navigation">
                 {sidebarItems.map(item => (
                     <SidebarItem
                         {...item}
@@ -54,6 +54,6 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
                 <ThemeSwitcher className={styles.themeSwitcher} />
                 <LangSwitcher short={isCollapsed} buttonTheme={ButtonTheme.BACKGROUND_INVERTED} />
             </div>
-        </menu>
+        </aside>
     );
 });
