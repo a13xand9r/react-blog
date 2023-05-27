@@ -1,0 +1,57 @@
+.Listbox {
+    position: relative;
+    display: inline-block;
+}
+
+.options {
+    background-color: var(--listbox-options-list-bg);
+    position: absolute;
+    z-index: var(--listbox-options-z-index);
+    margin-top: 4px;
+    padding: 2px;
+    min-width: 100%;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.option {
+    position: relative;
+    padding: 6px;
+    padding-left: 22px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.disabledOption {
+    opacity: 0.6;
+}
+
+.activeOption {
+    background-color: var(--listbox-active-option-bg);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    .arrowIcon {
+        transition: 0.2s;
+    }
+}
+
+.buttonContainer[aria-expanded="true"] {
+    .button {
+        .arrowIcon {
+            transform: rotateZ(180deg);
+        }
+    }
+}
+
+.activeIcon {
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}

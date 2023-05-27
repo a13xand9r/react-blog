@@ -1,6 +1,5 @@
 import { FC, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Select, SelectOption } from 'shared/ui/Select/Select';
 import { ArticleSortField, ArticleSortOrder } from '../../model/types/filterArticles';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
@@ -11,6 +10,7 @@ import {
 import { filterArticlesActions } from '../../model/slice/filterArticlesSlice';
 import styles from './SortArticles.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Listbox, ListboxOption } from 'shared/ui/Listbox/Listbox';
 
 interface SortArticlesProps {
     className?: string;
@@ -23,7 +23,7 @@ export const SortArticles: FC<SortArticlesProps> = ({ className, onChange }) => 
     const fieldValue = useSelector(getArticlesFilterSortByField);
     const orderValue = useSelector(getArticlesFilterSortOrder);
 
-    const fieldSortOptions = useMemo<SelectOption<ArticleSortField>[]>(
+    const fieldSortOptions = useMemo<ListboxOption<ArticleSortField>[]>(
         () => [
             {
                 content: t('creation date'),
@@ -40,7 +40,7 @@ export const SortArticles: FC<SortArticlesProps> = ({ className, onChange }) => 
         ],
         [t]
     );
-    const orderSortOptions = useMemo<SelectOption<ArticleSortOrder>[]>(
+    const orderSortOptions = useMemo<ListboxOption<ArticleSortOrder>[]>(
         () => [
             {
                 content: t('increase'),
@@ -72,13 +72,13 @@ export const SortArticles: FC<SortArticlesProps> = ({ className, onChange }) => 
 
     return (
         <div className={classNames(styles.SortArticles, className)}>
-            <Select
+            <Listbox
                 label={t('Sort by')}
                 options={fieldSortOptions}
                 value={fieldValue}
                 onChange={onSortFieldChange}
             />
-            <Select
+            <Listbox
                 label={t('by')}
                 options={orderSortOptions}
                 value={orderValue}

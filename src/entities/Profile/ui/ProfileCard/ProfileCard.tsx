@@ -14,11 +14,11 @@ import { Title, TitleTheme } from 'shared/ui/Title/Title';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { getProfileError } from '../../model/selectors/getProfileError';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Select } from 'shared/ui/Select/Select';
 import { Currency } from 'shared/consts/common';
 import { getProfileFormValidateError } from '../../model/selectors/getProfileFormValidateError';
 import { ValidateError } from '../../model/types/profileSchema';
 import { VStack } from 'shared/ui/Stack';
+import { Listbox } from 'shared/ui/Listbox/Listbox';
 
 interface ProfileCardProps {
     className?: string;
@@ -55,31 +55,31 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
     const [isFirstInputFocused, setIsFirstInputFocused] = useState(false);
 
     const changeName = useCallback(
-        value => {
+        (value: string) => {
             dispatch(profileActions.updateForm({ first: value }));
         },
         [dispatch]
     );
     const changeLastname = useCallback(
-        value => {
+        (value: string) => {
             dispatch(profileActions.updateForm({ lastname: value }));
         },
         [dispatch]
     );
     const changeAge = useCallback(
-        value => {
-            dispatch(profileActions.updateForm({ age: value }));
+        (value: string) => {
+            dispatch(profileActions.updateForm({ age: +value }));
         },
         [dispatch]
     );
     const changeCity = useCallback(
-        value => {
+        (value: string) => {
             dispatch(profileActions.updateForm({ city: value }));
         },
         [dispatch]
     );
     const changeCurrency = useCallback(
-        value => {
+        (value: Currency) => {
             dispatch(profileActions.updateForm({ currency: value }));
         },
         [dispatch]
@@ -112,6 +112,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
                 placeholder={t('Age')}
                 value={data?.age}
                 onChange={changeAge}
+                type="number"
             />
             <Input
                 readOnly={readOnly}
@@ -119,7 +120,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
                 value={data?.city}
                 onChange={changeCity}
             />
-            <Select
+            <Listbox
                 readOnly={readOnly}
                 value={data?.currency}
                 label="Валюта"
