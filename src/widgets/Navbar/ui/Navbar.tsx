@@ -1,12 +1,15 @@
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
-import { FC, memo, useCallback, useState } from 'react';
+import { FC, memo, useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import styles from './Navbar.module.scss';
+import { Dropdown, DropdownItem } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { routesPaths } from 'shared/config/routeConfig/routeConfig';
 
 interface NavbarProps {
     className?: string;
@@ -28,17 +31,33 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
         setIsLoginModalOpen(true);
     }, []);
 
-    const onLogoutClick = useCallback(() => {
+    const onLogout = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
+
+    const dropdownItems = useMemo<DropdownItem[]>(
+        () => [
+            {
+                content: t('Profile'),
+                href: routesPaths.profile + authData?.id,
+            },
+            {
+                content: t('Logout'),
+                onClick: onLogout,
+            },
+        ],
+        [authData?.id, onLogout, t]
+    );
 
     if (authData) {
         return (
             <header className={classNames(className, styles.Navbar)}>
                 <div className={styles.links}>
-                    <Button onClick={onLogoutClick} theme={ButtonTheme.CLEAR_INVERTED} size="M">
-                        {t('Logout')}
-                    </Button>
+                    <Dropdown
+                        buttonElement={<Avatar src={authData.avatar} size={30} />}
+                        items={dropdownItems}
+                        position="bottom left"
+                    />
                 </div>
             </header>
         );
