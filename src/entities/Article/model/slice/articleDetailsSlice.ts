@@ -10,7 +10,7 @@ export const articleDetailsSlice = createSlice({
     name: 'articleDetails',
     initialState,
     reducers: {},
-    extraReducers: builder => {
+    extraReducers: (builder) => {
         builder
             .addCase(fetchArticleDetails.pending, (state, action) => {
                 state.error = undefined;

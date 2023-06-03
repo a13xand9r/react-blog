@@ -30,7 +30,7 @@ export const createReducerManager = (
             reducers[key] = reducer;
             combinedReducer = combineReducers(reducers);
         },
-        remove: key => {
+        remove: (key) => {
             if (!key || !reducers[key]) {
                 return;
             }

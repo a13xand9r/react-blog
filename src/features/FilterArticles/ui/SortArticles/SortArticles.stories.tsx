@@ -7,7 +7,7 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof SortArticles>;
 
-const Template: ComponentStory<typeof SortArticles> = args => <SortArticles {...args} />;
+const Template: ComponentStory<typeof SortArticles> = (args) => <SortArticles {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

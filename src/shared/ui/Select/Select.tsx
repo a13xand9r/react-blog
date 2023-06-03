@@ -41,7 +41,7 @@ export const Select = typedMemo(
                     onChange={onChangeHandler}
                     value={value}
                 >
-                    {options.map(opt => (
+                    {options.map((opt) => (
                         <option className={styles.option} key={opt.value} value={opt.value}>
                             {opt.content}
                         </option>

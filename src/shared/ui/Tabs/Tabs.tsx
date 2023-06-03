@@ -23,7 +23,7 @@ export const Tabs = typedMemo(
 
         return (
             <div className={classNames(className, styles.Tabs)}>
-                {tabs.map(tab => (
+                {tabs.map((tab) => (
                     <Card
                         key={tab.value}
                         onClick={onClick(tab.value)}

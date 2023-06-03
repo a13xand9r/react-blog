@@ -7,7 +7,7 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof Listbox>;
 
-const Template: ComponentStory<typeof Listbox> = args => <Listbox {...args} />;
+const Template: ComponentStory<typeof Listbox> = (args) => <Listbox {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

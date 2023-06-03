@@ -44,8 +44,8 @@ export const Listbox = typedMemo(
         position = 'bottom right',
     }: ListboxProps<T>) => {
         const currentContent = (
-            options.find(opt => opt.value === value) ??
-            options.find(opt => opt.value === defaultValue)
+            options.find((opt) => opt.value === value) ??
+            options.find((opt) => opt.value === defaultValue)
         )?.content;
 
         const positionClassName = positionMapper[position];
@@ -76,7 +76,7 @@ export const Listbox = typedMemo(
                         </Button>
                     </HListbox.Button>
                     <HListbox.Options className={classNames(styles.options, positionClassName)}>
-                        {options.map(option => (
+                        {options.map((option) => (
                             <HListbox.Option
                                 as={Fragment}
                                 key={option.value}

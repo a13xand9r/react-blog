@@ -7,7 +7,7 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof ArticlesViewSelector>;
 
-const Template: ComponentStory<typeof ArticlesViewSelector> = args => (
+const Template: ComponentStory<typeof ArticlesViewSelector> = (args) => (
     <ArticlesViewSelector {...args} />
 );
 

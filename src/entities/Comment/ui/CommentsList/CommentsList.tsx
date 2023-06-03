@@ -17,7 +17,7 @@ export const CommentsList: FC<CommentsListProps> = ({ comments, isLoading, class
     return (
         <div className={classNames(className, styles.CommentsList)}>
             {comments?.length ? (
-                comments.map(comment => (
+                comments.map((comment) => (
                     <CommentCard
                         className={styles.commentCard}
                         key={comment.id}

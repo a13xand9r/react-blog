@@ -5,11 +5,11 @@ import { fetchArticleRecommendations } from '../services/fetchArticleRecommendat
 import { ArticleDetailsRecommendationsSchema } from '../types/ArticleDetailsRecommendationsSchema';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
-    selectId: comment => comment.id,
+    selectId: (comment) => comment.id,
 });
 
 export const recommendationsSelectors = recommendationsAdapter.getSelectors<StateSchema>(
-    state => state.articleDetailsPage?.recommendations ?? recommendationsAdapter.getInitialState()
+    (state) => state.articleDetailsPage?.recommendations ?? recommendationsAdapter.getInitialState()
 );
 
 const articleDetailsRecommendationsSlice = createSlice({
@@ -21,7 +21,7 @@ const articleDetailsRecommendationsSlice = createSlice({
         error: undefined,
     }),
     reducers: {},
-    extraReducers: builder => {
+    extraReducers: (builder) => {
         builder
             .addCase(fetchArticleRecommendations.fulfilled, (state, action) => {
                 state.error = undefined;

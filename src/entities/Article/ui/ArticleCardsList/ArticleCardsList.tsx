@@ -92,7 +92,7 @@ export const ArticleCardsList: FC<ArticleCardsListProps> = ({
                 )}
             >
                 {!!articles?.length &&
-                    articles.map(article => (
+                    articles.map((article) => (
                         <ArticleCard
                             view={view}
                             article={article}

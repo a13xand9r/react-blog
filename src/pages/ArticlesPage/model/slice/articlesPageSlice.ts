@@ -8,11 +8,11 @@ import { fetchArticles } from '../services/fetchArticles';
 import { ARTICLES_VIEW_KEY } from 'shared/consts/localstorage';
 
 const articlesAdapter = createEntityAdapter<Article>({
-    selectId: article => article.id,
+    selectId: (article) => article.id,
 });
 
 export const articlesSelectors = articlesAdapter.getSelectors<StateSchema>(
-    state => state.articlesPage ?? articlesAdapter.getInitialState()
+    (state) => state.articlesPage ?? articlesAdapter.getInitialState()
 );
 
 const articlesPageSlice = createSlice({
@@ -32,7 +32,7 @@ const articlesPageSlice = createSlice({
             state.view = action.payload;
             localStorage.setItem(ARTICLES_VIEW_KEY, action.payload);
         },
-        initState: state => {
+        initState: (state) => {
             const view = localStorage.getItem(ARTICLES_VIEW_KEY) as ArticleCardView;
             state.view = view;
             state.limit = view === 'BIG' ? 4 : 9;
@@ -42,7 +42,7 @@ const articlesPageSlice = createSlice({
             state.page = action.payload;
         },
     },
-    extraReducers: builder => {
+    extraReducers: (builder) => {
         builder
             .addCase(fetchArticles.fulfilled, (state, action) => {
                 state.error = undefined;

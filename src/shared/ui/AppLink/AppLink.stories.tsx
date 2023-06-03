@@ -9,7 +9,7 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof AppLink>;
 
-const Template: ComponentStory<typeof AppLink> = args => <AppLink {...args}>TEST</AppLink>;
+const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args}>TEST</AppLink>;
 
 export const Primary = Template.bind({});
 Primary.args = {

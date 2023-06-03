@@ -11,7 +11,7 @@ module.exports = async ({ config }: { config: webpack.Configuration }) => {
     config.module?.rules?.push(getScssLoader(true));
 
     // Отключаем дефолтный лоадер svg
-    config.module!.rules = config.module!.rules!.map(rule => {
+    config.module!.rules = config.module!.rules!.map((rule) => {
         if (typeof rule !== 'string' && /svg/.test(rule.test as string)) {
             return { ...rule, exclude: /\.svg$/i };
         }

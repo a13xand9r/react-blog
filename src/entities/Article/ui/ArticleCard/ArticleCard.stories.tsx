@@ -7,7 +7,7 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof ArticleCard>;
 
-const Template: ComponentStory<typeof ArticleCard> = args => (
+const Template: ComponentStory<typeof ArticleCard> = (args) => (
     <div style={{ width: args.view === 'SMALL' ? '300px' : '100%' }}>
         <ArticleCard {...args} />
     </div>

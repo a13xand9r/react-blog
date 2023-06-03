@@ -35,7 +35,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({
 
     if (view === 'BIG') {
         const textBlock = article?.blocks.find(
-            block => block.type === 'TEXT'
+            (block) => block.type === 'TEXT'
         ) as ArticleTextBlockType;
         return (
             <Card className={classNames(styles.ArticleCardContent, styles[view], className)}>

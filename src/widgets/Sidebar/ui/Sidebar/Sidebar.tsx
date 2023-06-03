@@ -20,7 +20,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     const sidebarItems = useSelector(getSidebarItems);
 
     const toggleCollapseSidebar = () => {
-        setIsCollapsed(prev => !prev);
+        setIsCollapsed((prev) => !prev);
     };
 
     return (
@@ -31,7 +31,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
             })}
         >
             <VStack gap="12" role="navigation">
-                {sidebarItems.map(item => (
+                {sidebarItems.map((item) => (
                     <SidebarItem
                         {...item}
                         title={t(item.title)}

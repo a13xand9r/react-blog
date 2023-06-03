@@ -7,7 +7,7 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof FilterArticlesTypes>;
 
-const Template: ComponentStory<typeof FilterArticlesTypes> = args => (
+const Template: ComponentStory<typeof FilterArticlesTypes> = (args) => (
     <FilterArticlesTypes {...args} />
 );
 

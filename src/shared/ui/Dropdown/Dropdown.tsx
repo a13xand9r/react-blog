@@ -37,7 +37,7 @@ export const Dropdown: FC<DropdownProps> = ({
         <Menu as="div" className={styles.Dropdown}>
             <Menu.Button className={styles.btn}>{buttonElement}</Menu.Button>
             <Menu.Items className={classNames(styles.items, positionClassName)}>
-                {items.map(item => {
+                {items.map((item) => {
                     const content = ({ active }: { active?: boolean }) => (
                         <Button
                             theme={ButtonTheme.CLEAR}

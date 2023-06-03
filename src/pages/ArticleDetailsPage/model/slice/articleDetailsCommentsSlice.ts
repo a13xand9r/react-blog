@@ -5,11 +5,11 @@ import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { CommentType } from 'entities/Comment';
 
 const commentsAdapter = createEntityAdapter<CommentType>({
-    selectId: comment => comment.id,
+    selectId: (comment) => comment.id,
 });
 
 export const commentsSelectors = commentsAdapter.getSelectors<StateSchema>(
-    state => state.articleDetailsPage?.comments ?? commentsAdapter.getInitialState()
+    (state) => state.articleDetailsPage?.comments ?? commentsAdapter.getInitialState()
 );
 
 const articleDetailsCommentsSlice = createSlice({
@@ -21,7 +21,7 @@ const articleDetailsCommentsSlice = createSlice({
         error: undefined,
     }),
     reducers: {},
-    extraReducers: builder => {
+    extraReducers: (builder) => {
         builder
             .addCase(fetchCommentsByArticleId.fulfilled, (state, action) => {
                 state.error = undefined;

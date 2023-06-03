@@ -7,7 +7,7 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof ArticleCardsList>;
 
-const Template: ComponentStory<typeof ArticleCardsList> = args => <ArticleCardsList {...args} />;
+const Template: ComponentStory<typeof ArticleCardsList> = (args) => <ArticleCardsList {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

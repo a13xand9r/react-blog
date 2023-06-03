@@ -7,7 +7,7 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof SearchArticles>;
 
-const Template: ComponentStory<typeof SearchArticles> = args => <SearchArticles {...args} />;
+const Template: ComponentStory<typeof SearchArticles> = (args) => <SearchArticles {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

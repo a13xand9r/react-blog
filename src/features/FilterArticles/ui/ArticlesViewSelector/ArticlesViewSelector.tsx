@@ -32,7 +32,7 @@ export const ArticlesViewSelector: FC<ArticlesViewSelectorProps> = ({
     const onClick = (view: ArticleCardView) => () => onChangeView(view);
     return (
         <div className={classNames(className, styles.ArticlesViewSelector)}>
-            {viewTypes.map(viewType => (
+            {viewTypes.map((viewType) => (
                 <Button
                     key={viewType.view}
                     theme={ButtonTheme.CLEAR}

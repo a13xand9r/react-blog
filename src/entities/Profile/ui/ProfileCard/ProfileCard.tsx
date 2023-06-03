@@ -158,7 +158,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
                 [styles.editMode]: !readOnly,
             })}
         >
-            {validateErrors?.map(err => (
+            {validateErrors?.map((err) => (
                 <Text key={err} theme={TextTheme.ERROR}>
                     {validateErrorsTranslation[err]}
                 </Text>

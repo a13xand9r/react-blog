@@ -10,7 +10,7 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = args => <Button {...args}>TEST</Button>;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args}>TEST</Button>;
 
 export const Clear = Template.bind({});
 Clear.args = {

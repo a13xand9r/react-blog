@@ -14,7 +14,7 @@ export const ArticleTextBlock: FC<ArticleTextBlockProps> = ({ className, textBlo
     return (
         <div className={classNames(className, styles.ArticleTextBlock)}>
             {textBlock.title && <Title className={styles.title}>{textBlock.title}</Title>}
-            {textBlock.paragraphs.map(par => (
+            {textBlock.paragraphs.map((par) => (
                 <Text className={styles.paragraph} key={par}>
                     {par}
                 </Text>

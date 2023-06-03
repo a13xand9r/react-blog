@@ -9,7 +9,7 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof Text>;
 
-const Template: ComponentStory<typeof Text> = args => <Text {...args} />;
+const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {

@@ -7,7 +7,7 @@ export default {
     component: Dropdown,
     argTypes: {},
     decorators: [
-        Story => (
+        (Story) => (
             <div style={{ padding: '200px' }}>
                 <Story />
             </div>
@@ -15,7 +15,7 @@ export default {
     ],
 } as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = args => <Dropdown {...args} />;
+const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
 
 const items: DropdownItem[] = [
     {
