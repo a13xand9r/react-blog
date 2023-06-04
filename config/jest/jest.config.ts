@@ -36,6 +36,19 @@ export default {
         // axios: 'axios/dist/node/axios.cjs',
     },
 
+    reporters: [
+        'default',
+        [
+            'jest-html-reporters',
+            {
+                publicPath: '<rootDir>/reports/unitTests',
+                filename: 'report.html',
+                openReport: true,
+                inlineSource: true,
+            },
+        ],
+    ],
+
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
     // transformIgnorePatterns: [
     //     'node_modules/(?!axios)/',
