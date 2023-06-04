@@ -8,7 +8,7 @@ import { Loader } from 'widgets/Loader';
 import { Input } from 'shared/ui/Input/Input';
 import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { profileActions } from '../../model/slice/profileSlice';
+import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { getProfileForm } from '../../model/selectors/getProfileForm';
 import { Title, TitleTheme } from 'shared/ui/Title/Title';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
@@ -19,8 +19,11 @@ import { getProfileFormValidateError } from '../../model/selectors/getProfileFor
 import { ValidateError } from '../../model/types/profileSchema';
 import { VStack } from 'shared/ui/Stack';
 import { Listbox } from 'shared/ui/Listbox/Listbox';
+import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
+import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 
 interface ProfileCardProps {
+    id: string;
     className?: string;
 }
 
@@ -44,7 +47,7 @@ const currencyOptions: CurrencyOption[] = [
     },
 ];
 
-export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
+export const ProfileCard: FC<ProfileCardProps> = ({ id, className }) => {
     const { t } = useTranslation('profilePage');
     const data = useSelector(getProfileForm);
     const error = useSelector(getProfileError);
@@ -53,6 +56,13 @@ export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
     const readOnly = useSelector(getProfileReadOnly);
     const dispatch = useAppDispatch();
     const [isFirstInputFocused, setIsFirstInputFocused] = useState(false);
+
+    useDynamicReducerLoader('profile', profileReducer);
+    useEffect(() => {
+        if (id && __PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData(id));
+        }
+    }, [dispatch, id]);
 
     const changeName = useCallback(
         (value: string) => {

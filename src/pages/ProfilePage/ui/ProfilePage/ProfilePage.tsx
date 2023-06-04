@@ -1,30 +1,21 @@
-import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile';
-import { FC, memo, useEffect } from 'react';
+import { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
-import { ProfileHeader } from '../ProfileHeader/ProfileHeader';
 import { Page } from 'widgets/Page';
-import { VStack } from 'shared/ui/Stack';
+import { Title } from 'shared/ui/Title/Title';
+import { useTranslation } from 'react-i18next';
+import { EditableProfileCard } from '../EditableProfileCard/EditableProfileCard';
 
 const ProfilePage: FC = memo(() => {
-    useDynamicReducerLoader('profile', profileReducer);
-
+    const { t } = useTranslation('profilePage');
     const { id } = useParams<{ id: string }>();
 
-    const dispatch = useAppDispatch();
-    useEffect(() => {
-        if (id && __PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData(id));
-        }
-    }, [dispatch, id]);
+    if (!id) {
+        return <Title>{t('User not found')}</Title>;
+    }
 
     return (
         <Page>
-            <VStack gap="12" align="start" fullWidth>
-                <ProfileHeader />
-                <ProfileCard />
-            </VStack>
+            <EditableProfileCard id={id} />
         </Page>
     );
 });
