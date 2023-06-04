@@ -2,6 +2,7 @@ import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@redu
 import { userReducer } from 'entities/User';
 import { axiosInstance } from 'shared/api/api';
 import { pageReducer } from 'widgets/Page';
+import { rtkApi } from 'shared/api/rtkQuery';
 
 import { StateSchema, ThunkExtraArgs } from './StateSchema';
 import { createReducerManager } from './reducerManager';
@@ -14,6 +15,7 @@ export const createStore = (
         ...asyncReducers,
         user: userReducer,
         page: pageReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);
@@ -31,7 +33,7 @@ export const createStore = (
                 thunk: {
                     extraArgument: thunkExtraArgs,
                 },
-            }),
+            }).concat(rtkApi.middleware),
     });
 
     // @ts-ignore

@@ -14,6 +14,7 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { FilterArticlesSchema } from 'features/FilterArticles';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { rtkApi } from 'shared/api/rtkQuery';
 import { PageSchema } from 'widgets/Page';
 
 import { AddCommentFormSchema } from './../../../../features/AddCommentForm/model/types/addCommentForm';
@@ -21,6 +22,7 @@ import { AddCommentFormSchema } from './../../../../features/AddCommentForm/mode
 export interface StateSchema {
     user: UserSchema;
     page: PageSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Асинхронные редюсеры
     counter?: CounterSchema;

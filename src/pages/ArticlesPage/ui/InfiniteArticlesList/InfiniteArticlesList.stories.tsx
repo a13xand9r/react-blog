@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { InfiniteArticlesList } from './InfiniteArticlesList';
 
 export default {
@@ -7,7 +8,9 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof InfiniteArticlesList>;
 
-const Template: ComponentStory<typeof InfiniteArticlesList> = (args) => <InfiniteArticlesList {...args} />;
+const Template: ComponentStory<typeof InfiniteArticlesList> = (args) => (
+    <InfiniteArticlesList {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {};
