@@ -1,4 +1,5 @@
 import { CounterSchema } from '../types/CounterSchema';
+
 import { counterActions, counterReducer } from './counterSlice';
 
 const state: CounterSchema = {

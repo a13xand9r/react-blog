@@ -4,11 +4,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import styles from './Sidebar.module.scss';
-import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
-import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { VStack } from 'shared/ui/Stack';
+
+import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+
+import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
     className?: string;

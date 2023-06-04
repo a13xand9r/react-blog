@@ -1,16 +1,18 @@
 import { FC, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArticleSortField, ArticleSortOrder } from '../../model/types/filterArticles';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Listbox, ListboxOption } from 'shared/ui/Listbox/Listbox';
+
+import { ArticleSortField, ArticleSortOrder } from '../../model/types/filterArticles';
 import {
     getArticlesFilterSortByField,
     getArticlesFilterSortOrder,
 } from '../../model/selectors/getFilters';
 import { filterArticlesActions } from '../../model/slice/filterArticlesSlice';
+
 import styles from './SortArticles.module.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Listbox, ListboxOption } from 'shared/ui/Listbox/Listbox';
 
 interface SortArticlesProps {
     className?: string;

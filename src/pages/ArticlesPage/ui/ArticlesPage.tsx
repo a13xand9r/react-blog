@@ -3,12 +3,9 @@ import { FC, memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
-import {
-    getArticlesPageIsLoading,
-    getArticlesPageView,
-} from '../model/selectors/articlesPageSelectors';
-import styles from './ArticlesPage.module.scss';
 import { Page } from 'widgets/Page';
+import { ArticlesFilters } from 'features/FilterArticles';
+
 import {
     articlesPageActions,
     articlesPageReducer,
@@ -16,8 +13,13 @@ import {
 } from '../model/slice/articlesPageSlice';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage';
 import { initArticlesPage } from '../model/services/initArticlesPage';
-import { ArticlesFilters } from 'features/FilterArticles';
+import {
+    getArticlesPageIsLoading,
+    getArticlesPageView,
+} from '../model/selectors/articlesPageSelectors';
 import { fetchArticles } from '../model/services/fetchArticles';
+
+import styles from './ArticlesPage.module.scss';
 
 const ArticlesPage: FC = () => {
     const view = useSelector(getArticlesPageView);

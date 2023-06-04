@@ -1,12 +1,14 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import styles from './ArticleCardsList.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleCard, ArticleCardView } from '../ArticleCard/ArticleCard';
-import { ArticleCardSkeleton } from '../ArticleCard/ArticleCardSkeleton';
-import { Article } from '../../model/types/article';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
 import { ARTICLES_LIST_CLICKED_ITEM_IDX } from 'shared/consts/sessionStorage';
 import { usePageContext } from 'shared/lib/contexts/PageContext';
+
+import { ArticleCard, ArticleCardView } from '../ArticleCard/ArticleCard';
+import { ArticleCardSkeleton } from '../ArticleCard/ArticleCardSkeleton';
+import { Article } from '../../model/types/article';
+
+import styles from './ArticleCardsList.module.scss';
 
 interface ArticleCardsListProps {
     articles?: Article[];

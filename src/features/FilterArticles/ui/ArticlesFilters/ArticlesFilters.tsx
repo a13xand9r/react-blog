@@ -1,23 +1,25 @@
 import { FC, useEffect } from 'react';
-import styles from './ArticlesFilters.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Card } from 'shared/ui/Card/Card';
+import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
+import { useSearchParams } from 'react-router-dom';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { ArticleType } from 'entities/Article';
+
 import { SortArticles } from '../SortArticles/SortArticles';
 import {
     ArticlesViewSelector,
     ArticlesViewSelectorProps,
 } from '../ArticlesViewSelector/ArticlesViewSelector';
 import { SearchArticles } from '../SearchArticles/SearchArticles';
-import { Card } from 'shared/ui/Card/Card';
-import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 import {
     filterArticlesActions,
     filterArticlesReducer,
 } from '../../model/slice/filterArticlesSlice';
-import { useSearchParams } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { ArticleSortField, ArticleSortOrder } from '../../model/types/filterArticles';
-import { ArticleType } from 'entities/Article';
 import { FilterArticlesTypes } from '../FilterArticlesTypes/FilterArticlesTypes';
+
+import styles from './ArticlesFilters.module.scss';
 
 interface ArticlesFiltersProps extends ArticlesViewSelectorProps {
     className?: string;

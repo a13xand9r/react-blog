@@ -3,7 +3,9 @@ import { FC, memo } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+
 import { SidebarItemType } from '../../model/types/sidebarItems';
+
 import styles from './SidebarItem.module.scss';
 
 interface SidebarItemProps extends SidebarItemType {

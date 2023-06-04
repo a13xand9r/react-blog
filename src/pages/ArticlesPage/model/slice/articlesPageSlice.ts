@@ -2,10 +2,11 @@
 // import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ArticlesPageSchema } from '../types/ArticlesPageSchema';
 import { Article, ArticleCardView } from 'entities/Article';
-import { fetchArticles } from '../services/fetchArticles';
 import { ARTICLES_VIEW_KEY } from 'shared/consts/localstorage';
+
+import { ArticlesPageSchema } from '../types/ArticlesPageSchema';
+import { fetchArticles } from '../services/fetchArticles';
 
 const articlesAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,

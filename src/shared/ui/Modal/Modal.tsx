@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { classNames } from 'shared/lib/classNames/classNames';
+
 import styles from './Modal.module.scss';
 
 export interface ModalProps {

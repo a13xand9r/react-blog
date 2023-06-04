@@ -1,10 +1,11 @@
-import { BuildPaths } from './types/config';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CopyPlugin from "copy-webpack-plugin";
+
+import { BuildPaths } from './types/config';
 
 export const buildPlugins = ({ html, locales, buildLocales }: BuildPaths, isDev: boolean, apiBaseUrl: string): webpack.WebpackPluginInstance[] => {
     const plugins = [

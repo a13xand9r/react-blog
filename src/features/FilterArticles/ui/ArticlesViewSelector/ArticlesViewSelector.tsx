@@ -1,11 +1,12 @@
 import { FC } from 'react';
-import styles from './ArticlesViewSelector.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleCardView } from 'entities/Article';
 import GridIcon from 'shared/assets/icons/grid-icon.svg';
 import ListIcon from 'shared/assets/icons/list-icon.svg';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
+
+import styles from './ArticlesViewSelector.module.scss';
 
 export interface ArticlesViewSelectorProps {
     className?: string;

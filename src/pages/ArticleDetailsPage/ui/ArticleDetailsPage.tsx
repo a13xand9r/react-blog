@@ -1,25 +1,27 @@
 import { ArticleCardsList, ArticleDetails } from 'entities/Article';
-import { CommentsList } from 'entities/Comment';
 import { AddCommentForm } from 'features/AddCommentForm';
+import { CommentsList } from 'entities/Comment';
 import { FC, memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { routesPaths } from 'shared/config/routeConfig/routeConfig';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
-import { Title } from 'shared/ui/Title/Title';
-import { getArticleCommentsIsLoading } from '../model/selectors/comments';
-import { addCommentForArticle } from '../model/services/addCommentForArticle';
-import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId';
-import { commentsSelectors } from '../model/slice/articleDetailsCommentsSlice';
-import { Page } from 'widgets/Page';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { routesPaths } from 'shared/config/routeConfig/routeConfig';
-import { recommendationsSelectors } from '../model/slice/articleDetailsRecommendationsSlice';
+import { Title } from 'shared/ui/Title/Title';
+import { Page } from 'widgets/Page';
+
+import { getArticleCommentsIsLoading } from '../model/selectors/comments';
 import { getArticleRecommendationsIsLoading } from '../model/selectors/recommendations';
+import { addCommentForArticle } from '../model/services/addCommentForArticle';
 import { fetchArticleRecommendations } from '../model/services/fetchArticleRecommendations';
-import styles from './ArticleDetailsPage.module.scss';
+import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId';
 import { articleDetailsPageReducer } from '../model/slice';
+import { commentsSelectors } from '../model/slice/articleDetailsCommentsSlice';
+import { recommendationsSelectors } from '../model/slice/articleDetailsRecommendationsSlice';
+
+import styles from './ArticleDetailsPage.module.scss';
 
 const ArticleDetailsPage: FC = () => {
     const { t } = useTranslation('articleDetailsPage');

@@ -45,6 +45,35 @@ module.exports = {
         '@typescript-eslint/restrict-plus-operands': 'off',
         'n/no-callback-literal': 'off',
         '@typescript-eslint/array-type': 'off',
+        'import/order': [
+            'error',
+            {
+                'newlines-between': 'always',
+                groups: ['builtin', 'external', 'internal', 'parent', 'sibling'],
+                pathGroups: [
+                    {
+                        pattern: '~/**',
+                        group: 'external',
+                        position: 'before',
+                    },
+                    {
+                        pattern: '~/shared/**',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                    {
+                        pattern: '~/features/**',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                    {
+                        pattern: '~/entities/**',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                ],
+            },
+        ],
         'fsd-imports-plugin/absolute-relative-imports-checker': 'error',
     },
     globals: {

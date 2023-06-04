@@ -1,7 +1,8 @@
-import { validateProfileForm } from '../../validateForm/validateForm';
-import { getProfileForm } from '../../selectors/getProfileForm';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
+import { validateProfileForm } from '../../validateForm/validateForm';
+import { getProfileForm } from '../../selectors/getProfileForm';
 import { Profile, ValidateError } from '../../types/profileSchema';
 import { profileActions } from '../../slice/profileSlice';
 

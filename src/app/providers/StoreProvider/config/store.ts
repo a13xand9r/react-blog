@@ -1,9 +1,10 @@
-import { createReducerManager } from './reducerManager';
 import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
-import { StateSchema, ThunkExtraArgs } from './StateSchema';
 import { axiosInstance } from 'shared/api/api';
 import { pageReducer } from 'widgets/Page';
+
+import { StateSchema, ThunkExtraArgs } from './StateSchema';
+import { createReducerManager } from './reducerManager';
 
 export const createStore = (
     initialState?: StateSchema,

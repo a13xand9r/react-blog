@@ -1,7 +1,9 @@
-import styles from './Tabs.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Card } from '../Card/Card';
 import { typedMemo } from 'shared/lib/typedMemo/typedMemo';
+
+import { Card } from '../Card/Card';
+
+import styles from './Tabs.module.scss';
 
 export interface TabType<T = string> {
     value: T;

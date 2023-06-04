@@ -6,10 +6,11 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import styles from './Navbar.module.scss';
 import { Dropdown, DropdownItem } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { routesPaths } from 'shared/config/routeConfig/routeConfig';
+
+import styles from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;

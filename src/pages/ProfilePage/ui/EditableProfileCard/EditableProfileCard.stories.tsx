@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { EditableProfileCard } from './EditableProfileCard';
 
 export default {

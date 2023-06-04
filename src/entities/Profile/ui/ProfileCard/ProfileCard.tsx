@@ -1,26 +1,28 @@
 import { FC, useCallback, useEffect, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import styles from './ProfileCard.module.scss';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getProfileLoading } from '../../model/selectors/getProfileLoading';
-import { Loader } from 'widgets/Loader';
-import { Input } from 'shared/ui/Input/Input';
-import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { getProfileForm } from '../../model/selectors/getProfileForm';
-import { Title, TitleTheme } from 'shared/ui/Title/Title';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { getProfileError } from '../../model/selectors/getProfileError';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency } from 'shared/consts/common';
-import { getProfileFormValidateError } from '../../model/selectors/getProfileFormValidateError';
-import { ValidateError } from '../../model/types/profileSchema';
-import { VStack } from 'shared/ui/Stack';
-import { Listbox } from 'shared/ui/Listbox/Listbox';
-import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Input } from 'shared/ui/Input/Input';
+import { Listbox } from 'shared/ui/Listbox/Listbox';
+import { VStack } from 'shared/ui/Stack';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Title, TitleTheme } from 'shared/ui/Title/Title';
+import { Loader } from 'widgets/Loader';
+
+import { getProfileError } from '../../model/selectors/getProfileError';
+import { getProfileForm } from '../../model/selectors/getProfileForm';
+import { getProfileFormValidateError } from '../../model/selectors/getProfileFormValidateError';
+import { getProfileLoading } from '../../model/selectors/getProfileLoading';
+import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly';
+import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
+import { profileActions, profileReducer } from '../../model/slice/profileSlice';
+import { ValidateError } from '../../model/types/profileSchema';
+
+import styles from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     id: string;

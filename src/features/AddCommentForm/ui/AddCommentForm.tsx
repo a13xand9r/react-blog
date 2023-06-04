@@ -1,14 +1,16 @@
 import { FC, FormEvent, memo, useCallback } from 'react';
-import styles from './AddCommentForm.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
-import { addCommentFormActions, addCommentFormReducer } from '../model/slice/addCommentFormSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
+
+import { addCommentFormActions, addCommentFormReducer } from '../model/slice/addCommentFormSlice';
 import { getCommentFormText } from '../model/selectors/getCommentFormData';
+
+import styles from './AddCommentForm.module.scss';
 
 interface AddCommentFormProps {
     onSend: (text: string) => void;

@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import { ProfileHeader } from '../ProfileHeader/ProfileHeader';
 import { ProfileCard } from 'entities/Profile';
 import { VStack } from 'shared/ui/Stack';
+
+import { ProfileHeader } from '../ProfileHeader/ProfileHeader';
 
 interface EditableProfileCardProps {
     id: string;

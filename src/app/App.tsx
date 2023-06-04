@@ -1,7 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useThemeContext } from 'shared/theme/ThemeContext';
 import { Navbar } from 'widgets/Navbar';
-import { AppRouter } from './providers/router';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { Loader } from 'widgets/Loader';
@@ -12,6 +11,8 @@ import { getIsUserInit } from 'entities/User/model/selectors/getIsUserInit';
 import { useLocation } from 'react-router-dom';
 import { ARTICLES_LIST_CLICKED_ITEM_IDX } from 'shared/consts/sessionStorage';
 import { routesPaths } from 'shared/config/routeConfig/routeConfig';
+
+import { AppRouter } from './providers/router';
 
 export const App = () => {
     const { theme } = useThemeContext();

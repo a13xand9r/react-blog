@@ -1,14 +1,16 @@
 import { Fragment } from 'react';
 import { Listbox as HListbox } from '@headlessui/react';
-import { Button, ButtonTheme } from '../Button/Button';
-import styles from './Listbox.module.scss';
 import DownIcon from 'shared/assets/icons/down-arrow.svg';
 import CheckIcon from 'shared/assets/icons/check-mark.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Icon } from '../Icon/Icon';
-import { HStack } from '../Stack';
 import { typedMemo } from 'shared/lib/typedMemo/typedMemo';
 import { DropdownPosition } from 'shared/types/ui';
+
+import { Icon } from '../Icon/Icon';
+import { HStack } from '../Stack';
+import { Button, ButtonTheme } from '../Button/Button';
+
+import styles from './Listbox.module.scss';
 
 export interface ListboxOption<T> {
     value: T;

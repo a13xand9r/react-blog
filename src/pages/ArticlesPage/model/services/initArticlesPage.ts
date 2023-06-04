@@ -1,8 +1,5 @@
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getIsArticlesPageInitialized } from '../selectors/articlesPageSelectors';
-import { fetchArticles } from './fetchArticles';
-import { articlesPageActions } from '../slice/articlesPageSlice';
 import {
     getArticlesFilterSearchText,
     getArticlesFilterSortByField,
@@ -10,6 +7,11 @@ import {
     getArticlesFilterTabValue,
 } from 'features/FilterArticles';
 import { addQueryParams } from 'shared/lib/url/addQueryParams';
+
+import { getIsArticlesPageInitialized } from '../selectors/articlesPageSelectors';
+import { articlesPageActions } from '../slice/articlesPageSlice';
+
+import { fetchArticles } from './fetchArticles';
 
 export const initArticlesPage = createAsyncThunk<void, void, ThunkConfig<void>>(
     'articlesPage/initArticlesPage',

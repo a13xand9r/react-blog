@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { PageSchema } from '../types/pageSchema';
 
 const initialState: PageSchema = {

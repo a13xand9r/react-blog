@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { SearchArticles } from './SearchArticles';
 
 export default {

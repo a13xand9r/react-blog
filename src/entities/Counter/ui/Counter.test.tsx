@@ -1,5 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { renderComponent } from 'shared/lib/tests/renderComponent/renderComponent';
+
 import { Counter } from './Counter';
 
 const initialState = {

@@ -1,10 +1,12 @@
 import { Menu } from '@headlessui/react';
 import { FC, Fragment, ReactNode } from 'react';
-import styles from './Dropdown.module.scss';
-import { AppLink } from '../AppLink/AppLink';
-import { Button, ButtonTheme } from '../Button/Button';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownPosition } from 'shared/types/ui';
+
+import { AppLink } from '../AppLink/AppLink';
+import { Button, ButtonTheme } from '../Button/Button';
+
+import styles from './Dropdown.module.scss';
 
 export interface DropdownItem {
     content: string;

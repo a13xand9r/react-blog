@@ -1,17 +1,19 @@
 import { FC } from 'react';
-import styles from './ArticleCard.module.scss';
-import { Article, ArticleTextBlockType } from '../../model/types/article';
 import { Card } from 'shared/ui/Card/Card';
 import { Text } from 'shared/ui/Text/Text';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Title } from 'shared/ui/Title/Title';
-import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { routesPaths } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+
+import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
+import { Article, ArticleTextBlockType } from '../../model/types/article';
+
+import styles from './ArticleCard.module.scss';
 
 export type ArticleCardView = 'SMALL' | 'BIG';
 

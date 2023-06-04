@@ -1,4 +1,3 @@
-import { AddCommentFormSchema } from './../../../../features/AddCommentForm/model/types/addCommentForm';
 import {
     AnyAction,
     CombinedState,
@@ -16,6 +15,8 @@ import { FilterArticlesSchema } from 'features/FilterArticles';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { PageSchema } from 'widgets/Page';
+
+import { AddCommentFormSchema } from './../../../../features/AddCommentForm/model/types/addCommentForm';
 
 export interface StateSchema {
     user: UserSchema;

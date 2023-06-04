@@ -1,6 +1,8 @@
-import { updateProfileData } from './updateProfileData';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+
 import { ProfileSchema } from '../../types/profileSchema';
+
+import { updateProfileData } from './updateProfileData';
 
 describe('updateProfileData thunk', () => {
     test('success update', async () => {

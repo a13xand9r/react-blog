@@ -1,6 +1,7 @@
 import { DetailedHTMLProps, FC, HTMLAttributes } from 'react';
-import styles from './Flex.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
+
+import styles from './Flex.module.scss';
 
 type JustifyContent = 'start' | 'end' | 'center' | 'between';
 type AlignItems = 'start' | 'end' | 'center';

@@ -1,7 +1,10 @@
-import { getSvgLoader } from './../loaders/svgLoader';
-import { getScssLoader } from '../loaders/scssLoader';
 import path from 'path';
+
 import webpack, { DefinePlugin } from 'webpack';
+
+import { getScssLoader } from '../loaders/scssLoader';
+
+import { getSvgLoader } from './../loaders/svgLoader';
 
 module.exports = async ({ config }: { config: webpack.Configuration }) => {
     const srcFolderPath = path.resolve(__dirname, '..', '..', 'src');

@@ -1,13 +1,15 @@
 import { FC } from 'react';
-import styles from './CommentCard.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { CommentType } from '../../model/types/comment';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Title } from 'shared/ui/Title/Title';
 import { Text } from 'shared/ui/Text/Text';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { routesPaths } from 'shared/config/routeConfig/routeConfig';
+
+import { CommentType } from '../../model/types/comment';
+
+import styles from './CommentCard.module.scss';
 
 interface CommentCardProps {
     comment: CommentType;
