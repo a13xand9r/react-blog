@@ -11,4 +11,20 @@ export default {
 const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+    tabs: [
+        {
+            text: 'Tab 1',
+            value: 'tab1',
+        },
+        {
+            text: 'Tab 2',
+            value: 'tab2',
+        },
+        {
+            text: 'Tab 3',
+            value: 'tab3',
+        },
+    ],
+    value: 'tab2',
+};

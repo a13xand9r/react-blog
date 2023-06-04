@@ -1,5 +1,5 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { getStoreDecorator } from 'shared/lib/storybook/decorators/StoreDecorator';
 
 import { ArticlesRecommendations } from './ArticlesRecommendations';
 
@@ -15,3 +15,4 @@ const Template: ComponentStory<typeof ArticlesRecommendations> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.decorators = [getStoreDecorator()];

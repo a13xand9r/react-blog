@@ -72,6 +72,9 @@ export const SortArticles: FC<SortArticlesProps> = ({ className, onChange }) => 
         [dispatch, onChange]
     );
 
+    console.log('fieldValue', fieldValue);
+    console.log('orderValue', orderValue);
+
     return (
         <div className={classNames(styles.SortArticles, className)}>
             <Listbox

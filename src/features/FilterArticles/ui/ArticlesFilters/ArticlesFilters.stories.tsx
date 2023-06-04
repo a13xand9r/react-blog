@@ -1,9 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { getStoreDecorator } from 'shared/lib/storybook/decorators/StoreDecorator';
 
 import { ArticlesFilters } from './ArticlesFilters';
 
 export default {
-    title: 'shared/ArticlesFilters',
+    title: 'features/ArticleFilters/ArticlesFilters',
     component: ArticlesFilters,
     argTypes: {},
 } as ComponentMeta<typeof ArticlesFilters>;
@@ -12,3 +13,4 @@ const Template: ComponentStory<typeof ArticlesFilters> = (args) => <ArticlesFilt
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.decorators = [getStoreDecorator()];
