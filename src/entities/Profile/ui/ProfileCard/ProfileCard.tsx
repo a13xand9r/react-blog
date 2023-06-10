@@ -61,7 +61,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({ id, className }) => {
 
     useDynamicReducerLoader('profile', profileReducer);
     useEffect(() => {
-        if (id && __PROJECT__ !== 'storybook') {
+        if (id && __PROJECT__ !== 'storybook' && __PROJECT__ !== 'test') {
             dispatch(fetchProfileData(id));
         }
     }, [dispatch, id]);
@@ -112,12 +112,14 @@ export const ProfileCard: FC<ProfileCardProps> = ({ id, className }) => {
                 placeholder={t('Your name')}
                 value={data?.first}
                 onChange={changeName}
+                data-testid="EditableProfileCard.firstInput"
             />
             <Input
                 readOnly={readOnly}
                 placeholder={t('Your lastname')}
                 value={data?.lastname}
                 onChange={changeLastname}
+                data-testid="EditableProfileCard.lastnameInput"
             />
             <Input
                 readOnly={readOnly}
@@ -171,7 +173,11 @@ export const ProfileCard: FC<ProfileCardProps> = ({ id, className }) => {
             })}
         >
             {validateErrors?.map((err) => (
-                <Text key={err} theme={TextTheme.ERROR}>
+                <Text
+                    key={err}
+                    theme={TextTheme.ERROR}
+                    data-testid="EditableProfileCard.errorTitle"
+                >
                     {validateErrorsTranslation[err]}
                 </Text>
             ))}

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, HTMLAttributes } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import styles from './Title.module.scss';
@@ -11,8 +11,7 @@ export const enum TitleTheme {
 type TitleSize = 's' | 'm' | 'l' | 'xl';
 type OutTagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-interface TitleProps {
-    className?: string;
+interface TitleProps extends HTMLAttributes<HTMLHeadingElement> {
     theme?: TitleTheme;
     size?: TitleSize;
     OutTag?: OutTagType;
@@ -26,9 +25,11 @@ export const Title: FC<TitleProps> = ({
     size = 'm',
     OutTag = 'h2',
     theme = TitleTheme.DEFAULT,
+    ...otherProps
 }) => {
     return (
         <OutTag
+            {...otherProps}
             className={classNames(className, styles.Title, styles[theme], styles[size], {
                 [styles.center]: center,
             })}

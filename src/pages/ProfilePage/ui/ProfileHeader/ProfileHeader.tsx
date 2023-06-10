@@ -36,16 +36,28 @@ export const ProfileHeader: FC = memo(() => {
             {canEdit ? (
                 isReadOnly ? (
                     <>
-                        <Button onClick={onEdit} theme={ButtonTheme.OUTLINED}>
+                        <Button
+                            onClick={onEdit}
+                            theme={ButtonTheme.OUTLINED}
+                            data-testid="EditableProfileCard.editBtn"
+                        >
                             {t('Edit')}
                         </Button>
                     </>
                 ) : (
                     <HStack gap="16">
-                        <Button onClick={onSave} theme={ButtonTheme.OUTLINED}>
+                        <Button
+                            onClick={onSave}
+                            theme={ButtonTheme.OUTLINED}
+                            data-testid="EditableProfileCard.saveBtn"
+                        >
                             {t('Save')}
                         </Button>
-                        <Button onClick={onCancel} theme={ButtonTheme.OUTLINED_ERROR}>
+                        <Button
+                            onClick={onCancel}
+                            theme={ButtonTheme.OUTLINED_ERROR}
+                            data-testid="EditableProfileCard.cancelBtn"
+                        >
                             {t('Cancel')}
                         </Button>
                     </HStack>
