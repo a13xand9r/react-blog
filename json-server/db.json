@@ -16,14 +16,20 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN", "MANAGER", "USER"],
+      "roles": [
+        "ADMIN",
+        "MANAGER",
+        "USER"
+      ],
       "avatar": "https://images.freeimages.com/fic/images/icons/573/must_have/256/user.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
@@ -647,6 +653,12 @@
       "userId": "1",
       "text": "dfgdfg",
       "id": "tVx_m3d"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "fdgdfgdfg",
+      "id": "xRrJmjT"
     }
   ]
 }
