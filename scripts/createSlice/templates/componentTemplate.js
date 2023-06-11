@@ -1,6 +1,7 @@
 module.exports = (componentName) => `import { FC, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+
 import styles from './${componentName}.module.scss';
 
 interface ${componentName}Props {

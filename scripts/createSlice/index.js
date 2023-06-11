@@ -2,6 +2,7 @@ const createTemplate = require('./templates/createTemplate');
 
 const layer = process.argv[2];
 const sliceName = process.argv[3];
+const isJustUI = process.argv[4] === 'justUI';
 
 const layers = ['features', 'entities', 'pages'];
 
@@ -13,4 +14,4 @@ if (!sliceName) {
     throw new Error('Укажите название слайса');
 }
 
-createTemplate(layer, sliceName);
+createTemplate(layer, sliceName, isJustUI);

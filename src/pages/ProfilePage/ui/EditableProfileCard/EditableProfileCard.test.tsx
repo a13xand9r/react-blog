@@ -25,6 +25,7 @@ const initialState: Partial<StateSchema> = {
         authUser: {
             id: '1',
             username: 'albanick',
+            roles: [],
         },
         _isInit: true,
     },

@@ -1,4 +1,4 @@
-import { getUserAuthData, userActions } from 'entities/User';
+import { getUserAuthData, getIsUserAdmin, getIsUserManager, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { FC, memo, useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -22,6 +22,8 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
     const { t } = useTranslation();
 
     const authData = useSelector(getUserAuthData);
+    const isUserAdmin = useSelector(getIsUserAdmin);
+    const isUserManager = useSelector(getIsUserManager);
     const dispatch = useAppDispatch();
 
     const closeLoginModal = useCallback(() => {
@@ -36,8 +38,18 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
+    const isShowAdminPanelItem = isUserAdmin || isUserManager;
+
     const dropdownItems = useMemo<DropdownItem[]>(
         () => [
+            ...(isShowAdminPanelItem
+                ? [
+                      {
+                          content: t('Admin panel'),
+                          href: routesPaths.admin,
+                      },
+                  ]
+                : []),
             {
                 content: t('Profile'),
                 href: routesPaths.profile + authData?.id,
@@ -47,7 +59,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
                 onClick: onLogout,
             },
         ],
-        [authData?.id, onLogout, t]
+        [authData?.id, isShowAdminPanelItem, onLogout, t]
     );
 
     if (authData) {

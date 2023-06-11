@@ -16,5 +16,7 @@
 	"Enter Password": "Enter password",
 	"Authorization form": "Autharization form",
 	"Logout": "Logout",
-    "Articles": "Articles"
+	"Articles": "Articles",
+	"Admin panel": "Admin panel",
+	"No permission": "You don't have permission to this page"
 }

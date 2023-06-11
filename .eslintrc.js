@@ -45,6 +45,7 @@ module.exports = {
         '@typescript-eslint/restrict-plus-operands': 'off',
         'n/no-callback-literal': 'off',
         '@typescript-eslint/array-type': 'off',
+        '@typescript-eslint/prefer-nullish-coalescing': 'off',
         'import/order': [
             'error',
             {

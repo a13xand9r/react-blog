@@ -1,8 +1,4 @@
-export interface User {
-    id: string;
-    username: string;
-    avatar?: string;
-}
+import { User } from './user';
 
 export interface UserSchema {
     authUser?: User;
