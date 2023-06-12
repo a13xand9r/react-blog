@@ -7,6 +7,26 @@ export default {
     title: 'pages/Profile/EditableProfileCard',
     component: EditableProfileCard,
     argTypes: {},
+    parameters: {
+        mockData: [
+            {
+                url: `${__API_BASE_URL__}/profile/1`,
+                method: 'GET',
+                status: 200,
+                response: {
+                    id: '1',
+                    first: 'Александр',
+                    lastname: 'Новиков',
+                    age: '26',
+                    currency: 'RUB',
+                    country: 'Russia',
+                    city: 'Москва',
+                    username: 'admin',
+                    avatar: 'https://images.ctfassets.net/1wryd5vd9xez/4DxzhQY7WFsbtTkoYntq23/a4a04701649e92a929010a6a860b66bf/https___cdn-images-1.medium.com_max_2000_1_Y6l_FDhxOI1AhjL56dHh8g.jpeg',
+                },
+            },
+        ],
+    },
 } as ComponentMeta<typeof EditableProfileCard>;
 
 const Template: ComponentStory<typeof EditableProfileCard> = (args) => (
@@ -14,20 +34,17 @@ const Template: ComponentStory<typeof EditableProfileCard> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+    id: '1',
+};
 Default.decorators = [
     getStoreDecorator({
         profile: {
-            data: {
-                currency: 'USD',
-                avatar: 'https://imageio.forbes.com/specials-images/imageserve/63974b591dbcd3145c446ad4/0x0.jpg?format=jpg&width=1200',
-                lastname: 'Novikov',
-                first: 'Aleksandr',
-                age: 26,
-                city: 'Moscow',
-                country: 'Russia',
+            readonly: true,
+        },
+        user: {
+            authUser: {
                 id: '1',
-                username: 'albanick',
             },
         },
     }),

@@ -61,7 +61,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({ id, className }) => {
 
     useDynamicReducerLoader('profile', profileReducer);
     useEffect(() => {
-        if (id && __PROJECT__ !== 'storybook' && __PROJECT__ !== 'test') {
+        if (id && __PROJECT__ !== 'test') {
             dispatch(fetchProfileData(id));
         }
     }, [dispatch, id]);

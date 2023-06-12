@@ -15,9 +15,7 @@ const ArticlesPage: FC = () => {
     useDynamicReducerLoader('articlesPage', articlesPageReducer, false);
 
     useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(initArticlesPage());
-        }
+        dispatch(initArticlesPage());
     }, [dispatch]);
 
     const onLoadMore = useCallback(() => {

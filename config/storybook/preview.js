@@ -1,3 +1,5 @@
+import { TranslateDecorator } from 'shared/lib/storybook/decorators/TranslateDecorator';
+
 import { Theme } from '../../src/shared/theme/ThemeContext';
 import { StyleDecorator } from '../../src/shared/lib/storybook/decorators/StyleDecorator';
 import { getThemeDecorator } from '../../src/shared/lib/storybook/decorators/ThemeDecorator';
@@ -17,5 +19,5 @@ export const decorators = [
     StyleDecorator,
     getThemeDecorator(Theme.LIGHT),
     RouterDecorator,
-    // TranslateDecorator,
+    TranslateDecorator,
 ];

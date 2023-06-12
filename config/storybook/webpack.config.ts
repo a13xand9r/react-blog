@@ -27,7 +27,7 @@ module.exports = async ({ config }: { config: webpack.Configuration }) => {
     config.plugins!.push(
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(true),
-            __API_BASE_URL__: JSON.stringify(''),
+            __API_BASE_URL__: JSON.stringify('https://testapi.com'),
             __PROJECT__: JSON.stringify('storybook'),
         })
     );
