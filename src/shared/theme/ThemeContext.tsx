@@ -1,4 +1,4 @@
-import { createContext, FC, useCallback, useContext, useMemo, useState } from 'react';
+import { createContext, FC, ReactNode, useCallback, useContext, useMemo, useState } from 'react';
 
 export enum Theme {
     LIGHT = 'light',
@@ -32,7 +32,7 @@ export const useThemeContext = (): UseThemeReturn => {
     return { theme: theme ?? Theme.LIGHT, toggleTheme };
 };
 
-export const ThemeProvider: FC = ({ children }) => {
+export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [theme, setTheme] = useState(defaultTheme);
 
     const contextValue = useMemo(() => ({ theme, setTheme }), [theme]);

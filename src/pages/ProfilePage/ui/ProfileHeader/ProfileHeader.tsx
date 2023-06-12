@@ -11,7 +11,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Title } from 'shared/ui/Title/Title';
 import { HStack } from 'shared/ui/Stack';
 
-export const ProfileHeader: FC = memo(() => {
+export const ProfileHeader: FC<{ id?: string }> = memo(({ id }) => {
     const { t } = useTranslation('profilePage');
 
     const isReadOnly = useSelector(getProfileReadOnly);
@@ -21,8 +21,8 @@ export const ProfileHeader: FC = memo(() => {
     const dispatch = useAppDispatch();
 
     const onSave = useCallback(() => {
-        dispatch(updateProfileData());
-    }, [dispatch]);
+        dispatch(updateProfileData(id));
+    }, [dispatch, id]);
     const onCancel = useCallback(() => {
         dispatch(profileActions.cancelFormEdit());
     }, [dispatch]);

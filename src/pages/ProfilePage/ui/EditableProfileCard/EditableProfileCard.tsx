@@ -12,7 +12,7 @@ interface EditableProfileCardProps {
 export const EditableProfileCard: FC<EditableProfileCardProps> = ({ id, className }) => {
     return (
         <VStack className={className} gap="12" align="start" fullWidth>
-            <ProfileHeader />
+            <ProfileHeader id={id} />
             <ProfileCard id={id} />
         </VStack>
     );

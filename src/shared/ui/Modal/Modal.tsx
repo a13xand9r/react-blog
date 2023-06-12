@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, ReactNode, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -8,6 +8,7 @@ export interface ModalProps {
     className?: string;
     isOpen: boolean;
     onClose: () => void;
+    children: ReactNode;
 }
 
 export const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose }) => {

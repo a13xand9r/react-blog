@@ -1,5 +1,5 @@
 import { ReducersMapObject } from '@reduxjs/toolkit';
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Provider } from 'react-redux';
 
 import { StateSchema } from '../config/StateSchema';
@@ -8,6 +8,7 @@ import { createStore } from '../config/store';
 interface StoreProviderProps {
     initialState?: StateSchema;
     asyncReducers?: ReducersMapObject<StateSchema>;
+    children: ReactNode;
 }
 
 export const StoreProvider: FC<StoreProviderProps> = ({
