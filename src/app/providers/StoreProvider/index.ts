@@ -8,8 +8,8 @@ import {
 } from './config/StateSchema';
 import { StoreProvider } from './ui/StoreProvider';
 
-export {
-    StoreProvider,
+export { StoreProvider };
+export type {
     StateSchema,
     StoreWithReducerManager,
     StateSchemaKey,

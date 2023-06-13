@@ -8,10 +8,11 @@ import {
 } from './model/selectors/getFilters';
 
 export {
-    FilterArticlesSchema,
     ArticlesFilters,
     getArticlesFilterSortByField,
     getArticlesFilterSortOrder,
     getArticlesFilterSearchText,
     getArticlesFilterTabValue,
 };
+
+export type { FilterArticlesSchema };

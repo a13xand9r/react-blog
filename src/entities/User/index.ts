@@ -10,9 +10,6 @@ import { User, UserRole } from './model/types/user';
 import { UserSchema } from './model/types/UserSchema';
 
 export {
-    UserSchema,
-    User,
-    UserRole,
     userActions,
     userReducer,
     getUserAuthData,
@@ -21,3 +18,4 @@ export {
     getIsUserAdmin,
     getIsUserManager,
 };
+export type { UserSchema, User, UserRole };

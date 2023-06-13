@@ -4,11 +4,5 @@ import { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema';
 import { Article, ArticleType } from './model/types/article';
 import { ArticleCardView } from './ui/ArticleCard/ArticleCard';
 
-export {
-    ArticleDetailsSchema,
-    ArticleDetails,
-    ArticleCardsList,
-    Article,
-    ArticleCardView,
-    ArticleType,
-};
+export { ArticleDetails, ArticleCardsList };
+export type { ArticleDetailsSchema, Article, ArticleCardView, ArticleType };
