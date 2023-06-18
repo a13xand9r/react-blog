@@ -3,7 +3,8 @@ import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import CopyPlugin from "copy-webpack-plugin";
+import CopyPlugin from 'copy-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 
 import { BuildPaths } from './types/config';
 
@@ -24,9 +25,13 @@ export const buildPlugins = ({ html, locales, buildLocales }: BuildPaths, isDev:
         }),
         new CopyPlugin({
             patterns: [
-              { from: locales, to: buildLocales },
+                { from: locales, to: buildLocales },
             ],
-          }),
+        }),
+        new CircularDependencyPlugin({
+            exclude: /node_modules/,
+            failOnError: true,
+        }),
     ];
 
     if (isDev) {
