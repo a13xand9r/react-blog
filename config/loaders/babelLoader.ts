@@ -1,3 +1,5 @@
+import removePropsBabelPlugin from '../babelPlugins/removePropsBabelPlugin';
+
 import { BuildOptions } from './../build/types/config';
 
 interface GetBabelLoaderParams extends BuildOptions {
@@ -19,8 +21,15 @@ export const getBabelLoader = ({ isDev, isTSX }: GetBabelLoaderParams) => {
                             isTSX,
                         },
                     ],
-                    ['@babel/plugin-transform-runtime'],
+                    '@babel/plugin-transform-runtime',
                     isDev && require.resolve('react-refresh/babel'),
+                    !isDev &&
+                        isTSX && [
+                            removePropsBabelPlugin(),
+                            {
+                                props: ['data-testid'],
+                            },
+                        ],
                 ],
             },
         },
