@@ -19,27 +19,14 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
 
     const scssLoader = getScssLoader(options.isDev);
 
-    const tsLoader = {
-        test: /\.tsx?$/,
-        use: [
-            {
-                loader: 'ts-loader',
-                options: {
-                    // чтоб ошибки тайпскрипта не фейлили полностью сборку
-                    // transpileOnly: options.isDev,
-                },
-            },
-        ],
-        exclude: /node_modules/,
-    };
-
     const babelLoader = getBabelLoader(options);
+    const tsxBabelLoader = getBabelLoader({ ...options, isTSX: true });
 
     return [
         fileLoader,
         svgLoader,
         scssLoader,
         babelLoader,
-        tsLoader,
+        tsxBabelLoader,
     ];
 };

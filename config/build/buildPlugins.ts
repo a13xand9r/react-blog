@@ -5,6 +5,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CopyPlugin from 'copy-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 import { BuildPaths } from './types/config';
 
@@ -31,6 +32,15 @@ export const buildPlugins = ({ html, locales, buildLocales }: BuildPaths, isDev:
         new CircularDependencyPlugin({
             exclude: /node_modules/,
             failOnError: true,
+        }),
+        new ForkTsCheckerWebpackPlugin({
+            typescript: {
+                diagnosticOptions: {
+                    semantic: true,
+                    syntactic: true,
+                },
+                mode: 'write-references',
+            },
         }),
     ];
 

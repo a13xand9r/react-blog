@@ -1,14 +1,27 @@
 import { BuildOptions } from './../build/types/config';
 
-export const getBabelLoader = ({ isDev }: BuildOptions) => {
+interface GetBabelLoaderParams extends BuildOptions {
+    isTSX?: boolean;
+}
+
+export const getBabelLoader = ({ isDev, isTSX }: GetBabelLoaderParams) => {
     return {
-        test: /\.(js|jsx|tsx|ts)$/,
+        test: isTSX ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
         exclude: /node_modules/,
         use: {
             loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
-                plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
+                plugins: [
+                    [
+                        '@babel/plugin-transform-typescript',
+                        {
+                            isTSX,
+                        },
+                    ],
+                    ['@babel/plugin-transform-runtime'],
+                    isDev && require.resolve('react-refresh/babel'),
+                ],
             },
         },
     };
