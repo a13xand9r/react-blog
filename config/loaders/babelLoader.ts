@@ -7,6 +7,28 @@ interface GetBabelLoaderParams extends BuildOptions {
 }
 
 export const getBabelLoader = ({ isDev, isTSX }: GetBabelLoaderParams) => {
+    const plugins: unknown[] = [
+        [
+            '@babel/plugin-transform-typescript',
+            {
+                isTSX,
+            },
+        ],
+        '@babel/plugin-transform-runtime',
+    ];
+
+    if (isDev) {
+        plugins.push(require.resolve('react-refresh/babel'));
+    }
+    if (!isDev && isTSX) {
+        plugins.push([
+            removePropsBabelPlugin(),
+            {
+                props: ['data-testid'],
+            },
+        ]);
+    }
+
     return {
         test: isTSX ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
         exclude: /node_modules/,
@@ -14,23 +36,7 @@ export const getBabelLoader = ({ isDev, isTSX }: GetBabelLoaderParams) => {
             loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
-                plugins: [
-                    [
-                        '@babel/plugin-transform-typescript',
-                        {
-                            isTSX,
-                        },
-                    ],
-                    '@babel/plugin-transform-runtime',
-                    isDev && require.resolve('react-refresh/babel'),
-                    !isDev &&
-                        isTSX && [
-                            removePropsBabelPlugin(),
-                            {
-                                props: ['data-testid'],
-                            },
-                        ],
-                ],
+                plugins,
             },
         },
     };
