@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Dropdown, DropdownItem } from 'shared/ui/Dropdown/Dropdown';
+import { Dropdown, DropdownItem } from 'shared/ui/Popups';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { routesPaths } from 'shared/config/routeConfig/routeConfig';
 

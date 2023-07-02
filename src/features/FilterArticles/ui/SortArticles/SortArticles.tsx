@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Listbox, ListboxOption } from 'shared/ui/Listbox/Listbox';
+import { Listbox, ListboxOption } from 'shared/ui/Popups';
 
 import { ArticleSortField, ArticleSortOrder } from '../../model/types/filterArticles';
 import {

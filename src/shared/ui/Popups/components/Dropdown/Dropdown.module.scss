@@ -1,9 +1,8 @@
 .Dropdown {
-    position: relative;
     width: fit-content;
 }
 
-.btn {
+.triggerBtn {
     outline: none;
     border: none;
     background: none;
@@ -30,28 +29,4 @@
     width: 100%;
     padding: 6px 12px;
     border-radius: 8px;
-}
-
-.activeItem {
-    background-color: var(--listbox-active-option-bg);
-}
-
-.topLeft {
-    bottom: 100%;
-    right: 0;
-}
-
-.topRight {
-    bottom: 100%;
-    left: 0;
-}
-
-.bottomLeft {
-    top: 100%;
-    right: 0;
-}
-
-.bottomRight {
-    top: 100%;
-    left: 0;
 }

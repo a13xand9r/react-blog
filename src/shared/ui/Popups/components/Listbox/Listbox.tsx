@@ -6,9 +6,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { typedMemo } from 'shared/lib/typedMemo/typedMemo';
 import { DropdownPosition } from 'shared/types/ui';
 
-import { Icon } from '../Icon/Icon';
-import { HStack } from '../Stack';
-import { Button, ButtonTheme } from '../Button/Button';
+import { Icon } from '../../../Icon/Icon';
+import { HStack } from '../../../Stack';
+import { Button, ButtonTheme } from '../../../Button/Button';
+import { positionMapper } from '../../styles/consts';
+import popupStyles from '../../styles/popup.module.scss';
 
 import styles from './Listbox.module.scss';
 
@@ -27,13 +29,6 @@ interface ListboxProps<T> {
     onChange: (value: T) => void;
     position?: DropdownPosition;
 }
-
-const positionMapper: Record<DropdownPosition, string> = {
-    'top right': styles.topRight,
-    'top left': styles.topLeft,
-    'bottom right': styles.bottomRight,
-    'bottom left': styles.bottomLeft,
-};
 
 export const Listbox = typedMemo(
     <T extends string>({
@@ -57,7 +52,7 @@ export const Listbox = typedMemo(
                 {label && <span>{`${label}>`}</span>}
                 <HListbox
                     disabled={readOnly}
-                    className={styles.Listbox}
+                    className={classNames(styles.Listbox, popupStyles.popup)}
                     as="div"
                     value={value ?? defaultValue}
                     onChange={onChange}
@@ -88,8 +83,8 @@ export const Listbox = typedMemo(
                                 {({ active, selected, disabled }) => (
                                     <li
                                         className={classNames(styles.option, {
-                                            [styles.activeOption]: active,
-                                            [styles.disabledOption]: disabled,
+                                            [popupStyles.activeItem]: active,
+                                            [popupStyles.disabledItem]: disabled,
                                         })}
                                     >
                                         {selected && (
