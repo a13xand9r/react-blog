@@ -18,5 +18,6 @@
 	"Logout": "Logout",
 	"Articles": "Articles",
 	"Admin panel": "Admin panel",
-	"No permission": "You don't have permission to this page"
+	"No permission": "You don't have permission to this page",
+	"Error occured": "Error occured"
 }

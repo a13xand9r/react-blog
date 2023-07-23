@@ -1,0 +1,58 @@
+import { FC, memo, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Dropdown, DropdownItem } from 'shared/ui/Popups';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { getIsUserAdmin, getIsUserManager, getUserAuthData, userActions } from 'entities/User';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { routesPaths } from 'shared/config/routeConfig/routeConfig';
+
+export const UserAvatarDropdown: FC = memo(() => {
+    const { t } = useTranslation();
+
+    const authData = useSelector(getUserAuthData);
+    const isUserAdmin = useSelector(getIsUserAdmin);
+    const isUserManager = useSelector(getIsUserManager);
+
+    const dispatch = useAppDispatch();
+
+    const onLogout = useCallback(() => {
+        dispatch(userActions.logout());
+    }, [dispatch]);
+
+    const isShowAdminPanelItem = isUserAdmin || isUserManager;
+
+    const dropdownItems = useMemo<DropdownItem[]>(
+        () => [
+            ...(isShowAdminPanelItem
+                ? [
+                      {
+                          content: t('Admin panel'),
+                          href: routesPaths.admin,
+                      },
+                  ]
+                : []),
+            {
+                content: t('Profile'),
+                href: routesPaths.profile + authData?.id,
+            },
+            {
+                content: t('Logout'),
+                onClick: onLogout,
+            },
+        ],
+        [authData?.id, isShowAdminPanelItem, onLogout, t]
+    );
+
+    if (!authData) {
+        return null;
+    }
+
+    return (
+        <Dropdown
+            buttonElement={<Avatar src={authData.avatar} size={30} />}
+            items={dropdownItems}
+            position="bottom left"
+        />
+    );
+});
