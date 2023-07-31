@@ -2,6 +2,8 @@ import React, { FC, ReactNode, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { classNames } from 'shared/lib/classNames/classNames';
 
+import { Overlay } from '../Overlay/Overlay';
+
 import styles from './Modal.module.scss';
 
 export interface ModalProps {
@@ -12,10 +14,6 @@ export interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose }) => {
-    const onContentClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
-
     useEffect(() => {
         const onKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'Escape' && isOpen) {
@@ -43,10 +41,9 @@ export const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose }) 
                 exit: styles.modalTransitionExit,
             }}
         >
-            <div ref={modalRef} onClick={onClose} className={classNames(styles.Modal, className)}>
-                <div onClick={onContentClick} className={styles.content}>
-                    {children}
-                </div>
+            <div ref={modalRef} className={classNames(styles.Modal, className)}>
+                <Overlay onClick={onClose} />
+                <div className={styles.content}>{children}</div>
             </div>
         </CSSTransition>
     );

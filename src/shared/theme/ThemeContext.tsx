@@ -20,7 +20,7 @@ const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) ||
 
 const ThemeContext = createContext<ThemeContextProps>({});
 
-export const useThemeContext = (): UseThemeReturn => {
+export const useTheme = (): UseThemeReturn => {
     const { setTheme, theme } = useContext(ThemeContext);
 
     const toggleTheme = useCallback(() => {

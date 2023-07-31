@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useThemeContext } from 'shared/theme/ThemeContext';
+import { useTheme } from 'shared/theme/ThemeContext';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
@@ -15,7 +15,7 @@ import { routesPaths } from 'shared/config/routeConfig/routeConfig';
 import { AppRouter } from './providers/router';
 
 export const App = () => {
-    const { theme } = useThemeContext();
+    const { theme } = useTheme();
     const dispatch = useAppDispatch();
     const isUserInit = useSelector(getIsUserInit);
     const { pathname } = useLocation();
