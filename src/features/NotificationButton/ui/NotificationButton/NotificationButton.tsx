@@ -7,7 +7,6 @@ import { Icon } from '@/shared/ui/Icon/Icon';
 import NotificationIcon from '@/shared/assets/icons/notification-icon.svg';
 import { detectDevice } from '@/shared/lib/detectDevice/detectDevice';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
-import { AnimationProvider } from '@/shared/lib/providers/AnimationProvider/AnimationProvider';
 
 import styles from './NotificationButton.module.scss';
 
@@ -35,11 +34,9 @@ export const NotificationButton: FC<NotificationButtonProps> = memo(({ className
     return isMobile ? (
         <>
             {trigger}
-            <AnimationProvider>
-                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-                    <Notifications />
-                </Drawer>
-            </AnimationProvider>
+            <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                <Notifications />
+            </Drawer>
         </>
     ) : (
         <Popover position="bottom left" triggerBtnContent={trigger}>
