@@ -1,4 +1,4 @@
-import { DropdownPosition } from 'shared/types/ui';
+import { DropdownPosition } from '@/shared/types/ui';
 
 import styles from './popup.module.scss';
 

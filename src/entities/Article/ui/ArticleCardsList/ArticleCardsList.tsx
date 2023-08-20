@@ -1,8 +1,9 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
-import { ARTICLES_LIST_CLICKED_ITEM_IDX } from 'shared/consts/sessionStorage';
-import { usePageContext } from 'shared/lib/contexts/PageContext';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ARTICLES_LIST_CLICKED_ITEM_IDX } from '@/shared/consts/sessionStorage';
+import { usePageContext } from '@/shared/lib/contexts/PageContext';
 
 import { ArticleCard, ArticleCardView } from '../ArticleCard/ArticleCard';
 import { ArticleCardSkeleton } from '../ArticleCard/ArticleCardSkeleton';

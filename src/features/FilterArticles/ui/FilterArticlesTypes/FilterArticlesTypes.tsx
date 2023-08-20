@@ -1,9 +1,10 @@
 import { FC, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TabType, Tabs } from 'shared/ui/Tabs/Tabs';
-import { ArticleType } from 'entities/Article';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
+
+import { TabType, Tabs } from '@/shared/ui/Tabs/Tabs';
+import { ArticleType } from '@/entities/Article';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
 import { filterArticlesActions } from '../../model/slice/filterArticlesSlice';
 import { getArticlesFilterTabValue } from '../../model/selectors/getFilters';

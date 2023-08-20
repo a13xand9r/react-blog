@@ -1,6 +1,7 @@
 import React, { FC, ReactNode, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { classNames } from 'shared/lib/classNames/classNames';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { Overlay } from '../Overlay/Overlay';
 

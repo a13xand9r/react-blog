@@ -1,16 +1,17 @@
 import { FC, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Title, TitleTheme } from 'shared/ui/Title/Title';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import EyeIcon from 'shared/assets/icons/eye.svg';
-import CalendarIcon from 'shared/assets/icons/calendar.svg';
-import { Text } from 'shared/ui/Text/Text';
-import { Icon } from 'shared/ui/Icon/Icon';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Title, TitleTheme } from '@/shared/ui/Title/Title';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import CalendarIcon from '@/shared/assets/icons/calendar.svg';
+import { Text } from '@/shared/ui/Text/Text';
+import { Icon } from '@/shared/ui/Icon/Icon';
 
 import { ArticleBlocks } from '../../model/types/article';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';

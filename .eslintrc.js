@@ -58,17 +58,7 @@ module.exports = {
                         position: 'before',
                     },
                     {
-                        pattern: '~/shared/**',
-                        group: 'internal',
-                        position: 'after',
-                    },
-                    {
-                        pattern: '~/features/**',
-                        group: 'internal',
-                        position: 'after',
-                    },
-                    {
-                        pattern: '~/entities/**',
+                        pattern: '@/**',
                         group: 'internal',
                         position: 'after',
                     },

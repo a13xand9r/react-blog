@@ -10,6 +10,8 @@ export const buildResolvers = (options: BuildOptions): ResolveOptions => {
         preferAbsolute: true,
         modules: ['node_modules', options.paths.src],
         mainFiles: ['index'],
-        alias: {},
+        alias: {
+            '@': options.paths.src,
+        },
     };
 };

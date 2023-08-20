@@ -1,13 +1,14 @@
 import { FC, FormEvent, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
-import { Title } from 'shared/ui/Title/Title';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Input } from '@/shared/ui/Input/Input';
+import { Title } from '@/shared/ui/Title/Title';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
 import { getLoginPassword } from '../../model/selectors/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading';

@@ -1,5 +1,5 @@
-import { Article } from 'entities/Article';
-import { rtkApi } from 'shared/api/rtkQuery';
+import { Article } from '@/entities/Article';
+import { rtkApi } from '@/shared/api/rtkQuery';
 
 const extendedApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({

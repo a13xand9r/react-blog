@@ -1,5 +1,5 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { typedMemo } from 'shared/lib/typedMemo/typedMemo';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { typedMemo } from '@/shared/lib/typedMemo/typedMemo';
 
 import { Card } from '../Card/Card';
 

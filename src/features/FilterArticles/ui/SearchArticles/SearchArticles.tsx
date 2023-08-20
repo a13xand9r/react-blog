@@ -1,9 +1,10 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Input } from 'shared/ui/Input/Input';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { useDebounce } from 'shared/lib/hooks/useDebounce';
+
+import { Input } from '@/shared/ui/Input/Input';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 
 import { filterArticlesActions } from '../../model/slice/filterArticlesSlice';
 import { getArticlesFilterSearchText } from '../../model/selectors/getFilters';

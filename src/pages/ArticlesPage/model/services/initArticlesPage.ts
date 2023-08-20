@@ -1,12 +1,13 @@
-import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
+import { ThunkConfig } from '@/app/providers/StoreProvider/config/StateSchema';
 import {
     getArticlesFilterSearchText,
     getArticlesFilterSortByField,
     getArticlesFilterSortOrder,
     getArticlesFilterTabValue,
-} from 'features/FilterArticles';
-import { addQueryParams } from 'shared/lib/url/addQueryParams';
+} from '@/features/FilterArticles';
+import { addQueryParams } from '@/shared/lib/url/addQueryParams';
 
 import { getIsArticlesPageInitialized } from '../selectors/articlesPageSelectors';
 import { articlesPageActions } from '../slice/articlesPageSlice';

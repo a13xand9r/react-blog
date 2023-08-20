@@ -1,5 +1,6 @@
 import { EntityState } from '@reduxjs/toolkit';
-import { Article, ArticleCardView } from 'entities/Article';
+
+import { Article, ArticleCardView } from '@/entities/Article';
 
 export interface ArticlesPageSchema extends EntityState<Article> {
     isLoading: boolean;

@@ -1,4 +1,4 @@
-import { rtkApi } from 'shared/api/rtkQuery';
+import { rtkApi } from '@/shared/api/rtkQuery';
 
 import { UserNotification } from '../model/types/types';
 

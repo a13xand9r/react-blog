@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Title } from 'shared/ui/Title/Title';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Title } from '@/shared/ui/Title/Title';
 
 import { ArticleImageBlockType } from '../../model/types/article';
 

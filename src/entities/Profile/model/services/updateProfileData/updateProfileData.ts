@@ -1,5 +1,6 @@
-import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
+import { ThunkConfig } from '@/app/providers/StoreProvider/config/StateSchema';
 
 import { validateProfileForm } from '../../validateForm/validateForm';
 import { getProfileForm } from '../../selectors/getProfileForm';

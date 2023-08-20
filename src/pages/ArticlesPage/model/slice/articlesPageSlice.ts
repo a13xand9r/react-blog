@@ -1,9 +1,10 @@
 // import { fetchCommentsByArticleId } from './../services/fetchCommentsByArticleId';
 // import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
-import { StateSchema } from 'app/providers/StoreProvider';
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Article, ArticleCardView } from 'entities/Article';
-import { ARTICLES_VIEW_KEY } from 'shared/consts/localstorage';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Article, ArticleCardView } from '@/entities/Article';
+import { ARTICLES_VIEW_KEY } from '@/shared/consts/localstorage';
 
 import { ArticlesPageSchema } from '../types/ArticlesPageSchema';
 import { fetchArticles } from '../services/fetchArticles';

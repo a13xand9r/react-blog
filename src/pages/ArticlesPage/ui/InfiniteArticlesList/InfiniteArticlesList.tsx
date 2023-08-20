@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { ArticleCardsList } from 'entities/Article';
 import { useSelector } from 'react-redux';
+
+import { ArticleCardsList } from '@/entities/Article';
 
 import {
     getArticlesPageIsLoading,

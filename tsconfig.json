@@ -24,7 +24,7 @@
     "baseUrl": ".",
     "strict": true,
     "paths": {
-        "*": ["./src/*"]
+        "@/*": ["./src/*"]
     },
     // Если какая-либо библиотека не имеет default import,
     // лоадеры вроде ts-loader или babel-loader автоматически создают их

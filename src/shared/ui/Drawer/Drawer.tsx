@@ -1,7 +1,8 @@
 import { FC, memo, ReactNode, useCallback, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTheme } from 'shared/theme/ThemeContext';
-import { useAnimationProvider } from 'shared/lib/providers/AnimationProvider/AnimationProvider';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTheme } from '@/shared/theme/ThemeContext';
+import { useAnimationProvider } from '@/shared/lib/providers/AnimationProvider/AnimationProvider';
 
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';

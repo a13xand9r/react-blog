@@ -1,8 +1,9 @@
 import { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { Page } from 'widgets/Page';
-import { Title } from 'shared/ui/Title/Title';
 import { useTranslation } from 'react-i18next';
+
+import { Page } from '@/widgets/Page';
+import { Title } from '@/shared/ui/Title/Title';
 
 import { EditableProfileCard } from '../EditableProfileCard/EditableProfileCard';
 

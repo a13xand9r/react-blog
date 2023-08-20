@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { typedMemo } from 'shared/lib/typedMemo/typedMemo';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { typedMemo } from '@/shared/lib/typedMemo/typedMemo';
 
 import styles from './Select.module.scss';
 

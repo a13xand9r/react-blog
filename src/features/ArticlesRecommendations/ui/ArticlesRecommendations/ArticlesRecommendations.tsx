@@ -1,7 +1,8 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Title } from 'shared/ui/Title/Title';
-import { ArticleCardsList } from 'entities/Article';
+
+import { ArticleCardsList } from '@/entities/Article';
+import { Title } from '@/shared/ui/Title/Title';
 
 import { useGetRecommendationsQuery } from '../../api/articlesRecommentationsApi';
 

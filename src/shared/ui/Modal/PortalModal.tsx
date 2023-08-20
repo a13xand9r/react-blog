@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { Portal } from 'shared/ui/Portal/Portal';
+
+import { Portal } from '@/shared/ui/Portal/Portal';
 
 import { Modal, ModalProps } from './Modal';
 

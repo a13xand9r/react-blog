@@ -1,8 +1,9 @@
 import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
-import { userReducer } from 'entities/User';
-import { axiosInstance } from 'shared/api/api';
-import { pageReducer } from 'widgets/Page';
-import { rtkApi } from 'shared/api/rtkQuery';
+
+import { userReducer } from '@/entities/User';
+import { axiosInstance } from '@/shared/api/api';
+import { pageReducer } from '@/widgets/Page';
+import { rtkApi } from '@/shared/api/rtkQuery';
 
 import { StateSchema, ThunkExtraArgs } from './StateSchema';
 import { createReducerManager } from './reducerManager';

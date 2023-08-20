@@ -1,11 +1,12 @@
 import { FC, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Title } from 'shared/ui/Title/Title';
-import { AddCommentForm } from 'features/AddCommentForm';
-import { CommentsList } from 'entities/Comment';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
+
+import { Title } from '@/shared/ui/Title/Title';
+import { AddCommentForm } from '@/features/AddCommentForm';
+import { CommentsList } from '@/entities/Comment';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
 
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { commentsSelectors } from '../../model/slice/articleDetailsCommentsSlice';

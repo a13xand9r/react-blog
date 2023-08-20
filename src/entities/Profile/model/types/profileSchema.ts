@@ -1,4 +1,4 @@
-import { Country, Currency } from 'shared/consts/common';
+import { Country, Currency } from '@/shared/consts/common';
 
 export type ValidateError =
     | 'NAME_ERROR'

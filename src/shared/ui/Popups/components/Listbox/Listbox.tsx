@@ -1,10 +1,11 @@
 import { Fragment } from 'react';
 import { Listbox as HListbox } from '@headlessui/react';
-import DownIcon from 'shared/assets/icons/down-arrow.svg';
-import CheckIcon from 'shared/assets/icons/check-mark.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { typedMemo } from 'shared/lib/typedMemo/typedMemo';
-import { DropdownPosition } from 'shared/types/ui';
+
+import DownIcon from '@/shared/assets/icons/down-arrow.svg';
+import CheckIcon from '@/shared/assets/icons/check-mark.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { typedMemo } from '@/shared/lib/typedMemo/typedMemo';
+import { DropdownPosition } from '@/shared/types/ui';
 
 import { Icon } from '../../../Icon/Icon';
 import { HStack } from '../../../Stack';

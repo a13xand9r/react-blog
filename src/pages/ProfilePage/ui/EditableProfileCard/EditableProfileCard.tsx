@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { ProfileCard } from 'entities/Profile';
-import { VStack } from 'shared/ui/Stack';
+
+import { ProfileCard } from '@/entities/Profile';
+import { VStack } from '@/shared/ui/Stack';
 
 import { ProfileHeader } from '../ProfileHeader/ProfileHeader';
 

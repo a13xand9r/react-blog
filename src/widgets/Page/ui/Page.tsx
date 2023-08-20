@@ -1,12 +1,13 @@
 import { FC, MutableRefObject, useRef, UIEvent, useEffect, useMemo, ReactNode } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { useThrottle } from 'shared/lib/hooks/useThrottle';
-import { PageContext } from 'shared/lib/contexts/PageContext';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle';
+import { PageContext } from '@/shared/lib/contexts/PageContext';
 
 import { getPageScrollPosition } from '../model/selectors/getPageScrollPosition';
 import { pageActions } from '../model/slice/pageSlice';

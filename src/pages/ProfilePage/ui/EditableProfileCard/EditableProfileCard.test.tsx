@@ -1,8 +1,9 @@
 import useEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { profileReducer } from 'entities/Profile/model/slice/profileSlice';
-import { renderComponent } from 'shared/lib/tests/renderComponent/renderComponent';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { profileReducer } from '@/entities/Profile/model/slice/profileSlice';
+import { renderComponent } from '@/shared/lib/tests/renderComponent/renderComponent';
 
 import { EditableProfileCard } from './EditableProfileCard';
 

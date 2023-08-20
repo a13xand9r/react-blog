@@ -1,12 +1,13 @@
-import { UserRole } from 'entities/User';
-import { AboutPageLazy } from 'pages/AboutPage';
-import { AdminPageLazy } from 'pages/AdminPage';
-import { ArticleDetailsPageLazy } from 'pages/ArticleDetailsPage';
-import { ArticlesPageLazy } from 'pages/ArticlesPage';
-import { MainPageLazy } from 'pages/MainPage';
-import { NotFoundPage } from 'pages/NotFoundPage';
-import { ProfilePageLazy } from 'pages/ProfilePage';
 import { RouteProps } from 'react-router-dom';
+
+import { UserRole } from '@/entities/User';
+import { AboutPageLazy } from '@/pages/AboutPage';
+import { AdminPageLazy } from '@/pages/AdminPage';
+import { ArticleDetailsPageLazy } from '@/pages/ArticleDetailsPage';
+import { ArticlesPageLazy } from '@/pages/ArticlesPage';
+import { MainPageLazy } from '@/pages/MainPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
+import { ProfilePageLazy } from '@/pages/ProfilePage';
 
 export type AppRouteProps = RouteProps & {
     authOnly?: boolean;

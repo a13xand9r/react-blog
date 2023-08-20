@@ -1,7 +1,8 @@
 import { FC, memo, useCallback, useEffect } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
-import { Page } from 'widgets/Page';
+
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
+import { Page } from '@/widgets/Page';
 
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage';

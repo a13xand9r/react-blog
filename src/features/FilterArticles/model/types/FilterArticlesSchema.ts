@@ -1,4 +1,4 @@
-import { ArticleType } from 'entities/Article';
+import { ArticleType } from '@/entities/Article';
 
 import { ArticleSortField, ArticleSortOrder } from './filterArticles';
 

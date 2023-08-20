@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Title } from 'shared/ui/Title/Title';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Title } from '@/shared/ui/Title/Title';
 
 import { CommentType } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';

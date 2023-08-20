@@ -1,10 +1,11 @@
-import { getUserAuthData } from 'entities/User';
 import { FC, memo } from 'react';
 import { useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { UserAvatarDropdown } from 'features/UserAvatarDropdown';
-import { NotificationButton } from 'features/NotificationButton';
-import { HStack } from 'shared/ui/Stack';
+
+import { getUserAuthData } from '@/entities/User';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { UserAvatarDropdown } from '@/features/UserAvatarDropdown';
+import { NotificationButton } from '@/features/NotificationButton';
+import { HStack } from '@/shared/ui/Stack';
 
 import styles from './Navbar.module.scss';
 import { LoginButton } from './LoginButton/LoginButton';
