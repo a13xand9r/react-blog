@@ -24,6 +24,11 @@ module.exports = async ({ config }: { config: webpack.Configuration }) => {
 
     config.module!.rules.push(getSvgLoader());
 
+    config.resolve!.alias = {
+        ...config.resolve?.alias,
+        '@': srcFolderPath,
+    };
+
     config.plugins!.push(
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(true),
