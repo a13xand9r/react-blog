@@ -33,6 +33,7 @@ export default {
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg$': path.resolve(__dirname, 'JestEmptyComponent.tsx'),
+        '^@/(.*)$': '<rootDir>/src/$1',
         // axios: 'axios/dist/node/axios.cjs',
     },
 
