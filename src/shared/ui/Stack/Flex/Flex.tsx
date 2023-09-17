@@ -50,6 +50,7 @@ export const Flex: FC<FlexProps> = ({
     fullWidth,
     className,
     children,
+    ...otherProps
 }) => {
     return (
         <div
@@ -62,6 +63,7 @@ export const Flex: FC<FlexProps> = ({
                 gapMap[gap],
                 { [styles.width100]: fullWidth }
             )}
+            {...otherProps}
         >
             {children}
         </div>

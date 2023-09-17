@@ -1,0 +1,16 @@
+.StarRating {
+    width: fit-content;
+}
+
+.starIcon {
+    fill: none;
+    cursor: pointer;
+}
+
+.starIcon.filled {
+    fill: var(--primary-color);
+}
+
+.starIcon.selected {
+    cursor: auto;
+}

@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './Icon.module.scss';
 
 interface IconProps extends SVGAttributes<HTMLOrSVGElement> {
-    SvgIcon: React.VFC<React.SVGProps<SVGSVGElement>>;
+    SvgIcon: React.FC<React.SVGProps<SVGSVGElement>>;
     className?: string;
     isInvertedColor?: boolean;
 }
