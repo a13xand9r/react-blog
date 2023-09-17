@@ -65,8 +65,8 @@ module.exports = {
                 ],
             },
         ],
-        // 'fsd-imports-plugin/absolute-relative-imports-checker': 'error',
         'fsd-imports-plugin/absolute-relative-imports-checker': ['error', { alias: '@' }],
+        'fsd-imports-plugin/public-api-imports': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,

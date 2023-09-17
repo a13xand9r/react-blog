@@ -2,15 +2,17 @@ import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { getProfileData } from '@/entities/Profile/model/selectors/getProfileData';
-import { getProfileReadOnly } from '@/entities/Profile/model/selectors/getProfileReadOnly';
-import { updateProfileData } from '@/entities/Profile/model/services/updateProfileData/updateProfileData';
-import { profileActions } from '@/entities/Profile/model/slice/profileSlice';
 import { getUserAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { Title } from '@/shared/ui/Title/Title';
 import { HStack } from '@/shared/ui/Stack';
+import {
+    getProfileData,
+    getProfileReadOnly,
+    profileActions,
+    updateProfileData,
+} from '@/entities/Profile';
 
 export const ProfileHeader: FC<{ id?: string }> = memo(({ id }) => {
     const { t } = useTranslation('profilePage');

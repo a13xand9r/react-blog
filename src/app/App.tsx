@@ -7,9 +7,8 @@ import { useTheme } from '@/shared/theme/ThemeContext';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { Loader } from '@/widgets/Loader';
-import { userActions } from '@/entities/User';
+import { userActions, getIsUserInit } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { getIsUserInit } from '@/entities/User/model/selectors/getIsUserInit';
 import { ARTICLES_LIST_CLICKED_ITEM_IDX } from '@/shared/consts/sessionStorage';
 import { routesPaths } from '@/shared/config/routeConfig/routeConfig';
 

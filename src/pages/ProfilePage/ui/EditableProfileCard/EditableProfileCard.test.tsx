@@ -2,6 +2,7 @@ import useEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
 
 import { StateSchema } from '@/app/providers/StoreProvider';
+// eslint-disable-next-line fsd-imports-plugin/public-api-imports
 import { profileReducer } from '@/entities/Profile/model/slice/profileSlice';
 import { renderComponent } from '@/shared/lib/tests/renderComponent/renderComponent';
 
