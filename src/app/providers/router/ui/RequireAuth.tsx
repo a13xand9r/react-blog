@@ -4,7 +4,7 @@ import { useLocation, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { getUserAuthData, getUserRoles, UserRole } from '@/entities/User';
-import { routesPaths } from '@/shared/config/routeConfig/routeConfig';
+import { routesPaths } from '@/shared/consts/router';
 import { Page } from '@/widgets/Page';
 
 interface RequireAuthProps {

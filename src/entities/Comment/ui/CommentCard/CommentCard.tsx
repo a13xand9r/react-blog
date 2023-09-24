@@ -6,7 +6,7 @@ import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { Title } from '@/shared/ui/Title/Title';
 import { Text } from '@/shared/ui/Text/Text';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
-import { routesPaths } from '@/shared/config/routeConfig/routeConfig';
+import { routesPaths } from '@/shared/consts/router';
 
 import { CommentType } from '../../model/types/comment';
 

@@ -8,7 +8,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Title } from '@/shared/ui/Title/Title';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { routesPaths } from '@/shared/config/routeConfig/routeConfig';
+import { routesPaths } from '@/shared/consts/router';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';

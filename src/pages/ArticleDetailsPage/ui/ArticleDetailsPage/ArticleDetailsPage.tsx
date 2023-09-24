@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import { ArticlesRecommendations } from '@/features/ArticlesRecommendations';
 import { ArticleDetails } from '@/entities/Article';
-import { routesPaths } from '@/shared/config/routeConfig/routeConfig';
+import { routesPaths } from '@/shared/consts/router';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { Page } from '@/widgets/Page';
 

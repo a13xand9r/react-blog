@@ -6,7 +6,7 @@ import { Dropdown, DropdownItem } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { getIsUserAdmin, getIsUserManager, getUserAuthData, userActions } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { routesPaths } from '@/shared/config/routeConfig/routeConfig';
+import { routesPaths } from '@/shared/consts/router';
 
 export const UserAvatarDropdown: FC = memo(() => {
     const { t } = useTranslation();

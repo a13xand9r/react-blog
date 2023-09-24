@@ -10,7 +10,7 @@ import { Loader } from '@/widgets/Loader';
 import { userActions, getIsUserInit } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { ARTICLES_LIST_CLICKED_ITEM_IDX } from '@/shared/consts/sessionStorage';
-import { routesPaths } from '@/shared/config/routeConfig/routeConfig';
+import { routesPaths } from '@/shared/consts/router';
 
 import { AppRouter } from './providers/router';
 
