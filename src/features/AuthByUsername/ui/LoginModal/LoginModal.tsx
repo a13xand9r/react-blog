@@ -1,7 +1,7 @@
 import { FC, Suspense } from 'react';
 
 import { PortalModal } from '@/shared/ui/Modal/PortalModal';
-import { Loader } from '@/widgets/Loader';
+import { Loader } from '@/shared/ui/Loader';
 
 import { LoginFormLazy } from '../LoginForm/LoginFormLazy';
 

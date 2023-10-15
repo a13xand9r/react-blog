@@ -1,7 +1,7 @@
 import { memo, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { Loader } from '@/widgets/Loader';
+import { Loader } from '@/shared/ui/Loader';
 
 import { routesConfig } from '../config/routeConfig';
 

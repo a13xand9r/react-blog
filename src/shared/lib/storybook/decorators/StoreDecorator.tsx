@@ -1,3 +1,4 @@
+/* eslint-disable fsd-imports-plugin/layer-imports */
 /* eslint-disable fsd-imports-plugin/public-api-imports */
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import { Story } from '@storybook/react';

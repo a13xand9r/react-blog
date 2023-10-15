@@ -12,7 +12,7 @@ import { Listbox } from '@/shared/ui/Popups';
 import { VStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { Title, TitleTheme } from '@/shared/ui/Title/Title';
-import { Loader } from '@/widgets/Loader';
+import { Loader } from '@/shared/ui/Loader';
 
 import { getProfileError } from '../../model/selectors/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm';

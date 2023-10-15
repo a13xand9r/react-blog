@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { LangSwitcher } from '@/widgets/LangSwitcher';
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { LangSwitcher } from '@/features/LangSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { VStack } from '@/shared/ui/Stack';
 
 import { SidebarItem } from '../SidebarItem/SidebarItem';

@@ -1,4 +1,6 @@
-import { createContext, FC, ReactNode, useCallback, useContext, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext } from 'react';
+
+import { LOCAL_STORAGE_THEME_KEY } from '../consts/localstorage';
 
 export enum Theme {
     LIGHT = 'light',
@@ -15,10 +17,7 @@ interface UseThemeReturn {
     toggleTheme: () => void;
 }
 
-const LOCAL_STORAGE_THEME_KEY = 'theme';
-const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
-
-const ThemeContext = createContext<ThemeContextProps>({});
+export const ThemeContext = createContext<ThemeContextProps>({});
 
 export const useTheme = (): UseThemeReturn => {
     const { setTheme, theme } = useContext(ThemeContext);
@@ -30,14 +29,4 @@ export const useTheme = (): UseThemeReturn => {
     }, [setTheme, theme]);
 
     return { theme: theme ?? Theme.LIGHT, toggleTheme };
-};
-
-export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-    const [theme, setTheme] = useState(defaultTheme);
-
-    const contextValue = useMemo(() => ({ theme, setTheme }), [theme]);
-
-    document.body.className = theme;
-
-    return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
 };

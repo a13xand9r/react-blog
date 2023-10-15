@@ -67,6 +67,10 @@ module.exports = {
         ],
         'fsd-imports-plugin/absolute-relative-imports-checker': ['error', { alias: '@' }],
         'fsd-imports-plugin/public-api-imports': ['error', { alias: '@' }],
+        'fsd-imports-plugin/layer-imports': [
+            'error',
+            { alias: '@', ignoreImportPatterns: ['**/StoreProvider'] },
+        ],
     },
     globals: {
         __IS_DEV__: true,
