@@ -15,7 +15,14 @@ module.exports = {
         sourceType: 'module',
         project: ['tsconfig.json'],
     },
-    plugins: ['react', 'i18next', 'react-hooks', 'prettier', 'fsd-imports-plugin'],
+    plugins: [
+        'react',
+        'i18next',
+        'react-hooks',
+        'prettier',
+        'fsd-imports-plugin',
+        'unused-imports',
+    ],
     rules: {
         'prettier/prettier': [
             'error',
@@ -47,6 +54,7 @@ module.exports = {
         '@typescript-eslint/array-type': 'off',
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
         'no-useless-return': 'off',
+        'unused-imports/no-unused-imports': 'error',
         'import/order': [
             'error',
             {
