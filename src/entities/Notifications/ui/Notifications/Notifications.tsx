@@ -2,11 +2,11 @@ import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card } from '@/shared/ui/Card/Card';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import { Title } from '@/shared/ui/Title/Title';
+import { Card } from '@/shared/ui/Card';
+import { Text, TextTheme } from '@/shared/ui/Text';
+import { Title } from '@/shared/ui/Title';
 import { VStack } from '@/shared/ui/Stack';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import { useGetNotificationsQuery } from '../../api/notificationsApi';
 

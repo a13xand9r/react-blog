@@ -2,7 +2,7 @@ import { FC, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { TabType, Tabs } from '@/shared/ui/Tabs/Tabs';
+import { TabType, Tabs } from '@/shared/ui/Tabs';
 import { ArticleType } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 

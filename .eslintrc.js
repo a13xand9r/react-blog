@@ -46,6 +46,7 @@ module.exports = {
         'n/no-callback-literal': 'off',
         '@typescript-eslint/array-type': 'off',
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
+        'no-useless-return': 'off',
         'import/order': [
             'error',
             {

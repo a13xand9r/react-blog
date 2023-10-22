@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Title } from '@/shared/ui/Title/Title';
-import { Text } from '@/shared/ui/Text/Text';
+import { Title } from '@/shared/ui/Title';
+import { Text } from '@/shared/ui/Text';
 
 import { ArticleTextBlockType } from '../../model/types/article';
 

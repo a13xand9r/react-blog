@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card } from '@/shared/ui/Card/Card';
+import { Card } from '@/shared/ui/Card';
 import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { ArticleType } from '@/entities/Article';

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Title } from '@/shared/ui/Title/Title';
+import { Title } from '@/shared/ui/Title';
 
 import { CommentType } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';

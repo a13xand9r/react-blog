@@ -6,12 +6,12 @@ import { Currency } from '@/shared/consts/common';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Input } from '@/shared/ui/Input/Input';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Input } from '@/shared/ui/Input';
 import { Listbox } from '@/shared/ui/Popups';
 import { VStack } from '@/shared/ui/Stack';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import { Title, TitleTheme } from '@/shared/ui/Title/Title';
+import { Text, TextTheme } from '@/shared/ui/Text';
+import { Title, TitleTheme } from '@/shared/ui/Title';
 import { Loader } from '@/shared/ui/Loader';
 
 import { getProfileError } from '../../model/selectors/getProfileError';

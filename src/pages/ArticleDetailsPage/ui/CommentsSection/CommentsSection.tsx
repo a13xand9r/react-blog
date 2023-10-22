@@ -2,7 +2,7 @@ import { FC, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { Title } from '@/shared/ui/Title/Title';
+import { Title } from '@/shared/ui/Title';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { CommentsList } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';

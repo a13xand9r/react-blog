@@ -2,11 +2,11 @@ import { FC, memo, useCallback, useState } from 'react';
 
 import { Popover } from '@/shared/ui/Popups';
 import { Notifications } from '@/entities/Notifications';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import NotificationIcon from '@/shared/assets/icons/notification-icon.svg';
 import { detectDevice } from '@/shared/lib/detectDevice/detectDevice';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/Drawer';
 
 import styles from './NotificationButton.module.scss';
 
