@@ -22,7 +22,7 @@ describe('updateProfileData thunk', () => {
         const result = await thunk.callThunk('1');
 
         expect(thunk.api.put).toHaveBeenCalled();
-        expect(thunk.dispatch).toHaveBeenCalledTimes(3);
+        expect(thunk.dispatch).toHaveBeenCalledTimes(2);
         expect(result.meta.requestStatus).toBe('fulfilled');
         expect(result.payload).toEqual(profile.form);
     });
@@ -61,7 +61,7 @@ describe('updateProfileData thunk', () => {
         const result = await thunk.callThunk('1');
 
         expect(thunk.api.put).toHaveBeenCalled();
-        expect(thunk.dispatch).toHaveBeenCalledTimes(3);
+        expect(thunk.dispatch).toHaveBeenCalledTimes(2);
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual(['SERVER_ERROR']);
     });
