@@ -4,7 +4,8 @@ module.exports = {
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
-        'storybook-addon-mock',
+        // TODO this addon breaks storybook build, need fix
+        // 'storybook-addon-mock',
     ],
     framework: '@storybook/react',
     core: {

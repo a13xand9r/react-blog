@@ -1,0 +1,23 @@
+{
+	"Lang": "Русский",
+	"Main": "Main",
+	"Profile": "Profile",
+	"About": "About",
+	"Toggle": "Toggle",
+	"NotFound": "Not found",
+	"ThrowError": "Thow error",
+	"ReloadPage": "Reload page",
+	"ErrorMessage": "Something went wrong",
+	"Short Lang": "Ru",
+	"Login": "Login",
+	"increment": "increment",
+	"decrement": "decrement",
+	"Enter login": "Enter login",
+	"Enter Password": "Enter password",
+	"Authorization form": "Autharization form",
+	"Logout": "Logout",
+	"Articles": "Articles",
+	"Admin panel": "Admin panel",
+	"No permission": "You don't have permission to this page",
+	"Error occured": "Error occured"
+}

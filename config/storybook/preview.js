@@ -1,5 +1,4 @@
-import { TranslateDecorator } from 'shared/lib/storybook/decorators/TranslateDecorator';
-
+import { TranslateDecorator } from '../../src/shared/lib/storybook/decorators/TranslateDecorator';
 import { Theme } from '../../src/shared/theme/ThemeContext';
 import { StyleDecorator } from '../../src/shared/lib/storybook/decorators/StyleDecorator';
 import { getThemeDecorator } from '../../src/shared/lib/storybook/decorators/ThemeDecorator';
