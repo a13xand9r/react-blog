@@ -1,7 +1,6 @@
 import { TranslateDecorator } from '../../src/shared/lib/storybook/decorators/TranslateDecorator';
 import { Theme } from '../../src/shared/theme/ThemeContext';
 import { StyleDecorator } from '../../src/shared/lib/storybook/decorators/StyleDecorator';
-import { getThemeDecorator } from '../../src/shared/lib/storybook/decorators/ThemeDecorator';
 import { RouterDecorator } from '../../src/shared/lib/storybook/decorators/RouterDecorator';
 
 export const parameters = {
@@ -13,11 +12,13 @@ export const parameters = {
         },
     },
     layout: 'fullscreen',
+    themes: {
+        default: 'light',
+        list: [
+            { name: 'light', class: Theme.LIGHT, color: '#ffffff' },
+            { name: 'dark', class: Theme.DARK, color: '#000000' },
+        ],
+    },
 };
 
-export const decorators = [
-    StyleDecorator,
-    getThemeDecorator(Theme.LIGHT),
-    RouterDecorator,
-    TranslateDecorator,
-];
+export const decorators = [StyleDecorator, RouterDecorator, TranslateDecorator];
