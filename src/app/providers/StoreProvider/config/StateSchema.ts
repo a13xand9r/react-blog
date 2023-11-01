@@ -39,7 +39,7 @@ export interface StateSchema {
 export type StateSchemaKey = keyof StateSchema;
 
 export type ReducersList = {
-    [name in StateSchemaKey]?: Reducer;
+    [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
 };
 
 export interface ReducerManager {
