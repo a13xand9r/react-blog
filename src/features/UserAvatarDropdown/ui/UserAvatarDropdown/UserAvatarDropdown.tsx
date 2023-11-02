@@ -29,13 +29,13 @@ export const UserAvatarDropdown: FC = memo(() => {
                 ? [
                       {
                           content: t('Admin panel'),
-                          href: routesPaths.admin,
+                          href: routesPaths.getRouteAdmin(),
                       },
                   ]
                 : []),
             {
                 content: t('Profile'),
-                href: routesPaths.profile + authData?.id,
+                href: routesPaths.getRouteProfile(authData?.id ?? ''),
             },
             {
                 content: t('Logout'),

@@ -20,7 +20,7 @@ const ArticleDetailsPage: FC = () => {
 
     return (
         <Page>
-            <AppLink to={routesPaths.articles}>{`< ${t('Go to all articles')}`}</AppLink>
+            <AppLink to={routesPaths.getRouteArticles()}>{`< ${t('Go to all articles')}`}</AppLink>
             <ArticleDetails id={id} />
             <ArticlesRecommendations />
             <CommentsSection id={id} />

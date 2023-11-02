@@ -67,7 +67,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({
                         onClick={onArticleOpen}
                         target={target}
                         className={styles.link}
-                        to={routesPaths.articleDetails + article?.id}
+                        to={routesPaths.getRouteArticleDetails(article?.id ?? '')}
                     >
                         <Button theme={ButtonTheme.OUTLINED}>{t('Read more...')}</Button>
                     </AppLink>
@@ -84,7 +84,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({
             onClick={onArticleOpen}
             target={target}
             className={styles.link}
-            to={routesPaths.articleDetails + article?.id}
+            to={routesPaths.getRouteArticleDetails(article?.id ?? '')}
         >
             <Card className={classNames(styles.ArticleCardContent, styles[view], className)}>
                 <div className={styles.imgWrapper}>

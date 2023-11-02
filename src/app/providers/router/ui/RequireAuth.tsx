@@ -26,7 +26,7 @@ export const RequireAuth: FC<RequireAuthProps> = ({ requiredRoles, children }) =
     }, [requiredRoles, userRoles]);
 
     if (!isAuth) {
-        return <Navigate to={routesPaths.main} state={{ from: location }} replace />;
+        return <Navigate to={routesPaths.getRouteMain()} state={{ from: location }} replace />;
     }
     if (!hasPermission) {
         return <Page>{t('No permission')}</Page>;

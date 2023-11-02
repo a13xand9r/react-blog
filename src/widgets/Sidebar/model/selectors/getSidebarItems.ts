@@ -12,12 +12,12 @@ import { SidebarItemType } from '../types/sidebarItems';
 export const getSidebarItems = createSelector(getUserAuthData, (userAuthData) => {
     const sidebarItems: SidebarItemType[] = [
         {
-            url: routesPaths.main,
+            url: routesPaths.getRouteMain(),
             title: 'Main',
             Icon: HomeIcon,
         },
         {
-            url: routesPaths.about,
+            url: routesPaths.getRouteAbout(),
             title: 'About',
             Icon: AboutIcon,
         },
@@ -26,13 +26,13 @@ export const getSidebarItems = createSelector(getUserAuthData, (userAuthData) =>
     if (userAuthData) {
         sidebarItems.push(
             {
-                url: routesPaths.profile + userAuthData.id,
+                url: routesPaths.getRouteProfile(userAuthData.id),
                 title: 'Profile',
                 Icon: ProfileIcon,
                 authOnly: true,
             },
             {
-                url: routesPaths.articles,
+                url: routesPaths.getRouteArticles(),
                 title: 'Articles',
                 Icon: ArticleIcon,
                 authOnly: true,

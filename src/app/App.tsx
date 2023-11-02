@@ -28,7 +28,10 @@ export const App = () => {
         sessionStorage.removeItem(ARTICLES_LIST_CLICKED_ITEM_IDX);
     }, []);
     useEffect(() => {
-        if (pathname !== routesPaths.articles && !pathname.includes(routesPaths.articleDetails)) {
+        if (
+            pathname !== routesPaths.getRouteArticles() &&
+            !pathname.includes(routesPaths.getRouteArticleDetails(''))
+        ) {
             sessionStorage.removeItem(ARTICLES_LIST_CLICKED_ITEM_IDX);
         }
     }, [pathname]);
