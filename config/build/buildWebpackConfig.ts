@@ -12,7 +12,7 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
     return {
         mode,
         entry: paths.entry,
-        devtool: isDev ? 'inline-source-map' : false,
+        devtool: isDev ? 'eval-cheap-module-source-map' : false,
         output: {
             path: paths.build,
             filename: '[name].[contenthash].js',

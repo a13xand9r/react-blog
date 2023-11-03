@@ -35,6 +35,7 @@ export const getBabelLoader = ({ isDev, isTSX }: GetBabelLoaderParams) => {
         use: {
             loader: 'babel-loader',
             options: {
+                cacheDirectory: true,
                 presets: ['@babel/preset-env'],
                 plugins,
             },
