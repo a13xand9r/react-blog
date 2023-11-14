@@ -1,5 +1,5 @@
 import { getIsUserInit } from './model/selectors/getIsUserInit';
-import { getUserAuthData } from './model/selectors/getUserAuthData';
+import { getUserAuthData, useGetUserAuthData } from './model/selectors/getUserAuthData';
 import {
     getUserRoles,
     hasUserRole,
@@ -19,5 +19,6 @@ export {
     getIsUserAdmin,
     getIsUserManager,
     getIsUserInit,
+    useGetUserAuthData,
 };
 export type { UserSchema, User, UserRole };

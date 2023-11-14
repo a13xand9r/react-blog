@@ -2,24 +2,24 @@ import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { getUserAuthData } from '@/entities/User';
+import { useGetUserAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Title } from '@/shared/ui/Title';
 import { HStack } from '@/shared/ui/Stack';
 import {
-    getProfileData,
     getProfileReadOnly,
     profileActions,
     updateProfileData,
+    useGetProfileData,
 } from '@/entities/Profile';
 
 export const ProfileHeader: FC<{ id?: string }> = memo(({ id }) => {
     const { t } = useTranslation('profilePage');
 
     const isReadOnly = useSelector(getProfileReadOnly);
-    const authData = useSelector(getUserAuthData);
-    const profileData = useSelector(getProfileData);
+    const authData = useGetUserAuthData();
+    const profileData = useGetProfileData();
     const canEdit = authData?.id === profileData?.id;
     const dispatch = useAppDispatch();
 

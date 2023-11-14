@@ -1,7 +1,6 @@
 import { FC, memo } from 'react';
-import { useSelector } from 'react-redux';
 
-import { getUserAuthData } from '@/entities/User';
+import { useGetUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { UserAvatarDropdown } from '@/features/UserAvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
@@ -15,7 +14,7 @@ interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = memo(({ className }) => {
-    const authData = useSelector(getUserAuthData);
+    const authData = useGetUserAuthData();
 
     if (authData) {
         return (

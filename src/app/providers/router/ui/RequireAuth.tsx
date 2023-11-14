@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useLocation, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { getUserAuthData, getUserRoles, UserRole } from '@/entities/User';
+import { getUserRoles, useGetUserAuthData, UserRole } from '@/entities/User';
 import { routesPaths } from '@/shared/consts/router';
 import { Page } from '@/widgets/Page';
 
@@ -13,7 +13,7 @@ interface RequireAuthProps {
 }
 
 export const RequireAuth: FC<RequireAuthProps> = ({ requiredRoles, children }) => {
-    const isAuth = useSelector(getUserAuthData);
+    const isAuth = useGetUserAuthData();
     const userRoles = useSelector(getUserRoles);
     const location = useLocation();
     const { t } = useTranslation();

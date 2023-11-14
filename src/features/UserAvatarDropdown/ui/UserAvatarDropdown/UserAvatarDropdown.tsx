@@ -4,14 +4,14 @@ import { useSelector } from 'react-redux';
 
 import { Dropdown, DropdownItem } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
-import { getIsUserAdmin, getIsUserManager, getUserAuthData, userActions } from '@/entities/User';
+import { getIsUserAdmin, getIsUserManager, useGetUserAuthData, userActions } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { routesPaths } from '@/shared/consts/router';
 
 export const UserAvatarDropdown: FC = memo(() => {
     const { t } = useTranslation();
 
-    const authData = useSelector(getUserAuthData);
+    const authData = useGetUserAuthData();
     const isUserAdmin = useSelector(getIsUserAdmin);
     const isUserManager = useSelector(getIsUserManager);
 

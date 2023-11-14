@@ -1,7 +1,6 @@
 import { FC, memo } from 'react';
-import { useSelector } from 'react-redux';
 
-import { getUserAuthData } from '@/entities/User';
+import { useGetUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 
@@ -15,7 +14,7 @@ interface SidebarItemProps extends SidebarItemType {
 
 export const SidebarItem: FC<SidebarItemProps> = memo(
     ({ url, title, Icon, collapsed, authOnly }) => {
-        const isUserAuth = useSelector(getUserAuthData);
+        const isUserAuth = useGetUserAuthData();
 
         if (!isUserAuth && authOnly) {
             return null;

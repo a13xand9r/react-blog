@@ -1,3 +1,3 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { buildSelector } from '@/shared/store/buildSelector';
 
-export const getUserAuthData = (state: StateSchema) => state.user.authUser;
+export const [useGetUserAuthData, getUserAuthData] = buildSelector((state) => state.user.authUser);
