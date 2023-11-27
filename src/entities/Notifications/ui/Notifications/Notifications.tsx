@@ -29,9 +29,9 @@ export const Notifications: FC<NotificationsProps> = memo(({ className }) => {
     if (isLoading) {
         return (
             <VStack gap="8" className={classNames(className, styles.Notifications)}>
-                <Skeleton width="100%" border="8px" height="80px" />
-                <Skeleton width="100%" border="8px" height="80px" />
-                <Skeleton width="100%" border="8px" height="80px" />
+                <Skeleton maxWidth="100%" border="8px" height="80px" />
+                <Skeleton maxWidth="100%" border="8px" height="80px" />
+                <Skeleton maxWidth="100%" border="8px" height="80px" />
             </VStack>
         );
     }

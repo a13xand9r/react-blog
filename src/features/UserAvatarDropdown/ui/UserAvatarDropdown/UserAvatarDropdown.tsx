@@ -51,7 +51,7 @@ export const UserAvatarDropdown: FC = memo(() => {
 
     return (
         <Dropdown
-            buttonElement={<Avatar src={authData.avatar} size={30} />}
+            buttonElement={<Avatar src={authData.avatar} size={30} isInvertedFallback />}
             items={dropdownItems}
             position="bottom left"
         />

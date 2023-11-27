@@ -18,22 +18,22 @@ export const ArticleCardSkeleton: FC<ArticleCardProps> = ({ view, className }) =
         return (
             <Card className={classNames(styles.ArticleCardContent, styles[view], className)}>
                 <div className={styles.header}>
-                    <Skeleton className={styles.avatar} width={30} height={30} border="50px" />
-                    <Skeleton className={styles.username} width={100} height={15} />
-                    <Skeleton className={styles.date} width={70} height={15} />
+                    <Skeleton className={styles.avatar} maxWidth={30} height={30} border="50px" />
+                    <Skeleton className={styles.username} maxWidth={100} height={15} />
+                    <Skeleton className={styles.date} maxWidth={70} height={15} />
                 </div>
                 <div className={styles.topInfo}>
-                    <Skeleton className={styles.title} width={200} height={20} />
+                    <Skeleton className={styles.title} maxWidth={200} height={20} />
                     <div className={styles.typesContainer}>
-                        <Skeleton className={styles.types} width={45} height={15} />
-                        <Skeleton className={styles.types} width={45} height={15} />
+                        <Skeleton className={styles.types} maxWidth={45} height={15} />
+                        <Skeleton className={styles.types} maxWidth={45} height={15} />
                     </div>
                 </div>
                 <Skeleton className={styles.img} height={250} />
                 <Skeleton className={styles.text} height={90} />
                 <Skeleton className={styles.text} height={50} />
                 <div className={styles.bottomTopContainer}>
-                    <Skeleton width={80} height={25} />
+                    <Skeleton maxWidth={80} height={25} />
                 </div>
             </Card>
         );
@@ -45,9 +45,9 @@ export const ArticleCardSkeleton: FC<ArticleCardProps> = ({ view, className }) =
             </div>
             <div className={styles.bottomBlock}>
                 <div className={styles.bottomTopContainer}>
-                    <Skeleton width={130} height={16} />
+                    <Skeleton maxWidth={130} height={16} />
                 </div>
-                <Skeleton width={150} height={16} className={styles.title} />
+                <Skeleton maxWidth={150} height={16} className={styles.title} />
             </div>
         </Card>
     );

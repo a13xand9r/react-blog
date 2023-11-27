@@ -66,12 +66,12 @@ export const ArticleDetails: FC<ArticleDetailsProps> = ({ id, className }) => {
             <>
                 <Skeleton
                     className={styles.articleMainImage}
-                    width={200}
+                    maxWidth={200}
                     height={200}
                     border="50%"
                 />
-                <Skeleton className={styles.skeleton} width={300} height={32} />
-                <Skeleton className={styles.skeleton} width={600} height={24} />
+                <Skeleton className={styles.skeleton} maxWidth={300} height={32} />
+                <Skeleton className={styles.skeleton} maxWidth={600} height={24} />
                 <Skeleton className={styles.skeleton} height={200} />
                 <Skeleton className={styles.skeleton} height={200} />
             </>

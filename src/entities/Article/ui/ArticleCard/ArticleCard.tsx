@@ -10,6 +10,8 @@ import { Title } from '@/shared/ui/Title';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { routesPaths } from '@/shared/consts/router';
 import { AppLink } from '@/shared/ui/AppLink';
+import { AppImage } from '@/shared/ui/AppImage/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
 import { Article, ArticleTextBlockType } from '../../model/types/article';
@@ -59,7 +61,12 @@ export const ArticleCard: FC<ArticleCardProps> = ({
                     <Text className={styles.types}>{articleTypes}</Text>
                 </div>
                 <div className={styles.imgContainer}>
-                    <img className={styles.img} src={article?.img} alt={article?.title} />
+                    <AppImage
+                        fallback={<Skeleton maxWidth="100%" height="100%" />}
+                        className={styles.img}
+                        src={article?.img}
+                        alt={article?.title}
+                    />
                 </div>
                 {textBlock && <ArticleTextBlock className={styles.text} textBlock={textBlock} />}
                 <div className={styles.bottomTopContainer}>
@@ -89,7 +96,12 @@ export const ArticleCard: FC<ArticleCardProps> = ({
             <Card className={classNames(styles.ArticleCardContent, styles[view], className)}>
                 <div className={styles.imgWrapper}>
                     <Text className={styles.date}>{article?.createdAt}</Text>
-                    <img className={styles.img} src={article?.img} alt={article?.title} />
+                    <AppImage
+                        fallback={<Skeleton maxWidth="100%" height="300px" />}
+                        className={styles.img}
+                        src={article?.img}
+                        alt={article?.title}
+                    />
                 </div>
                 <div className={styles.bottomBlock}>
                     <div className={styles.bottomTopContainer}>

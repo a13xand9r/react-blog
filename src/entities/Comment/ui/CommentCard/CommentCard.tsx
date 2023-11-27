@@ -25,8 +25,8 @@ export const CommentCard: FC<CommentCardProps> = ({ comment, isLoading, classNam
         content = (
             <>
                 <div className={styles.cardHeader}>
-                    <Skeleton border="50%" width={30} height={30} />
-                    <Skeleton width={90} height={20} />
+                    <Skeleton border="50%" maxWidth={30} height={30} />
+                    <Skeleton maxWidth={90} height={20} />
                 </div>
                 <Skeleton height={20} />
             </>

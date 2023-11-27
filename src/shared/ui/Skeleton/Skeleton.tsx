@@ -6,14 +6,16 @@ import styles from './Skeleton.module.scss';
 
 interface SkeletonProps {
     className?: string;
+    maxWidth?: number | string;
     width?: number | string;
     height?: number | string;
     border?: string;
 }
 
-export const Skeleton: FC<SkeletonProps> = ({ className, border, height, width }) => {
+export const Skeleton: FC<SkeletonProps> = ({ className, border, height, width, maxWidth }) => {
     const inlineStyles: CSSProperties = {
-        maxWidth: width,
+        maxWidth,
+        width,
         height,
         borderRadius: border,
     };
