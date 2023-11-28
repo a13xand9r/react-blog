@@ -14,7 +14,7 @@ export const NotFoundPage: FC<NotFoundPageProps> = memo(({ className }) => {
     const { t } = useTranslation();
 
     return (
-        <Page className={classNames(className, styles.NotFoundPage)}>
+        <Page dataTestid="NotFoundPage" className={classNames(className, styles.NotFoundPage)}>
             <h1 className={styles.title404}>404</h1>
             {t('NotFound')}
         </Page>

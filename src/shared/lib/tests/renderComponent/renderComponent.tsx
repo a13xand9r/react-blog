@@ -9,7 +9,7 @@ import i18n from '@/shared/config/i18n/i18nForTesting';
 
 export interface ComponentRenderOptions {
     route?: string;
-    initialState?: Partial<StateSchema>;
+    initialState?: DeepPartial<StateSchema>;
     asyncReducers?: ReducersList;
 }
 

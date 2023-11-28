@@ -9,7 +9,7 @@ function AboutPage() {
     useDynamicReducerLoader('counter', counterReducer);
 
     return (
-        <Page>
+        <Page dataTestid="AboutPage">
             {t('AboutPage')}
             <Counter />
         </Page>

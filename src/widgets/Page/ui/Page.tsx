@@ -8,13 +8,14 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle';
 import { PageContext } from '@/shared/lib/contexts/PageContext';
+import { TestProps } from '@/shared/types/tests';
 
 import { getPageScrollPosition } from '../model/selectors/getPageScrollPosition';
 import { pageActions } from '../model/slice/pageSlice';
 
 import styles from './Page.module.scss';
 
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string;
     isSaveScrollPosition?: boolean;
     onScrollEnd?: () => void;
@@ -26,6 +27,7 @@ export const Page: FC<PageProps> = ({
     isSaveScrollPosition = false,
     className,
     children,
+    dataTestid,
 }) => {
     const intersectScrollElRef = useRef() as MutableRefObject<HTMLDivElement>;
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -61,6 +63,7 @@ export const Page: FC<PageProps> = ({
             onScroll={onScroll}
             ref={wrapperRef}
             className={classNames(className, styles.Page)}
+            data-testid={dataTestid}
         >
             <PageContext.Provider value={pageContextValue}>{children}</PageContext.Provider>
             <div ref={intersectScrollElRef} />

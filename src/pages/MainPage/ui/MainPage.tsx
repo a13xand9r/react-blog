@@ -8,6 +8,7 @@ const MainPage: FC = memo(() => {
     const { t } = useTranslation('mainPage');
     return (
         <Page
+            dataTestid="MainPage"
             className={classNames(
                 'mainClass',
                 { falseClass: false, trueClass: true },
