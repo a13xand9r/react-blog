@@ -91,6 +91,7 @@
     "jest": "^27.5.1",
     "jest-html-reporters": "^3.1.4",
     "json-server": "^0.17.1",
+    "lint-staged": "^15.1.0",
     "loki": "^0.30.3",
     "mini-css-extract-plugin": "^2.5.3",
     "npm": "^8.19.2",
@@ -132,6 +133,10 @@
     "react-router-dom": "^6.4.2",
     "react-transition-group": "^4.4.5",
     "react-virtuoso": "^4.3.5"
+  },
+  "lint-staged": {
+    "**/*.{tsx,ts}": "eslint --fix",
+    "**/*.scss": "stylelint"
   },
   "loki": {
     "configurations": {

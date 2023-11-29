@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run ts:lint:fix
-npm run scss:lint:fix
+npx lint-staged
